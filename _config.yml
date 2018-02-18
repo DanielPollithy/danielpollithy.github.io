@@ -1,33 +1,33 @@
-title:            Notepad
-description:      "Blogging is fun"
+title:            Notes
+description:      "2018 and more"
 logo:             logo3.png
-disqus_shortname: hmfaysal
-share:            true
+#disqus_shortname: 
+share:            false
 # Change url to your domain. Leave localhost server or blank when working locally.
 # or use the hint from http://jekyllrb.com/docs/github-pages/ to keep this the same 
 # whether working locally or remotely. Start Jekyll with: jekyll serve --baseurl ''
-#url:        	  http://hmfaysal.github.io
+url:        	  http://danielpollithy.github.io
 
 # Owner/author information
 owner:
-  name:           Your Name
-  avatar:         hmfaysal.jpg
-  email:          you@email.com
+  name:           Daniel Pollithy
+  avatar:         daniel.jpg
+  email:          daniel@pollithy.com
   # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
-  description:    Awesome Dude, Awesome Life
+  description:    Developer
   # Social networking links used in footer. Update and remove as you like.
-  twitter:        hmfaysal
-  facebook:       hmfaysal
-  github:         hmfaysal      
-  instagram:      hmfaysal
+  # twitter:        
+  # facebook:       hmfaysal
+  github:         DanielPollithy      
+  #instagram:      hmfaysal
   # For Google Authorship https://plus.google.com/authorship
-  google_plus:    https://plus.google.com/u/0/102602916593522619858
+  #google_plus:    https://plus.google.com/u/0/102602916593522619858
 
 # Analytics and webmaster tools stuff goes here
-google_analytics:   
-google_verify:      
+#google_analytics:   
+#google_verify:      
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:         
+#bing_verify:         
 
 # Links to include in footer navigation
 # For external links add external: true
@@ -41,10 +41,10 @@ links:
   - title: Categories
     url: /categories
   - title: About
-    url: /hossain-mohd-faysal
+    url: /daniel-pollithy
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    America/New_York
+timezone:    Europe/Berlin
 future:      true
 highlighter: pygments
 markdown:    kramdown
@@ -70,8 +70,8 @@ kramdown:
 
 prose:
   rooturl: '_posts'
-  siteurl: 'http://hmfaysal.github.io/'
-  relativeLinks: 'http://hmfaysal.github.io/links.jsonp'
+  siteurl: 'http://danielpollithy.github.io/'
+  relativeLinks: 'http://danielpollithy.github.io/links.jsonp'
   media: 'images'
   metadata:
     _posts:
