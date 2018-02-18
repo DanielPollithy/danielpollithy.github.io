@@ -5,14 +5,10 @@ title: Detect orientation of a cube with openCV
 mathjax: false
 featured: true
 comments: false
-headline: Making blogging easier for masses
+headline: Identify the position of a camera looking at a cube
 categories:
-  - personal
-  - webdevelopment
-tags: jekyll
-description: ''
-modified: ''
-imagefeature: ''
+  - opencv
+  - python
 ---
 Setup: There are 8 cameras positioned around a cube at which they are looking (ref: Initial setup).
 Every face of the cube is colored differently.
