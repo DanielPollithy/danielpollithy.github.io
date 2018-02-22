@@ -6,6 +6,7 @@ featured: true
 comments: false
 title: Android app Wifiota
 categories:
+  - personal
   - Programming
   - Hackathon
 tags: WiFi Direct Iota Flash Channel Challenge Android IRI Wifiota Java
@@ -29,6 +30,7 @@ We decided to design a protocol which enables devices with internet access to sh
 - Mobile data plans
 - Can serve an Access Point
 - Are capable of WiFi Direct
+
 
 <div style="text-align: center">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Co46IZxoB4c?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen align="center"></iframe>
