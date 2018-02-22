@@ -457,12 +457,13 @@ if vectors.any():
 		upper_corners = np.concatenate((upper_corners, \
         				np.array([cluster_center[0], cluster_center[1]], dtype = "uint32")))
 ```
-
-
-
-
+The following image shows the plot of the DBSCAN. I used this to calibrate a good epsilon value.
+In a better version of this program I would have to determine epsilon my other means.
 
 ![Screenshot from 2018-02-11 22-05-34.png]({{site.baseurl}}/images/Screenshot from 2018-02-11 22-05-34.png)
+
+The next image shows the assignment of the lower line ends to clusters.
+Three clusters are detected correctly and the associated points show the outline of the lower corners of the cube. 
 
 ![Screenshot from 2018-02-11 22-36-24.png]({{site.baseurl}}/images/Screenshot from 2018-02-11 22-36-24.png)
 
