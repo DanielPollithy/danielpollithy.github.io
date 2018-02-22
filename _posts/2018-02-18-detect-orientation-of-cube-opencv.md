@@ -467,6 +467,16 @@ Three clusters are detected correctly and the associated points show the outline
 
 ![Screenshot from 2018-02-11 22-36-24.png]({{site.baseurl}}/images/Screenshot from 2018-02-11 22-36-24.png)
 
+## To be continued...
+
+*One shall stop at the top* and because the reading time of this blog post is already too long I will show the rest of this in a following post.
+
+Coming up:
+- tetragon classification by size and dominant background color
+- puzzling the tetragons to cubes and picking the right one
+- calculate the orientation of the observing camera 
 
 
-To be continued...
+
+
+
