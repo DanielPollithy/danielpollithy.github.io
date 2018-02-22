@@ -30,7 +30,7 @@ We decided to design a protocol which enables devices with internet access to sh
 - Can serve an Access Point
 - Are capable of WiFi Direct
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Co46IZxoB4c?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Co46IZxoB4c?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen align="center"></iframe>
 
 
 
@@ -56,7 +56,7 @@ We built two protocols in Java:
 
 The android app contains basic wallet functions for sending and receiving iotas and a lot of settings regarding payment conditions. You can see this in the  screencaptured video demonstration.
 
-<iframe src="https://drive.google.com/file/d/1_v6PnM9ebcAoLRQRAE-wvv9_S9NYyrJP/preview" width="640" height="480"></iframe>
+<iframe src="https://drive.google.com/file/d/1_v6PnM9ebcAoLRQRAE-wvv9_S9NYyrJP/preview" width="640" height="480" align="center"></iframe>
 
 ### Challenges
 
@@ -81,7 +81,7 @@ After working for two to three weeks on it we got into time pressure because - a
 In the night before the deadline of the flash channel competition we did not go to sleep because we really tried to fix every bug and so on. 
 
 At around 5am we were capturing the videos:
-<iframe src="https://drive.google.com/file/d/1PAC1FrRnyhdQTYpWPdqNc71wyH1UuoXt/preview" width="640" height="480"></iframe>
+<iframe src="https://drive.google.com/file/d/1PAC1FrRnyhdQTYpWPdqNc71wyH1UuoXt/preview" width="640" height="480" align="center"></iframe>
 
 Luckily Toby from Canada was in a different timezone so when we were dead tired in Germany at 10am he just came back from work and could concentrate on our website for the project: [https://tobywoerthle.github.io/flashWiFiSite/](https://tobywoerthle.github.io/flashWiFiSite/)
 
