@@ -341,7 +341,9 @@ for a_x1, a_y1, a_x2, a_y2 in correct_lines:
                    			dtype = "uint32")))
 				lower_points = np.concatenate((lower_points, np.array([b_x1, b_y1], \
                    			dtype = "uint32")))
-					area = np.array([	
+                
+                # store the spanned tetragon
+				area = np.array([	
 					int(a_x1), int(a_y1),
 					int(b_x1), int(b_y1),
 					int(a_x2), int(a_y2), 
@@ -350,85 +352,115 @@ for a_x1, a_y1, a_x2, a_y2 in correct_lines:
 				areas = np.concatenate((areas, area))
 ```
 
+![Screenshot from 2018-02-11 21-17-00.png]({{site.baseurl}}/images/Screenshot from 2018-02-11 21-17-00.png)
+
+As you can see in this image, other lines were detects and had an acceptable length but they were lacking a parallel counterpart within the right range.
+Therefore only the cubes real edges were connected with red lines.
+
+**But the upper lines of the right face of the cube span around 40% of the area.**
+
+There are just too many lines and especially too many line ends. That's why we will cluster them based on their position.
+
 ### Cluster the ends of lines with DBSCAN
 
+Initially I was using K-Means as a cluster algorithm. But I soon realized that there is no a priori assumption possible about the K (number of clusters).
+
+That's why I switched to the (unsupervised) algorithm DBSCAN. Funfact: DBSCAN was created at the same department of the Computer Science faculty of LMU Munich where I worked on my Bachelor thesis.
+
 ```
+def centeroidnp(arr):
+	# this method calculates the center of an array of points
+	length = arr.shape[0]
+	sum_x = np.sum(arr[:, 0])
+	sum_y = np.sum(arr[:, 1])
+	return sum_x/length, sum_y/length
 
-	def centeroidnp(arr):
-		length = arr.shape[0]
-		sum_x = np.sum(arr[:, 0])
-		sum_y = np.sum(arr[:, 1])
-		return sum_x/length, sum_y/length
+# Promising results of the cluster algorithm
+corners = np.array([])
+lower_corners = np.array([])
+upper_corners = np.array([])
 
-	corners = np.array([])
-	lower_corners = np.array([])
-	upper_corners = np.array([])
+# --------------------------------------------------
+# Cluster the lower points
+# --------------------------------------------------
 
-	vectors = np.int32(lower_points.reshape(-1, 2))
+# reshape the array to int32 matrix with two columns
+vectors = np.int32(lower_points.reshape(-1, 2))
 
-	if vectors.any():
+if vectors.any():
+	# API of DBSCAN from scikit-learn
+	# http://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html
+    
+    # Run DBSCAN with eps=30 means that the minimum distance between two clusters is 30px
+    # and that points within 30px range will be part of the same cluster
+	db = DBSCAN(eps=75, min_samples=10).fit(vectors)
+	core_samples_mask = np.zeros_like(db.labels_, dtype=bool)
+	core_samples_mask[db.core_sample_indices_] = True
+	labels = db.labels_
 
-		# http://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html
-		db = DBSCAN(eps=30, min_samples=10).fit(vectors)
-		core_samples_mask = np.zeros_like(db.labels_, dtype=bool)
-		core_samples_mask[db.core_sample_indices_] = True
-		labels = db.labels_
+	# Number of clusters in labels, ignoring noise if present.
+	n_clusters_ = len(set(labels)) - (1 if -1 in labels else 0)
 
+	# iterate over the clusters
+	for i in set(db.labels_):
+		if i == -1:
+        	# -1 is noise
+			continue
+            
+		color = (random.randint(0, 255),random.randint(0, 255),random.randint(0, 255))
+		index = db.labels_ == i
+        
+        # draw the members of the cluster
+		for (point_x, point_y) in zip(vectors[index,0], vectors[index,1]):
+			cv2.circle(img2,  (point_x, point_y), 5, color, thickness=1, lineType=8, shift=0)
 
-		# Number of clusters in labels, ignoring noise if present.
-		n_clusters_ = len(set(labels)) - (1 if -1 in labels else 0)
-
-		vectors_result = {i: np.where(db.labels_ == i)[0] for i in range(n_clusters_)}
-
-
-		for i in set(db.labels_):
-			if i == -1:
-				continue
-			color = (random.randint(0, 255),random.randint(0, 255),random.randint(0, 255))
-			index = db.labels_ == i
-			for (point_x, point_y) in zip(vectors[index,0], vectors[index,1]):
-				cv2.circle(img2,  (point_x, point_y), 5, color, thickness=1, lineType=8, shift=0)
-
-			cluster_center = centeroidnp(np.array(zip(np.array(vectors[index,0]), np.array(vectors[index,1]))))
-			cv2.circle(img2,  cluster_center, 5, color, thickness=10, lineType=8, shift=0)
+		# calculate the centroid of the members
+		cluster_center = centeroidnp(np.array(zip(np.array(vectors[index,0]),\
+        				np.array(vectors[index,1]))))
+        
+        # draw the the cluster center
+		cv2.circle(img2,  cluster_center, 5, color, thickness=10, lineType=8, shift=0)
 			
-			corners = np.concatenate((corners, np.array([cluster_center[0], cluster_center[1]], dtype = "uint32")))
-			lower_corners = np.concatenate((lower_corners, np.array([cluster_center[0], cluster_center[1]], dtype = "uint32")))
-	# play the same game for the top line
-	vectors = np.int32(upper_points.reshape(-1, 2))
+        # store the centroid as corner
+		corners = np.concatenate((corners, np.array([cluster_center[0], cluster_center[1]],\
+        				dtype = "uint32")))
+		lower_corners = np.concatenate((lower_corners, 
+        				np.array([cluster_center[0], cluster_center[1]], dtype = "uint32")))
+                        
+# --------------------------------------------------
+# Cluster the upper points
+# = same as with lower points
+# --------------------------------------------------
 
-	if vectors.any():
+vectors = np.int32(upper_points.reshape(-1, 2))
 
-		# http://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html
-		db = DBSCAN(eps=75, min_samples=10).fit(vectors)
-		core_samples_mask = np.zeros_like(db.labels_, dtype=bool)
-		core_samples_mask[db.core_sample_indices_] = True
-		labels = db.labels_
+if vectors.any():
+	db = DBSCAN(eps=75, min_samples=10).fit(vectors)
+	core_samples_mask = np.zeros_like(db.labels_, dtype=bool)
+	core_samples_mask[db.core_sample_indices_] = True
+	labels = db.labels_
 
+	n_clusters_ = len(set(labels)) - (1 if -1 in labels else 0)
 
-		# Number of clusters in labels, ignoring noise if present.
-		n_clusters_ = len(set(labels)) - (1 if -1 in labels else 0)
-
-		vectors_result = {i: np.where(db.labels_ == i)[0] for i in range(n_clusters_)}
-
-
-		for i in set(db.labels_):
-			if i == -1:
-				continue
-			color = (random.randint(0, 255),random.randint(0, 255),random.randint(0, 255))
-			index = db.labels_ == i
-			for (point_x, point_y) in zip(vectors[index,0], vectors[index,1]):
-				cv2.circle(img2,  (point_x, point_y), 5, color, thickness=1, lineType=8, shift=0)
-
-			cluster_center = centeroidnp(np.array(zip(np.array(vectors[index,0]), np.array(vectors[index,1]))))
-			cv2.circle(img2,  cluster_center, 5, color, thickness=10, lineType=8, shift=0)
-			corners = np.concatenate((corners, np.array([cluster_center[0], cluster_center[1]], dtype = "uint32")))
-			upper_corners = np.concatenate((upper_corners, np.array([cluster_center[0], cluster_center[1]], dtype = "uint32")))
+	for i in set(db.labels_):
+		if i == -1:
+			continue
+		color = (random.randint(0, 255),random.randint(0, 255),random.randint(0, 255))
+		index = db.labels_ == i
+		for (point_x, point_y) in zip(vectors[index,0], vectors[index,1]):
+			cv2.circle(img2,  (point_x, point_y), 5, color, thickness=1, lineType=8, shift=0)
+		cluster_center = centeroidnp(np.array(zip(np.array(vectors[index,0]),\
+        				np.array(vectors[index,1]))))
+		cv2.circle(img2,  cluster_center, 5, color, thickness=10, lineType=8, shift=0)
+		corners = np.concatenate((corners, np.array([cluster_center[0], cluster_center[1]], \
+        				dtype = "uint32")))
+		upper_corners = np.concatenate((upper_corners, \
+        				np.array([cluster_center[0], cluster_center[1]], dtype = "uint32")))
 ```
 
 
 
-![Screenshot from 2018-02-11 21-17-00.png]({{site.baseurl}}/images/Screenshot from 2018-02-11 21-17-00.png)
+
 
 ![Screenshot from 2018-02-11 22-05-34.png]({{site.baseurl}}/images/Screenshot from 2018-02-11 22-05-34.png)
 
