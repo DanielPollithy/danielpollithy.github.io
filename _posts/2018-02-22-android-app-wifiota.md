@@ -25,7 +25,7 @@ The story begins in December 2017 on Reddit. Somebody was asking in the subred o
 
 In the comment section Toby from Canada and I were talking about the idea of "paying iota and receiving wifi". Together with Wlad we teamed up for the Iota Flash Channel Challenge.
 
-We decided to design a protocol which enables devices with internet access to share it and get paid for it. As a starter we built an Android app because these devices bring the interesting capacities with them: 
+We decided to design a protocol which enables devices with internet access to share it and get paid for it. As a starter we built an Android app because these devices bring the interesting capacities with them:  
 
 - Mobile data plans
 - Can serve an Access Point
