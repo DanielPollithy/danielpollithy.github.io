@@ -46,7 +46,7 @@ links:
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Europe/Berlin
 future:      true
-highlighter: pygments
+# highlighter: rouge
 markdown:    kramdown
 paginate:    5
 paginate_path: "page:num"
@@ -60,6 +60,7 @@ kramdown:
   entity_output: as_char
   toc_levels: 1..6
   use_coderay: false
+  syntax_highlighter: rouge
 
   coderay:
     coderay_line_numbers: 
