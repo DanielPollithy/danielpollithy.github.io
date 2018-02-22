@@ -9,8 +9,10 @@ headline: Identify the position of a camera looking at a cube
 categories:
   - opencv
   - python
-tags: 'opencv, python, dbscan, clustering'
+tags: opencv python dbscan clustering
 imagefeature: Screenshot from 2018-02-11 22-36-24.png
+description: ''
+modified: ''
 ---
 Setup: There are 8 cameras positioned around a cube at which they are looking (ref: Initial setup).
 Every face of the cube is colored differently.
