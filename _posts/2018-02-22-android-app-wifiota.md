@@ -1,17 +1,14 @@
 ---
 layout: post
 published: true
-categories:
-  - personal
 mathjax: false
-featured: false
+featured: true
 comments: false
 title: Android app Wifiota
-description: ''
-headline: ''
-modified: ''
-tags: ''
-imagefeature: ''
+categories:
+  - Programming
+  - Hackathon
+tags: WiFi Direct Iota Flash Channel Challenge Android IRI Wifiota Java
 ---
 ## Sharing remaining mobile data in exchange for Iota
 
@@ -91,14 +88,3 @@ Luckily Toby from Canada was in a different timezone so when we were dead tired 
 **In the end:** We did not win. There were similar ideas. The winner "Fognet" was also about sharing internet access in exchange for iotas but they used Arduino boards instead of Android devices.
 
 Nevertheless we did a really good job, it was fun to work with these two guys and I learnt a lot.
-
-
-
-
-
-
-
-
-
-
-
