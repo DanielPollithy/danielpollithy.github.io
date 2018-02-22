@@ -20,7 +20,7 @@ Quick link for the impatient: [https://tobywoerthle.github.io/flashWiFiSite/](ht
 The story begins in December 2017 on Reddit. Somebody was asking in the subred of Iota (not literally):
 
 
-> Anybody got cool ideas for a developer to program something with the iota library?
+> Anybody got cool ideas for a developer to program something with the iota library? 
 
 
 In the comment section Toby from Canada and I were talking about the idea of "paying iota and receiving wifi". Together with Wlad we teamed up for the Iota Flash Channel Challenge.
