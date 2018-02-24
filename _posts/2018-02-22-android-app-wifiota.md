@@ -13,7 +13,7 @@ tags: WiFi Direct Iota Flash Channel Challenge Android IRI Wifiota Java
 ---
 ## Sharing remaining mobile data in exchange for Iota
 
-Quick link for the impatient: [https://tobywoerthle.github.io/flashWiFiSite/](https://tobywoerthle.github.io/flashWiFiSite/)
+Quick link for the impatient: [promo site](https://tobywoerthle.github.io/flashWiFiSite/)
 
 ### Prelude
 
