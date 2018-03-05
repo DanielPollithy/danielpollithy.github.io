@@ -10,8 +10,8 @@ categories:
   - DLT
   - Programming
 tags: >-
-  ethereum solidity bluetooth socket cpp python javascript go bash raspberry
-  hikey drone
+  ethereum solidity bluetooth socket cpp python javascript bash raspberry hikey
+  drone
 ---
 ## Summer 2017: Ethereum+Iota hackathon in Frankfurt
 
@@ -182,16 +182,3 @@ The nights were short, we had a lot of things to fiddle around with until the la
 ## What stays
 
 I like to think back to this event because we really had a good time, talked to programmers all from all over the world and learned a lot. What really impressed my about this hackathon was the fact that all groups were working together, nobody was hiding their achievements and in the end everybody could benefit from the community.
-
-
-
-
-
-
-
-
-
-
-
-
-
