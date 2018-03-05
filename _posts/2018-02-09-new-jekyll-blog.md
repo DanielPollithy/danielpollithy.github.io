@@ -11,7 +11,7 @@ imagecredit: spreadeffect.com
 imagecreditlink: 'http://www.spreadeffect.com/blog/improve-website-speed/'
 comments: false
 mathjax: false
-featured: true
+featured: false
 published: true
 categories:
   - personal
