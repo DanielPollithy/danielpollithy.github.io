@@ -43,7 +43,7 @@ You could also learn how to legally organize an ICO and other administrative stu
 
 ![Screenshot from 2018-03-05 13-15-46.png]({{site.baseurl}}/images/Screenshot from 2018-03-05 13-15-46.png)
 
-With a team of six we took the challenge to build a self-managed drones. You can find all about the concept in the following video of the final presentation:
+With a team of six we took the challenge to build a self-managed drone charging system. You can find all about the concept in the following video of the final presentation:
 
 <div style="text-align: center">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/44oTBKQfcjE?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -57,8 +57,8 @@ Even more details by a blockchain vlogger: [Youtube video](https://www.youtube.c
 
 ![drone.jpeg]({{site.baseurl}}/images/drone.jpeg)
 
-- The Drone: We attached a raspberry pi 2 with a usb powerbank to a small quadrocopter. The powerbank powers the rasbpy and is also connected to an inductive charging card for cellphones. 
-- The charging station is box with a HiKey board (which was suggested by the guys from Eciotify) and an inductive charging station from Samsung. The charging station was controlled by a Relais to turn it on and off.
+- The Drone: We attached a raspberry pi 2 with a usb powerbank to a small quadrocopter. The powerbank powers the raspby and is also connected to an inductive charging card for cellphones. 
+- The charging station is a box with a HiKey board (which was suggested by the guys from Eciotify) and an inductive charging station from Samsung. The charging station was controlled by a Relais to turn it on and off.
 
 ### Software
 
@@ -181,4 +181,4 @@ The nights were short, we had a lot of things to fiddle around with until the la
 
 ## What stays
 
-I like to think back to this event because we really had a good time, talked to programmers all from all over the world and learned a lot. What really impressed my about this hackathon was the fact that all groups were working together, nobody was hiding their achievements and in the end everybody could benefit from the community.
+I like to think back to this event because we really had a good time, talked to programmers from all over the world and learned a lot. What really impressed my about this hackathon was the fact that all groups were working together, nobody was hiding their achievements and in the end everybody could benefit from the community.
