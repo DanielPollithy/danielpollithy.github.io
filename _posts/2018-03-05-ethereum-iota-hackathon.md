@@ -2,7 +2,7 @@
 layout: post
 published: true
 mathjax: false
-featured: false
+featured: true
 comments: false
 title: Ethereum Iota Hackathon
 categories:
