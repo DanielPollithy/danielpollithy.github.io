@@ -1,12 +1,17 @@
 ---
 layout: post
 published: true
-categories:
-  - personal
 mathjax: false
 featured: false
 comments: false
 title: Ethereum Iota Hackathon
+categories:
+  - Hackathon
+  - DLT
+  - Programming
+tags: >-
+  ethereum solidity bluetooth socket cpp python javascript go bash raspberry
+  hikey drone
 ---
 ## Summer 2017: Ethereum+Iota hackathon in Frankfurt
 
@@ -15,6 +20,8 @@ In May 2017 I read on the website of the blockchain department of the Technical 
 Together with a friend we applied for the "grant program" because we weren't willing to pay 700 € for one week. When we were noticed about us being accepted we did not know what to expect from that week hosted by Frankfurt Business School.
 
 **To be honest:** Both of us are not the kind of sales guys to be interested in the Frankfurt Business School. That is why we were skeptical.
+
+![frankfurt_skyline.png]({{site.baseurl}}/images/frankfurt_skyline.png)
 
 ## Our prejudices vanished up in thin air
 
@@ -34,7 +41,7 @@ You could also learn how to legally organize an ICO and other administrative stu
 
 ## The prototype
 
-
+![Screenshot from 2018-03-05 13-15-46.png]({{site.baseurl}}/images/Screenshot from 2018-03-05 13-15-46.png)
 
 With a team of six we took the challenge to build a self-managed drones. You can find all about the concept in the following video of the final presentation:
 
@@ -48,6 +55,8 @@ Even more details by a blockchain vlogger: [Youtube video](https://www.youtube.c
 
 ### Hardware
 
+![drone.jpeg]({{site.baseurl}}/images/drone.jpeg)
+
 - The Drone: We attached a raspberry pi 2 with a usb powerbank to a small quadrocopter. The powerbank powers the rasbpy and is also connected to an inductive charging card for cellphones. 
 - The charging station is box with a HiKey board (which was suggested by the guys from Eciotify) and an inductive charging station from Samsung. The charging station was controlled by a Relais to turn it on and off.
 
@@ -60,6 +69,8 @@ Even more details by a blockchain vlogger: [Youtube video](https://www.youtube.c
 - Configuration: We attached some init.d services to the raspby and the hikey in order to survive a battery shortage. The relais control of the inductive charging station was built with some c++ code. Both boards had a small json storage to keep track of the state and future tasks.
 
 ### Code examples
+
+![mainnet.jpg]({{site.baseurl}}/images/mainnet.jpg)
 
 #### The relais control
 
@@ -164,6 +175,8 @@ contract.register({from: drone_eth_address}, (e, r) => {
 ## Presentation
 
 The nights were short, we had a lot of things to fiddle around with until the last day and were dead tired when the presentations begun. Fortunately we had two presentators who did a good job. The jury awarded our project, we celebrated together and after a long week together we parted ways. 
+
+![drone_flying.JPG]({{site.baseurl}}/images/drone_flying.JPG)
 
 
 ## What stays
