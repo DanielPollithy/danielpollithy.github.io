@@ -6,7 +6,6 @@ featured: false
 comments: false
 title: Hack4Climate in Bonn
 categories:
-  - personal
   - Hackathon
   - DLT
 tags: bonn hack4climate ethereum iota
