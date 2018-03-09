@@ -1,12 +1,14 @@
 ---
 layout: post
 published: true
-categories:
-  - personal
 mathjax: false
 featured: false
 comments: false
 title: Hack4Climate in Bonn
+categories:
+  - Hackathon
+  - DLT
+tags: bonn hack4climate ethereum iota
 ---
 ## DLT against climate change
 
