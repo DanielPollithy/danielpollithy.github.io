@@ -38,7 +38,7 @@ A cool location to host an event. It was part of the UN world climate conference
 <div style="margin:auto;" class="videoWrapper">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/UOANny6i0QM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
-<p>
+</p>
 
 ## Inspiration
 
