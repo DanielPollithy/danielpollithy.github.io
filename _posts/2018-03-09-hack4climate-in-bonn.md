@@ -12,25 +12,7 @@ categories:
 tags: bonn ethereum iota
 description: A hackathon in Bonn to combine dlt with the fight against climate change
 ---
-<style>
-  .videoWrapper {
-	position: relative;
-	padding-bottom: 56.25%; /* 16:9 */
-	padding-top: 25px;
-	height: 0;
-}
-.videoWrapper iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-figure {
-  max-width: 56.25rem;
-  margin: auto;
-  }
-</style>
+
 
 ## DLT against climate change
 
