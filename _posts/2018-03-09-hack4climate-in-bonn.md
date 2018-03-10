@@ -27,8 +27,8 @@ description: A hackathon in Bonn to combine dlt with the fight against climate c
 	height: 100%;
 }
 figure {
-  margin: 0 auto 2em auto;
   max-width: 56.25rem;
+  margin: auto;
   }
 </style>
 
@@ -40,9 +40,9 @@ A cool location to host an event. It was part of the UN world climate conference
 
 <p>
   <figure>
-  <div class="videoWrapper">
-    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/UOANny6i0QM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-  </div>
+    <div class="videoWrapper">
+      <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/UOANny6i0QM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
   </figure>
 </p>
 
