@@ -26,6 +26,10 @@ description: A hackathon in Bonn to combine dlt with the fight against climate c
 	width: 100%;
 	height: 100%;
 }
+figure {
+  margin: 0 auto 2em auto;
+  max-width: 56.25rem;
+  }
 </style>
 
 ## DLT against climate change
