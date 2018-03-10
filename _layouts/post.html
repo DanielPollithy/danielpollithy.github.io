@@ -5,6 +5,26 @@
 {% include head.html %}
 </head>
 <body class="post-template" itemscope itemtype="http://schema.org/WebPage">  
+    
+<style>
+  .videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+figure {
+  max-width: 56.25rem;
+  margin: auto;
+  }
+</style>
 
 <main id="summer-post-container" class="summer-post-container intro-effect-sliced" role="main">
     
