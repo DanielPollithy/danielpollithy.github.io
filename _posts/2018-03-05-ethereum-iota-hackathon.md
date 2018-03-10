@@ -6,6 +6,7 @@ featured: true
 comments: false
 title: Ethereum Iota Hackathon
 categories:
+  - personal
   - Hackathon
   - DLT
   - Programming
@@ -27,9 +28,13 @@ Together with a friend we applied for the "grant program" because we weren't wil
 
 On the first official day of the Hackathon all of our skepticism was gone when we arrived at the event location called Tatcraft. It is a renovated factory in the suburban region of Frankfurt with an active Makers community providing tools like water-cutters, huge 3d printers etc.
 
-<div style="text-align: center">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ojwR1DwMBak?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-</div>
+<p>
+  <figure>
+    <div class="videoWrapper">
+      <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ojwR1DwMBak?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+  </figure>
+</p>
 
 The weather was great, we formed teams for the hackathon, had nice chats, listened to speakers and had a lot of fun.
 
@@ -45,9 +50,13 @@ You could also learn how to legally organize an ICO and other administrative stu
 
 With a team of six we took the challenge to build a self-managed drone charging system. You can find all about the concept in the following video of the final presentation:
 
-<div style="text-align: center">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/44oTBKQfcjE?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-</div>
+<p>
+  <figure>
+    <div class="videoWrapper">
+      <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/44oTBKQfcjE?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+  </figure>
+</p>
 
 Even more details by a blockchain vlogger: [Youtube video](https://www.youtube.com/watch?v=p4nhJqEd1zY)
 
