@@ -12,13 +12,29 @@ categories:
 tags: bonn ethereum iota
 description: A hackathon in Bonn to combine dlt with the fight against climate change
 ---
+<style>
+  .videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+</style>
+
 ## DLT against climate change
 
 In November 2017 I participated at a hackathon in Bonn called "Hack4Climate". Actually on a boat which was anchored five minutes from the city center in the river Rhine.
 
 A cool location to host an event. It was part of the UN world climate conference and the purpose was to hack on ideas regarding DLT and climate change.
 
-<div style="text-align: center">
+<div style="text-align: center" class=".videoWrapper">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/UOANny6i0QM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
 
