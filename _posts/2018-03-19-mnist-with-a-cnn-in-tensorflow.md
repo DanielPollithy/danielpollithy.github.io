@@ -1,17 +1,14 @@
 ---
 layout: post
 published: true
-categories:
-  - personal
 mathjax: false
 featured: false
 comments: false
 title: Mnist with a CNN in TensorFlow
-description: ''
-headline: ''
-modified: ''
-tags: ''
-imagefeature: ''
+categories:
+  - Python
+  - Programming
+tags: mnist numpy tensorflow tkinter
 ---
 ## Quickstart to TensorFlow
 
