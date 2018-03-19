@@ -4,7 +4,7 @@ published: true
 mathjax: false
 featured: false
 comments: false
-title: Mnist with a CNN in TensorFlow
+title: MNIST with a CNN in TensorFlow
 categories:
   - Python
   - Programming
