@@ -2,7 +2,7 @@
 layout: post
 published: true
 mathjax: false
-featured: true
+featured: false
 comments: false
 title: Hack4Climate in Bonn
 categories:
