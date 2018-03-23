@@ -1,17 +1,14 @@
 ---
 layout: post
 published: true
-categories:
-  - personal
 mathjax: false
-featured: false
+featured: true
 comments: false
 title: Principal components analysis
-description: ''
-headline: ''
-modified: ''
-tags: ''
-imagefeature: ''
+categories:
+  - python
+  - programming
+  - numpy
 ---
 ## Principal components analysis with numpy
 
@@ -37,7 +34,7 @@ The next component can be found by minimizing the L² distance of a line which i
 
 Only take the first n components of them and you get the principal components n. For the problem with the 3d plot we make n=3.
 
-The last step would be to obtain a rotation that converts all data points from the original coordinate system to the new coordinate system spanned by the three principal components.
+The last step would be to project all data points from the original coordinate system to the new coordinate system spanned by the three principal components.
 
 An interactive illustration can be found here: [http://setosa.io/...](http://setosa.io/ev/principal-component-analysis/)
 
@@ -48,7 +45,7 @@ An interactive illustration can be found here: [http://setosa.io/...](http://set
 1. Center the data by substracting the mean
 2. Calculate the covariance matrix
 3. Find eigenvectors and eigenvalues of the covariance matrix
-4. Order the eigenvectors by their eigenvalues and you obtain the principal components
+4. Sort the eigenvectors by their eigenvalues and you obtain the principal components
 5. Use matrixmultiplication to project the data in the new space
 
 ## Do it in numpy
@@ -63,17 +60,15 @@ An interactive illustration can be found here: [http://setosa.io/...](http://set
    `covM = np.cov(M)`
 3. Find eigenvectors and eigenvalues of the covariance matrix
    `[latent,coeff] = np.linalg.eig(covM)`
-4. Order the eigenvectors by their eigenvalues and you obtain the principal components
-4.1 Sort the eigenvalues ascending `idx = np.argsort(latent)[::-1]`
-4.2 Sort the eigenvectors `coeff = coeff[:,idx]`
+4. Sort the eigenvectors by their eigenvalues and you obtain the principal components
+   1. Sort the eigenvalues `idx = np.argsort(latent)[::-1]`
+   2. Sort the eigenvectors `coeff = coeff[:,idx]`
 5. Use matrixmultiplication to project the data in the new space 
    `new_points = np.dot(coeff.T, M)`
 
-ToDo: insert full method
-
 ## Toy data
 
-Let's build a toy data set of which we can prove that the pca function is working:
+Let's build a toy data set of which we know how pca should align it:
 ```
 A = array([
     list(range(0, 11)) + list(range(0, 7)),
