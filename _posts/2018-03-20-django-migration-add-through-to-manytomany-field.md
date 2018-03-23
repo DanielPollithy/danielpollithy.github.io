@@ -2,6 +2,7 @@
 layout: post
 published: true
 categories:
+  - personal
   - python
   - django
 mathjax: false
@@ -28,8 +29,8 @@ Create the through model:
 
 ```
 class ThroughModel(models.Model):
-    left = models.ForeignKey('Row')
-    right = models.ForeignKey('Option')
+    left = models.ForeignKey('Left')
+    right = models.ForeignKey('Right')
     order = models.PositiveSmallIntegerField()
 
     class Meta:
