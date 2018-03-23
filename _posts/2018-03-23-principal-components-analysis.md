@@ -49,6 +49,7 @@ An interactive illustration can be found here: [http://setosa.io/...](http://set
 2. Calculate the covariance matrix
 3. Find eigenvectors and eigenvalues of the covariance matrix
 4. Order the eigenvectors by their eigenvalues and you obtain the principal components
+5. Use matrixmultiplication to project the data in the new space
 
 ## Do it in numpy
 
@@ -56,13 +57,41 @@ An interactive illustration can be found here: [http://setosa.io/...](http://set
 
 `import numpy as np`
 
-`# Input matrix A`
-
-1. Center the data by substracting the mean
+1. Center the data (input matrix A) by substracting the mean
    `M = (A - np.mean(A.T, axis=1)).T`
 2. Calculate the covariance matrix
+   `covM = np.cov(M)`
 3. Find eigenvectors and eigenvalues of the covariance matrix
+   `[latent,coeff] = np.linalg.eig(covM)`
 4. Order the eigenvectors by their eigenvalues and you obtain the principal components
+4.1 Sort the eigenvalues ascending `idx = np.argsort(latent)[::-1]`
+4.2 Sort the eigenvectors `coeff = coeff[:,idx]`
+5. Use matrixmultiplication to project the data in the new space 
+   `new_points = np.dot(coeff.T, M)`
+
+ToDo: insert full method
+
+## Toy data
+
+Let's build a toy data set of which we can prove that the pca function is working:
+```
+A = array([
+    list(range(0, 11)) + list(range(0, 7)),
+    list(range(0, 11)) + list(reversed(range(0, 7)))
+])
+```
+
+![Screenshot from 2018-03-23 20-09-07.png]({{site.baseurl}}/images/Screenshot from 2018-03-23 20-09-07.png)
+
+
+**Test PCA:** Now we call `pca(A.T, target_dimensions=2)` and plot the new points
+
+![Screenshot from 2018-03-23 20-10-13.png]({{site.baseurl}}/images/Screenshot from 2018-03-23 20-10-13.png)
+
+Hooray! Things work as expected!
+
+
+   
 
 
 
