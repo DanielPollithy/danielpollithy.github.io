@@ -35,13 +35,39 @@ As you can see in the figure from Pearson's first introduction of the idea in 19
 
 The next component can be found by minimizing the L² distance of a line which is perpendicular to the first line and so on.
 
-Order the received components by the variation they introduce, only take the first n of them and you get the principal components n. For the problem with the 3d plot we make n=3.
+Only take the first n components of them and you get the principal components n. For the problem with the 3d plot we make n=3.
 
 The last step would be to obtain a rotation that converts all data points from the original coordinate system to the new coordinate system spanned by the three principal components.
 
-An interactive illustration can be found here: [http://setosa.io/ev/principal-component-analysis/](http://setosa.io/ev/principal-component-analysis/)
+An interactive illustration can be found here: [http://setosa.io/...](http://setosa.io/ev/principal-component-analysis/)
 
-## 
+## Steps to obtain the principal components
+
+(Taken from [https://www.youtube.com/watch?v=fKivxsVlycs](https://www.youtube.com/watch?v=fKivxsVlycs))
+
+1. Center the data by substracting the mean
+2. Calculate the covariance matrix
+3. Find eigenvectors and eigenvalues of the covariance matrix
+4. Order the eigenvectors by their eigenvalues and you obtain the principal components
+
+## Do it in numpy
+
+(Compare to [https://glowingpython.blogspot.de/...](https://glowingpython.blogspot.de/2011/07/principal-component-analysis-with-numpy.html))
+
+`import numpy as np`
+
+`# Input matrix A`
+
+1. Center the data by substracting the mean
+   `M = (A - np.mean(A.T, axis=1)).T`
+2. Calculate the covariance matrix
+3. Find eigenvectors and eigenvalues of the covariance matrix
+4. Order the eigenvectors by their eigenvalues and you obtain the principal components
+
+
+
+
+
 
 
 
