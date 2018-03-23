@@ -46,7 +46,7 @@ An interactive illustration can be found here: [http://setosa.io/...](http://set
 2. Calculate the covariance matrix
 3. Find eigenvectors and eigenvalues of the covariance matrix
 4. Sort the eigenvectors by their eigenvalues and you obtain the principal components
-5. Use matrixmultiplication to project the data in the new space
+5. Use matrix multiplication to project the data in the new space
 
 ## Do it in numpy
 
@@ -59,11 +59,11 @@ An interactive illustration can be found here: [http://setosa.io/...](http://set
 2. Calculate the covariance matrix
    `covM = np.cov(M)`
 3. Find eigenvectors and eigenvalues of the covariance matrix
-   `[latent,coeff] = np.linalg.eig(covM)`
+   `latent, coeff = np.linalg.eig(covM)`
 4. Sort the eigenvectors by their eigenvalues and you obtain the principal components
    1. Sort the eigenvalues `idx = np.argsort(latent)[::-1]`
    2. Sort the eigenvectors `coeff = coeff[:,idx]`
-5. Use matrixmultiplication to project the data in the new space 
+5. Use matrix multiplication to project the data in the new space 
    `new_points = np.dot(coeff.T, M)`
 
 ## Toy data
