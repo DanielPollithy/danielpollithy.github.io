@@ -4,15 +4,15 @@ published: true
 mathjax: false
 featured: false
 comments: false
-title: My working hours analyzed with SVM and Decision Tree
+title: A Decision Tree
 categories:
   - python
   - numpy
   - scikit
 ---
-## Support Vector Machine compared to Decision Tree
+## Decision Tree
 
-I have got a small data set (my working hours as a working student) on which I want to train a binary classifier. My regular days in the office changed depending on the lectures I attended.
+I have got a small data set (my working hours as a working student) on which I want to train a binary classifier to tell working days from non-working days apart. My regular days in the office changed depending on the lectures I attended.
 
 ## Cleaning the data set
 
