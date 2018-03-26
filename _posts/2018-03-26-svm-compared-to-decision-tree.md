@@ -136,8 +136,17 @@ clf = clf.fit(features, labels)
 tree.export_graphviz(clf, feature_names=['weekday', 'day', 'month'])
 ```
 
+![Screenshot from 2018-03-26 14-50-43.png]({{site.baseurl}}/images/Screenshot from 2018-03-26 14-50-43.png)
+
+The tree shrinks with only one feature but the first node stays more or less the same.
+
+### Testing again
+
+This way the error can be reduced to 29% (**OK=115 WRONG=47 => ERROR=29%**)
 
 ## Gamma distribution
+
+
 
 
 
