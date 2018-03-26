@@ -79,8 +79,8 @@ for clf, title, ax, score in zip(models, titles, sub.flatten(), scores):
     ax.scatter(X0, X1, c=y, cmap=plt.cm.coolwarm, s=20, edgecolors='k')
     ax.set_xlim(xx.min(), xx.max())
     ax.set_ylim(yy.min(), yy.max())
-    ax.set_xlabel('Day of the month')
-    ax.set_ylabel('Days of the week')
+    ax.set_xlabel('Days of the week')
+    ax.set_ylabel('Day of the month')
     ax.set_xticks(())
     ax.set_yticks(())
     ax.set_title(title + " accuracy={}".format(score))
@@ -119,6 +119,10 @@ But the errors for the normal test data set is higher than before.
 ## Last try
 
 The last possible correlation we could explore is day of the month and month.
+
+![Screenshot from 2018-03-26 17-56-02.png]({{site.baseurl}}/images/Screenshot from 2018-03-26 17-56-02.png)
+
+Three of the classifiers fail to find a decision boundary but the **support vector classifier with radial based function kernel** outputs an interesting carmouflage pattern which performs as good as the weekend boundary found by the svc with linear kernel (`SVC with RBF kernel 0.7530864197530864`).
 
 
 
