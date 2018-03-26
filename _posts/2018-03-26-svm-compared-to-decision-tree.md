@@ -24,7 +24,7 @@ I have got a small data set (my working hours as a working student) on which I w
 The data set contains one row for every work day. The row contains every necessary information in German: 
 "Donnerstag, 8. Juni (9:00 - 18:00) -> 8h (1h Mittag): Shop system"
 
-So I wrote a function which generates every weekday, day and year for a given time frame `get_dates_table(start_date, end_date)` and two functions that can generate the training data and the test data. The test data generates two years and the training data one year. The design matrix of each of them looks like this (where label is a boolean stating whether I went to work on that day):
+So I wrote a function which extracts every weekday, day and year for a given time frame `get_dates_table(start_date, end_date)` and two functions that can generate the training data and the test data. The test data generates two years and the training data one year. The design matrix of each of them looks like this (where label is a boolean stating whether I went to work on that day):
 
 <center>
   
@@ -43,9 +43,13 @@ So I wrote a function which generates every weekday, day and year for a given ti
 
 ### Histogram of the days I went to work
 
-![Screenshot from 2018-03-26 13-11-52.png]({{site.baseurl}}/images/Screenshot from 2018-03-26 13-11-52.png)
+![Screenshot from 2018-03-26 13-44-46.png]({{site.baseurl}}/images/Screenshot from 2018-03-26 13-44-46.png)
 
-This plot shows the amount of days I went to work by month in the test data.
+This plot shows the amount of days I went to work by week day in the test data (one year).
+
+
+
+
 
 
 
