@@ -10,6 +10,10 @@ categories:
   - python
   - scikit
 modified: '2018-03-27'
+description: ''
+headline: ''
+tags: ''
+imagefeature: ''
 ---
 ## Using a support vector machine to classify workdays
 
@@ -38,7 +42,7 @@ We use svm from scikit-learn.
 
 ```
 from sklearn import svm
-from sklearn.model_selection import cross_val_score
+from sklearn.metrics import accuracy_score
 
 X, y = get_training_data()
 X_test, y_test = get_test_data()
@@ -52,7 +56,9 @@ models = (clf.fit(X, y) for clf in models)
 scores = (accuracy_score(y_test, clf.predict(X_test)) for clf in models)
 ```
 
-Now we have got four different models. Let's visualize them:
+Now we have got four different models. 
+
+Let's visualize them:
 
 ```
 titles = ('SVC with linear kernel',
@@ -100,10 +106,24 @@ The linear kernel produces a line that perfectly separates monday-friday from sa
 
 The radial based function kernel (RBF) does an incredible good job fitting the small clusters in the data but I guess that these patterns won't occur in the test data.
 
-## Train again
+## Train and evaluate again
 
 I don't expect there to be a correlation between day of the month and the weekday.
 Maybe there is one between month and day of the week.
+
+![Screenshot from 2018-03-26 17-41-24.png]({{site.baseurl}}/images/Screenshot from 2018-03-26 17-41-24.png)
+
+Now three support vector classifiers achieve to draw a good decision line for the weekend which results in a good score for an artifical weekend data set.
+But the errors for the normal test data set is higher than before.
+
+## Last try
+
+The last possible correlation we could explore is day of the month and month.
+
+
+
+
+
 
 
 
