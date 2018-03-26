@@ -144,7 +144,14 @@ The tree shrinks with only one feature but the first node stays more or less the
 
 This way the error can be reduced to 29% (**OK=115 WRONG=47 => ERROR=29%**)
 
-## Gamma distribution
+If I only feed the weekends to the DecisionTree the error is reduced to **4%** because it predicts every day as a non-workday (error comes from two saturdays).
+
+If I only feed the weekdays to the DecisionTree the result is **OK=71 WRONG=45 => ERROR=38%**.
+The probability to draw a workday from the days monday to friday by random is 46%. I conclude therefore that the decision tree helps a little bit in this scenario although it's less than 10%.
+
+But one can say that the weekends are identified good enough.
+
+(Having spent some time with the data now I think modelling the data with a gamma distribution or using k-nearest-neighbours would result in better results.)
 
 
 
