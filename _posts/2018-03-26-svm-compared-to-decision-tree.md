@@ -56,4 +56,26 @@ By Acoggins38 (Own work) [CC BY-SA 4.0 (https://creativecommons.org/licenses/by-
 A decision tree is the output of algorithms that find the most discriminating features and value borders in the data. The tree can then be used like a search tree with the difference that the leaf maps to which class the data belongs to.
 (A good tutorial to write a CART like algorithm: [https://www.youtube.com/...](https://www.youtube.com/watch?v=LDRbO9a6XPU))
 
+### Training
+
+We use the DecisionTreeClassifier from sklearn and output a graph as a visualization.
+
+```
+from sklearn import tree
+
+features, labels = get_training_data()
+clf = tree.DecisionTreeClassifier()
+clf = clf.fit(features, labels)
+
+tree.export_graphviz(clf, feature_names=['weekday', 'day', 'month'])
+```
+
+The generated tree.dot file can be viewed in graphiz or [http://webgraphviz.com/](http://webgraphviz.com/).
+
+The generated tree is so huge that I cannot view it as a image on one monitor:
+
+![Screenshot from 2018-03-26 14-08-28.png]({{site.baseurl}}/images/Screenshot from 2018-03-26 14-08-28.png)
+
+The tree makes me sceptic although the first node looks promising because it says that the most important feature is the weekday and whether it is less than friday or not.
+
 
