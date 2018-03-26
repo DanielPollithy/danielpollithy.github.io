@@ -23,7 +23,7 @@ The data set contains one row for every work day. The row contains every necessa
 
 So I wrote a function which extracts every weekday, day and year for a given time frame `get_dates_table(start_date, end_date)` and two functions that can generate the training data and the test data. The test data generates two years and the training data one year. The design matrix of each of them looks like this (where label is a boolean stating whether I went to work on that day):
 
-<table>
+<table align="right">
   <tr>
     <th>weekday</th>
     <th>day</th>
