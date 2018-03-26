@@ -123,20 +123,9 @@ The following plot shows the inverse of the weekday plot, so it says on which da
 
 Let's sum up the work days vs the non-work days:
 
-| weekday       | workdays      | not workdays  | sum |
-| ------------- | ------------- | ------------- | ---:|
-| 1             | 21            | 31            | 52  |
-| 2             | 31            | 21            | 52  |
-| 3             | 35            | 17            | 52  |
-| 4             | 20            | 33            | 53  |
-| 5             | 14            | 38            | 52  |
-| 6             | 3             | 49            | 52  |
-| 7             | 1             | 51            | 52  |
+<table align="center"><tr><th>weekday</th><th>day</th><th>month</th><th>label</th></tr><tr><td>5</td><td>1</td><td>3</td><td>0</td></tr><tr><td>6</td><td>2</td><td>3</td><td>1</td></tr><tr><td>7</td><td>3</td><td>3</td><td>1</td></tr><tr><td>1</td><td>4</td><td>3</td><td>1</td></tr></table>
 
-| workdays      | non workdays | total |
-| ------------- | ------------ | ----- |
-| 125           | 240          | 365   |
-| **34%**       | **66%**      | 100%  |
+<table align="center"><tr><th>workdays</th><th>non workdays</th><th>total</th></tr><tr><td>125</td><td>240</td><td>365</td></tr><tr><td>**34%**</td><td>**66%**</td><td>100%</td></tr></table>
 
 **Result:** If our estimator made the assumption that every day is a "non workday" then it would be equally good as the DecisionTree.
 
