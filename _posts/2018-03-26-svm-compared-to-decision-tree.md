@@ -47,22 +47,14 @@ So I wrote a function which extracts every weekday, day and year for a given tim
 
 This plot shows the amount of days I went to work by week day in the test data (one year).
 
-
-
-
-
-
-
-
-
-
-
 ## Decision tree
 
 ![ID3_algorithm_decision_tree.png]({{site.baseurl}}/images/ID3_algorithm_decision_tree.png)
 
 By Acoggins38 (Own work) [CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0)], via Wikimedia Commons
 
-A decision tree is the output of algorithms that find the most discriminating features and value borders for them. The tree can then be used like a search tree with the difference that the leaf names to which class the data belongs to.
+A decision tree is the output of algorithms that find the most discriminating features and value borders in the data. The tree can then be used like a search tree with the difference that the leaf maps to which class the data belongs to.
+
+
 
 
