@@ -6,7 +6,7 @@ categories:
 mathjax: false
 featured: false
 comments: false
-title: SVM compared to Decision Tree
+title: My working hours analyzed with SVM and Decision Tree
 description: ''
 headline: ''
 modified: ''
@@ -24,7 +24,7 @@ I have got a small data set (my working hours as a working student) on which I w
 The data set contains one row for every work day. The row contains every necessary information in German: 
 "Donnerstag, 8. Juni (9:00 - 18:00) -> 8h (1h Mittag): Shop system"
 
-So I wrote a function which generates every weekday, day and year for a given time frame `get_dates_table(start_date, end_date)` and two functions that can generate the training data and the test data. The test data generates two years and the training data one year. The design matrix of each of them looks like this:
+So I wrote a function which generates every weekday, day and year for a given time frame `get_dates_table(start_date, end_date)` and two functions that can generate the training data and the test data. The test data generates two years and the training data one year. The design matrix of each of them looks like this (where label is a boolean stating whether I went to work on that day):
 
 <center>
   
@@ -37,7 +37,15 @@ So I wrote a function which generates every weekday, day and year for a given ti
 
 </center>
 
+**Objective:** I don't expect the classifier to tell workday from normal weekday apart because the pattern changes over time but what I want is that we can differentiate between weekday and day of the weekend which should not be too hard.
 
+## Let's take a look at the data set
+
+### Histogram of the days I went to work
+
+![Screenshot from 2018-03-26 13-11-52.png]({{site.baseurl}}/images/Screenshot from 2018-03-26 13-11-52.png)
+
+This plot shows the amount of days I went to work by month in the test data.
 
 
 
