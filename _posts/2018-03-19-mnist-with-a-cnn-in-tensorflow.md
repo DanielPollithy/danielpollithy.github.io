@@ -170,4 +170,4 @@ And this part wraps the 1d-numpy array called `data` into a function that is cal
 
 ![Gif gui cnn]({{site.baseurl}}/images/output_V1ZbXf.gif)
 
-This was fun. Although I have to say that it really doesn't work perfectly. The digits are easy mistaken and I have the feeling that my data is far to clean. I guess I would have to downsample it properly to improve the results.
+This was fun. Although I have to say that it really doesn't work perfectly. The digits are easy mistaken and I have the feeling that my data is far too clean. I guess I would have to downsample it properly to improve the results.
