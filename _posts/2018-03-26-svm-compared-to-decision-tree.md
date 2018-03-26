@@ -23,7 +23,6 @@ The data set contains one row for every work day. The row contains every necessa
 
 So I wrote a function which extracts every weekday, day and year for a given time frame `get_dates_table(start_date, end_date)` and two functions that can generate the training data and the test data. The test data generates two years and the training data one year. The design matrix of each of them looks like this (where label is a boolean stating whether I went to work on that day):
 
-<center>
   
 | weekday       | day           | month | label |
 | ------------- | ------------- | ----- | -----:|
@@ -32,7 +31,7 @@ So I wrote a function which extracts every weekday, day and year for a given tim
 | 7             | 3             | 3     | 1     |
 | 1             | 4             | 3     | 1     |
 
-</center>
+
 
 **Objective:** I don't expect the classifier to tell workday from normal weekday apart because the pattern changes over time but what I want is that we can differentiate between weekday and day of the weekend which should not be too hard.
 
