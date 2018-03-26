@@ -12,6 +12,8 @@ title: Support Vector Machine
 
 I use the same data set as in my last [post](http://blog.pollithy.com/python/numpy/scikit/svm-compared-to-decision-tree) which is a list of days (weekday, day of the month, month) from the last years labeled with 1 or 0 depending on whether I went to work on that particular day or not.
 
+**Objective:** Train a model that can discriminate weekdays from days of the weekend (see the last post for more details).
+
 ## Support Vector Machine
 
 ![Svm_max_sep_hyperplane_with_margin.png]({{site.baseurl}}/images/Svm_max_sep_hyperplane_with_margin.png)
@@ -44,7 +46,7 @@ models = (svm.SVC(kernel='linear'),
           svm.SVC(kernel='poly', degree=3))
 models = (clf.fit(X, y) for clf in models)
 
-scores = (cross_val_score(clf, X_test, y_test, scoring='accuracy') for clf in models)
+scores = (accuracy_score(y_test, clf.predict(X_test)) for clf in models)
 ```
 
 Now we have got four different models. Let's visualize them:
@@ -79,9 +81,30 @@ plt.show()
 
 Running the training and cross validation with a total of ~250 rows already takes four minutes on my average laptop.
 
-The result looks really interesting:
+
+
+
+
+## Evaluation
+
+The result looks really interesting (the labeling of the axes should be the other way around):
 
 ![Screenshot from 2018-03-26 17-09-29.png]({{site.baseurl}}/images/Screenshot from 2018-03-26 17-09-29.png)
+
+The SVC with linear kernel has an accuracy_score of 74% => error: **26%**
+
+The linear kernel produces a line that perfectly separates monday-friday from saturday and sunday. **Using this svm would be enough to solve the objective.**
+
+The radial based function kernel (RBF) does an incredible good job fitting the small clusters in the data but I guess that these patterns won't occur in the test data.
+
+## Train again
+
+I don't expect there to be a correlation between day of the month and the weekday.
+Maybe there is one between month and day of the week.
+
+
+
+
 
 
 
