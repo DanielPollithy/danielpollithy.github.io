@@ -111,8 +111,36 @@ Let's sum up the work days vs the non-work days:
 | 5             | 14            | 38            | 52  |
 | 6             | 3             | 49            | 52  |
 | 7             | 1             | 51            | 52  |
-| ------------- | ------------- | ------------- | --- |
-|               | 125           | 240           | 365 |
+
+| workdays      | non workdays | total |
+| ------------- | ------------ | ----- |
+| 125           | 240          | 365   |
+| **34%**       | **66%**      | 100%  |
+
+**Result:** If our estimator made the assumption that every day is a "non workday" then it would be equally good as the DecisionTree.
+
+### Training again
+
+This time I am only going to use the weekday feature.
+
+```
+from sklearn import tree
+
+features, labels = get_training_data()
+# only use the first column
+feature_weekday = np.asarray(features)[:, 0]
+
+clf = tree.DecisionTreeClassifier()
+clf = clf.fit(features, labels)
+
+tree.export_graphviz(clf, feature_names=['weekday', 'day', 'month'])
+```
+
+
+## Gamma distribution
+
+
+
 
 
 
