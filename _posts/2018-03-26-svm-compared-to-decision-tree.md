@@ -78,4 +78,21 @@ The generated tree is so huge that I cannot view it as a image on one monitor:
 
 The tree makes me sceptic although the first node looks promising because it says that the most important feature is the weekday and whether it is less than friday or not.
 
+### Testing
+
+```
+test_features, test_labels = get_test_data()
+predictions = clf.predict(test_features)
+
+ok = 0
+max_ = len(test_labels)
+for supervision, predition, test_feature in zip(test_labels, predictions, test_features):
+    ok += 1 if supervision == predition else 0
+
+print("OK={} WRONG={} => ERROR={}%".format(ok, max_ - ok, int((max_ - ok) * 100 / max_)))
+    
+```
+
+
+
 
