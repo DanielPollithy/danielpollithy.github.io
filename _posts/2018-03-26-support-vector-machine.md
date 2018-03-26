@@ -1,12 +1,15 @@
 ---
 layout: post
 published: true
-categories:
-  - personal
 mathjax: false
 featured: false
 comments: false
 title: Support Vector Machine
+categories:
+  - numpy
+  - python
+  - scikit
+modified: '2018-03-27'
 ---
 ## Using a support vector machine to classify workdays
 
