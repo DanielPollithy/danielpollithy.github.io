@@ -6,6 +6,7 @@ featured: true
 comments: false
 title: Principal components analysis
 categories:
+  - personal
   - python
   - programming
   - numpy
@@ -13,7 +14,7 @@ categories:
 ## Principal components analysis with numpy
 
 The first section of the deeplearningbook aims to refresh basic knowledge about linear algebra.
-Only the most imortant concepts to understand machine learning were covered. New for me (or I just did not remember from university were):
+Only the most important concepts to understand machine learning were covered. New for me (or I just did not remember from university were):
 
  - **Frobenius norm:** We use norms to measure the size of a vector (like L¹ or L²) and with the Frobenius norm one can measure the size of a matrix.
  - **Singular value decomposition:** This decomposition has the same goal as the **eigenvalue decomposition** but it works on every real matrix and does not have that many prerequisites.
@@ -84,19 +85,3 @@ A = array([
 ![Screenshot from 2018-03-23 20-10-13.png]({{site.baseurl}}/images/Screenshot from 2018-03-23 20-10-13.png)
 
 Hooray! Things work as expected!
-
-
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
