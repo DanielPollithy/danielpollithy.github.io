@@ -77,6 +77,13 @@ for clf, title, ax, score in zip(models, titles, sub.flatten(), scores):
 plt.show()
 ```
 
-Running the training and cross validation with a total of ~250 rows already takes five minutes on my average laptop.
+Running the training and cross validation with a total of ~250 rows already takes four minutes on my average laptop.
+
+The result looks really interesting:
+
+![Screenshot from 2018-03-26 17-09-29.png]({{site.baseurl}}/images/Screenshot from 2018-03-26 17-09-29.png)
+
+
+
 
 
