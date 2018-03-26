@@ -89,9 +89,30 @@ max_ = len(test_labels)
 for supervision, predition, test_feature in zip(test_labels, predictions, test_features):
     ok += 1 if supervision == predition else 0
 
-print("OK={} WRONG={} => ERROR={}%".format(ok, max_ - ok, int((max_ - ok) * 100 / max_)))
-    
+print("OK={} WRONG={} => ERROR={}%".format(ok, max_ - ok, int((max_ - ok) * 100 / max_)))  
 ```
+
+This code snippet prints **OK=110 WRONG=52 => ERROR=32%** to the console.
+
+32% errors seems to be a lot. Let's figure out whether this is only drawing from random.
+
+The following plot shows the inverse of the weekday plot, so it says on which days I did not go to work.
+
+![Screenshot from 2018-03-26 14-25-20.png]({{site.baseurl}}/images/Screenshot from 2018-03-26 14-25-20.png)
+
+Let's sum up the work days vs the non-work days:
+
+| weekday       | workdays      | not workdays  | sum |
+| ------------- | ------------- | ------------- | ---:|
+| 1             | 21            | 31            | 52  |
+| 2             | 31            | 21            | 52  |
+| 3             | 35            | 17            | 52  |
+| 4             | 20            | 33            | 53  |
+| 5             | 14            | 38            | 52  |
+| 6             | 3             | 49            | 52  |
+| 7             | 1             | 51            | 52  |
+| ------------- | ------------- | ------------- | --- |
+|               | 125           | 240           | 365 |
 
 
 
