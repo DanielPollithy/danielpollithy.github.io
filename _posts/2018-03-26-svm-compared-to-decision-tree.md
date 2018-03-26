@@ -1,17 +1,14 @@
 ---
 layout: post
 published: true
-categories:
-  - personal
 mathjax: false
 featured: false
 comments: false
 title: My working hours analyzed with SVM and Decision Tree
-description: ''
-headline: ''
-modified: ''
-tags: ''
-imagefeature: ''
+categories:
+  - python
+  - numpy
+  - scikit
 ---
 ## Support Vector Machine compared to Decision Tree
 
