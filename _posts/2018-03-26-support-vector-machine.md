@@ -29,9 +29,54 @@ This plot show the weekdays on the x-axis in relation to the work days (red) and
 ## Training
 
 We use svm from scikit-learn.
+(See [http://scikit-learn.org/stable/auto_examples/svm/plot_iris.html](http://scikit-learn.org/stable/auto_examples/svm/plot_iris.html))
 
 ```
 from sklearn import svm
+from sklearn.model_selection import cross_val_score
 
+X, y = get_training_data()
+X_test, y_test = get_test_data()
+
+models = (svm.SVC(kernel='linear'),
+          svm.LinearSVC(),
+          svm.SVC(kernel='rbf', gamma=0.7),
+          svm.SVC(kernel='poly', degree=3))
+models = (clf.fit(X, y) for clf in models)
+
+scores = (cross_val_score(clf, X_test, y_test, scoring='accuracy') for clf in models)
+```
+
+Now we have got four different models. Let's visualize them:
+
+```
+titles = ('SVC with linear kernel',
+          'LinearSVC (linear kernel)',
+          'SVC with RBF kernel',
+          'SVC with polynomial (degree 3) kernel')
+
+# Set-up 2x2 grid for plotting.
+fig, sub = plt.subplots(2, 2)
+plt.subplots_adjust(wspace=0.4, hspace=0.4)
+
+X0, X1 = X[:, 0], X[:, 1]
+xx, yy = make_meshgrid(X0, X1)
+
+for clf, title, ax, score in zip(models, titles, sub.flatten(), scores):
+    plot_contours(ax, clf, xx, yy,
+                  cmap=plt.cm.coolwarm, alpha=0.8)
+    ax.scatter(X0, X1, c=y, cmap=plt.cm.coolwarm, s=20, edgecolors='k')
+    ax.set_xlim(xx.min(), xx.max())
+    ax.set_ylim(yy.min(), yy.max())
+    ax.set_xlabel('Day of the month')
+    ax.set_ylabel('Days of the week')
+    ax.set_xticks(())
+    ax.set_yticks(())
+    ax.set_title(title + " accuracy={}".format(score))
+
+plt.show()
+```
+
+Running the training and cross validation with a total of ~250 rows already takes five minutes on my average laptop.
 
 
