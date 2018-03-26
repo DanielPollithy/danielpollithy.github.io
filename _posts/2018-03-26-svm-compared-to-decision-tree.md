@@ -66,7 +66,7 @@ So I wrote a function which extracts every weekday, day and year for a given tim
 
 ![Screenshot from 2018-03-26 13-44-46.png]({{site.baseurl}}/images/Screenshot from 2018-03-26 13-44-46.png)
 
-This plot shows the amount of days I went to work by week day in the test data (one year). The enumeration stars with 1=Monday and ends with 7=Sunday.
+This plot shows the amount of days I went to work by week day in the test data (one year). The enumeration starts with 1=Monday and ends with 7=Sunday.
 
 ## Decision tree
 
