@@ -73,7 +73,11 @@ The network is called feed forward because there is no backward loop as in recur
 
 ![xor_ffn.png]({{site.baseurl}}/images/xor_ffn.png)
 
-Our input X is a vector consisting of two binary values. For example: $$ X = (0,0)^T $$
+The calculation of every layer i consists of:
+- Our input x_i is a vector consisting of two binary values. For example: $$ x_0 = (0,0)^T $$
+- The weight matrix W_i
+- The vector of biases for every neuron b_i
+- Estimated values ŷ which are calculated by ŷ_i = W_i x_i + b_i
 
 
 
