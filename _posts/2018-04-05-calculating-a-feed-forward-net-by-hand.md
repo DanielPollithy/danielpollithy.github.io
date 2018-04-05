@@ -21,9 +21,9 @@ For **Artifical Neural Networks** the simple building blocks are the **perceptro
 
 ![Perceptron.png]({{site.baseurl}}/images/Perceptron.png)
 
-They work by weighting their inputs (`w_0, w_1`), summing them up (Σ) and applying an activation function to the output.
+They work by weighting their inputs (`w_0, w_1, ..., w_n`), summing them up (Σ) and applying an activation function to the output.
 
-Multiple perceptrons form layers and the layers form a neural network. Neural networks are general function approximation machines. That means that for every continuous function within a limited range a neural network can serve an approximation with an error less than some chosen epsilon.
+Multiple perceptrons form layers and the layers form a neural network. Neural networks are general function approximation machines. That means that for every continuous function within a limited range a neural network can serve an approximation with an error less than some epsilon.
 
 Let's look at an example with only one perceptron to understand why we want to use them in layers.
 
@@ -39,7 +39,9 @@ It is easy to see that the following perceptron acts like a linear equation and 
 Like `f(x) = x^2`?
 
 One could propose a network like this:
+
 ![ANN2.png]({{site.baseurl}}/images/ANN2.png)
+
 Or even more complex ones but chaining multiple perceptrons together will just mimic another linear equation system as long as the activation function is only linear (`y = x`).
 
 The first choice for the activation function would be the cubic function itself. But I think approximating a function by using itself is not a valid solution.
@@ -66,7 +68,7 @@ The following link ([playground with linear activation](https://playground.tenso
 
 It doesn't matter how many epochs you are going to wait or how many hidden layers you add, the loss will always stay at around 0.5.
 
-But if you switch the activation function to ReLU or anything else and add one hidden layer with four perceptrons you obtain a perfect example.
+But if you switch the activation function to ReLU or anything else and add one hidden layer with four perceptrons you obtain a really good solution.
 
 ![Screenshot from 2018-04-05 15-18-08.png]({{site.baseurl}}/images/Screenshot from 2018-04-05 15-18-08.png)
 
@@ -74,28 +76,32 @@ But if you switch the activation function to ReLU or anything else and add one h
 
 These networks are called feed forward because there is no backward loop as in recurrent neural networks. The perceptrons a. k. a. neurons are illustrated as single units but we are going to deal with them layerwise as vectors.
 
+The following net shall be our example to solve XOR (layout taken from this [youtube video](https://www.youtube.com/watch?v=kNPGXgzxoHw)):
+
 ![xor_ffn.png]({{site.baseurl}}/images/xor_ffn.png)
 
 The calculation of every layer i consists of:
-- Our input x_i is a vector. For example: x_0 = (0,0)^T for the first layer
-- The weight matrix W_i
-- The vector of biases for every neuron b_i
-- Estimated values ŷ which are calculated by $$ŷ_i = W_i x_i + b_i$$
+- Our input $$x_i$$ is a vector. For example: $$x_0 = (0,0)^T$$ for the first layer
+- The weight matrix $$W_i$$
+- The vector of biases for every neuron $$b_i$$ 
+- Estimated values ŷ which are calculated by $$ŷ_i = \sigma \( W_i x_i + b_i \)$$
 
 After the first layer the estimated values ŷ are used as inputs for the next layer and so on.
 
-This post won't explain how to train a neural network. It will only show how to feed the input values through the network to return a prediction.
+This post won't explain how to train a neural network. It will only show how to feed the input values through the network to return a prediction (feed forward).
 
 Therefore we assume the following values:
-First and seconds weight matrix 
-$$ \begin{pmatrix}20 & 20\\\ -20 & -20\end{pmatrix} $$
-$$ \begin{pmatrix}20 & 20 \end{pmatrix} $$
+**First and seconds weight matrix **
 
-First and second bias vector
-$$ b_{1} \begin{pmatrix}-10\\\30\end{pmatrix} $$
-$$ b_{2} \begin{pmatrix}-30 \end{pmatrix} $$
+$$ W_{1} \begin{pmatrix}20 & 20\\\ -20 & -20\end{pmatrix} $$
+$$ W_{1}  \begin{pmatrix}20 & 20 \end{pmatrix} $$
 
-The following should output `1`:
+**First and second bias vector**
+
+$$ b_{1} \begin{pmatrix} -10\\\ 30\end{pmatrix} $$
+$$ b_{2} \begin{pmatrix} -30 \end{pmatrix} $$
+
+Let's calculate `1`:
 $$ \begin{pmatrix}20 & 20 \end{pmatrix} * \bigg( \begin{pmatrix}20 & 20\\\ -20 & -20\end{pmatrix} * \begin{pmatrix}0\\\ 1\end{pmatrix} + \begin{pmatrix}-10\\\ 30\end{pmatrix} \bigg) + \begin{pmatrix}-30 \end{pmatrix} $$
 
 
