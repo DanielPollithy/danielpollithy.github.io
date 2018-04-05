@@ -22,7 +22,10 @@ Multiple perceptrons forms layers and the layers form a neural network. Neural n
 
 Let's look at an example with only one perceptron to understand why we want to use them in layers.
 
-Imagine you wanted to approximate `f(x) = 2x`
+Imagine you wanted to approximate 
+$$
+f(x) = 2x
+$$
 
 
 
