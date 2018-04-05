@@ -24,8 +24,17 @@ Let's look at an example with only one perceptron to understand why we want to u
 
 Imagine you wanted to approximate 
 $$
-f(x) = 2x
+f(x) = 2x + 1
 $$
+
+It is easy to see that the following perceptron acts like a linear equation.
+
+![Perceptron2.png]({{site.baseurl}}/images/Perceptron2.png)
+
+
+
+
+
 
 
 
