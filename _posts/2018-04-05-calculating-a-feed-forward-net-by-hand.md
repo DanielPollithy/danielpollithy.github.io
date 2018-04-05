@@ -23,9 +23,7 @@ Multiple perceptrons form layers and the layers form a neural network. Neural ne
 Let's look at an example with only one perceptron to understand why we want to use them in layers.
 
 Imagine you wanted to approximate 
-$$
-f(x) = 2x + 1
-$$
+$ f(x) = 2x + 1 $:
 
 It is easy to see that the following perceptron acts like a linear equation and can be extended to represent the general form of a linear equation system $$ Ax + b = y $$ by adding more inputs and weights.
 
@@ -33,7 +31,7 @@ It is easy to see that the following perceptron acts like a linear equation and 
 
 ### But what about non-linear functions
 
-Like $$ f(x) = x^2 $$?
+Like $ f(x) = x^2 $?
 
 One could propose a network like this:
 ![ANN2.png]({{site.baseurl}}/images/ANN2.png)
@@ -74,10 +72,12 @@ The network is called feed forward because there is no backward loop as in recur
 ![xor_ffn.png]({{site.baseurl}}/images/xor_ffn.png)
 
 The calculation of every layer i consists of:
-- Our input x_i is a vector consisting of two binary values. For example: $$ x_0 = (0,0)^T $$
-- The weight matrix W_i
-- The vector of biases for every neuron b_i
-- Estimated values ŷ which are calculated by ŷ_i = W_i x_i + b_i
+- Our input $x_i$ is a vector consisting of two binary values. For example: $ x_0 = (0,0)^T $
+- The weight matrix $W_i$
+- The vector of biases for every neuron $b_i$
+- Estimated values ŷ which are calculated by $ŷ_i = W_i x_i + b_i$
+
+
 
 
 
