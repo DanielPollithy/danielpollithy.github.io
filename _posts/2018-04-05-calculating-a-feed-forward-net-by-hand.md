@@ -83,7 +83,7 @@ This post won't explain how to train a neural network. It will only show how to 
 
 Therefore we assume the following values:
 First and seconds weight matrix 
-$$W_{1} = \begin{pmatrix}20 & 20\\\ -20 & -20\end{pmatrix}, W_{2} = \begin{pmatrix}20 & 20\end{pmatrix}$$
+$$ W_{1} = \begin{pmatrix}20 & 20\\\ -20 & -20\end{pmatrix}, W_{2} = \begin{pmatrix}20 & 20\end{pmatrix} $$
 
 First and second bias vector
 $$ b_{1} = \begin{pmatrix}-10\\\30\end{pmatrix}, b_{2} = \begin{pmatrix}-30\end{pmatrix}, $$
