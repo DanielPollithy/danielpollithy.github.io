@@ -7,6 +7,11 @@ mathjax: true
 featured: false
 comments: false
 title: Calculating a feed forward net by hand
+description: ''
+headline: ''
+modified: ''
+tags: ''
+imagefeature: ''
 ---
 ## Calculating a feed forward network by hand
 
@@ -91,7 +96,7 @@ $$ b_{1} \begin{pmatrix}-10\\\30\end{pmatrix} $$
 $$ b_{2} \begin{pmatrix}-30 \end{pmatrix} $$
 
 The following should output `1`:
-$$ \begin{pmatrix}20 & 20 \end{pmatrix} * \(\begin{pmatrix}20 & 20\\\ -20 & -20\end{pmatrix} * \begin{pmatrix}0\\\1\end{pmatrix} + \begin{pmatrix}-10\\\30\end{pmatrix}\) + \begin{pmatrix}-30 \end{pmatrix} $$
+$$ \begin{pmatrix}20 & 20 \end{pmatrix} * \bigg( \begin{pmatrix}20 & 20\\\ -20 & -20\end{pmatrix} * \begin{pmatrix}0\\\ 1\end{pmatrix} + \begin{pmatrix}-10\\\ 30\end{pmatrix} \bigg) + \begin{pmatrix}-30 \end{pmatrix} $$
 
 
 
