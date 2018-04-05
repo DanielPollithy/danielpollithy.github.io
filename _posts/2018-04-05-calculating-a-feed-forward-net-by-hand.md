@@ -18,7 +18,7 @@ For **Artifical Neural Networks** the simple building blocks are the **perceptro
 
 They work by weighting their inputs (`w_0, w_1`), summing them up (Σ) and applying an activation function to the output.
 
-Multiple perceptrons forms layers and the layers form a neural network. Neural networks are general function approximation machines. That means that for every continuous function within a limited range a neural network can serve an approximation with an error less than some chosen epsilon.
+Multiple perceptrons form layers and the layers form a neural network. Neural networks are general function approximation machines. That means that for every continuous function within a limited range a neural network can serve an approximation with an error less than some chosen epsilon.
 
 Let's look at an example with only one perceptron to understand why we want to use them in layers.
 
@@ -43,7 +43,21 @@ The first choice for the activation function would be the cubic function itself.
 
 ### Activation functions
 
-There are a lot activation functions 
+There are a lot activation functions like sigmoid, tanh or linear. The default recommendation as of the deeplearningbook is ReLU (rectified linear unit). You can play around with neural networks and different activation functions at: [playground.tensorflow.org](playground.tensorflow.org).
+
+![ReLU.png]({{site.baseurl}}/images/ReLU.png)
+
+**Back to the question:** How can a combination of linear functions (ReLU is still linear from -inf to ]0 and ]0 to +inf) approximate a cubic functions?
+
+Well it is definetely not the most precise way to do it but the network could learn a step function like such because the ReLU can "activate" and "deactivate" whether the output of a perceptron shall be used.
+
+![cubic_steps.png]({{site.baseurl}}/images/cubic_steps.png)
+
+
+
+
+
+
 
 
 
