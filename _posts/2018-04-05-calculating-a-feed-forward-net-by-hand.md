@@ -23,7 +23,7 @@ Multiple perceptrons form layers and the layers form a neural network. Neural ne
 Let's look at an example with only one perceptron to understand why we want to use them in layers.
 
 Imagine you wanted to approximate 
-$ f(x) = 2x + 1 $:
+`f(x) = 2x + 1`:
 
 It is easy to see that the following perceptron acts like a linear equation and can be extended to represent the general form of a linear equation system $$ Ax + b = y $$ by adding more inputs and weights.
 
@@ -31,11 +31,11 @@ It is easy to see that the following perceptron acts like a linear equation and 
 
 ### But what about non-linear functions
 
-Like $ f(x) = x^2 $?
+Like `f(x) = x^2`?
 
 One could propose a network like this:
 ![ANN2.png]({{site.baseurl}}/images/ANN2.png)
-Or even more complex ones but chaining multiple perceptrons together will just mimic another linear equation system as long as the activation function is only linear ($y = x$).
+Or even more complex ones but chaining multiple perceptrons together will just mimic another linear equation system as long as the activation function is only linear (`y = x`).
 
 The first choice for the activation function would be the cubic function itself. But I think approximating a function by using itself is not a valid solution.
 
@@ -59,23 +59,31 @@ The following link ([playground with linear activation](https://playground.tenso
 ![Screenshot from 2018-04-05 15-11-59.png]({{site.baseurl}}/images/Screenshot from 2018-04-05 15-11-59.png)
 
 
-It doesn't matter how many epochs you are going to wait our how many hidden layers you add the loss will always stay at around 0.5.
+It doesn't matter how many epochs you are going to wait or how many hidden layers you add, the loss will always stay at around 0.5.
 
-But if you swith the activation function to ReLU or anything else and add one hidden layer with four perceptrons you obtain a perfect example.
+But if you switch the activation function to ReLU or anything else and add one hidden layer with four perceptrons you obtain a perfect example.
 
 ![Screenshot from 2018-04-05 15-18-08.png]({{site.baseurl}}/images/Screenshot from 2018-04-05 15-18-08.png)
 
 ### Calculation
 
-The network is called feed forward because there is no backward loop as in recurrent neural networks. The perceptrons a. k. a. neurons are illustrated as single units but we are going to deal with them layerwise as vectors.
+These networks are called feed forward because there is no backward loop as in recurrent neural networks. The perceptrons a. k. a. neurons are illustrated as single units but we are going to deal with them layerwise as vectors.
 
 ![xor_ffn.png]({{site.baseurl}}/images/xor_ffn.png)
 
 The calculation of every layer i consists of:
-- Our input $x_i$ is a vector consisting of two binary values. For example: $ x_0 = (0,0)^T $
-- The weight matrix $W_i$
-- The vector of biases for every neuron $b_i$
-- Estimated values ŷ which are calculated by $ŷ_i = W_i x_i + b_i$
+- Our input x_i is a vector. For example: x_0 = (0,0)^T for the first layer
+- The weight matrix W_i
+- The vector of biases for every neuron b_i
+- Estimated values ŷ which are calculated by $$ŷ_i = W_i x_i + b_i$$
+
+After the first layer the estimated values ŷ are used as inputs for the next layer and so on.
+
+This post won't explain how to train a neural network. It will only show how to feed the input values through the network to return a prediction.
+
+Therefore we assume the following values:
+First weight matrix 
+$$bb W_{1} \= \begin{pmatrix}20 & 20\\\ -20 & -20\end{pmatrix}$$
 
 
 
