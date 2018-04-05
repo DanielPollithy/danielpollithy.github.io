@@ -7,11 +7,6 @@ mathjax: true
 featured: false
 comments: false
 title: Calculating a feed forward net by hand
-description: ''
-headline: ''
-modified: ''
-tags: ''
-imagefeature: ''
 ---
 ## Calculating a feed forward network by hand
 
@@ -103,6 +98,7 @@ $$ b_{1} \begin{pmatrix} -10\\\ 30\end{pmatrix} $$
 $$ b_{2} \begin{pmatrix} -30 \end{pmatrix} $$
 
 Let's calculate the outputs for every possible input:
+
 $$ \sigma (\begin{pmatrix}20 & 20 \end{pmatrix} * \sigma \bigg( \begin{pmatrix}20 & 20\\\ -20 & -20\end{pmatrix} * \begin{pmatrix}0\\\ 0\end{pmatrix} + \begin{pmatrix}-10\\\ 30\end{pmatrix} \bigg) + \begin{pmatrix}-30 \end{pmatrix}) = 0 $$
 
 $$ \sigma (\begin{pmatrix}20 & 20 \end{pmatrix} * \sigma \bigg( \begin{pmatrix}20 & 20\\\ -20 & -20\end{pmatrix} * \begin{pmatrix}0\\\ 1\end{pmatrix} + \begin{pmatrix}-10\\\ 30\end{pmatrix} \bigg) + \begin{pmatrix}-30 \end{pmatrix}) = 1 $$
@@ -113,32 +109,3 @@ $$ \sigma (\begin{pmatrix}20 & 20 \end{pmatrix} * \sigma \bigg( \begin{pmatrix}2
 
 The results are exactly how we expect them to be. The original problem of a non-linear function can also be solved in other ways for example with the kernel trick which moves the non-linear function in another dimensionality where it becomes linear.
 Our network can be interpreted in the same way. The first layer projects the XOR function into another space. The perceptron in the **output layer** can then learn the parameters of its linear model to discriminate the two classes.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
