@@ -53,6 +53,29 @@ Well it is definetely not the most precise way to do it but the network could le
 
 ![cubic_steps.png]({{site.baseurl}}/images/cubic_steps.png)
 
+## Learning XOR
+
+Learning the XOR function was a prominent example of what could not be approximated by a linear model. 
+The following link ([playground with linear activation](https://playground.tensorflow.org/#activation=relu&regularization=L2&batchSize=10&dataset=spiral&regDataset=reg-gauss&learningRate=0.03&regularizationRate=0.01&noise=0&networkShape=8,6,8,8,6,2&seed=0.45009&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=true&xSquared=true&ySquared=true&cosX=false&sinX=true&cosY=false&sinY=true&collectStats=false&problem=classification&initZero=false&hideText=false)) brings you to the playground of tensorflow. It contains the XOR classification problem and I preset the linear activation function.
+
+![Screenshot from 2018-04-05 15-11-59.png]({{site.baseurl}}/images/Screenshot from 2018-04-05 15-11-59.png)
+
+
+It doesn't matter how many epochs you are going to wait our how many hidden layers you add the loss will always stay at around 0.5.
+
+But if you swith the activation function to ReLU or anything else and add one hidden layer with four perceptrons you obtain a perfect example.
+
+![Screenshot from 2018-04-05 15-18-08.png]({{site.baseurl}}/images/Screenshot from 2018-04-05 15-18-08.png)
+
+### Calculation
+
+Armed with the intuition we can proceed to some calculations:
+
+
+
+
+
+
 
 
 
