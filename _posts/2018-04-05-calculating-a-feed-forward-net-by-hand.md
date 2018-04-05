@@ -82,8 +82,8 @@ After the first layer the estimated values ŷ are used as inputs for the next la
 This post won't explain how to train a neural network. It will only show how to feed the input values through the network to return a prediction.
 
 Therefore we assume the following values:
-First weight matrix 
-$$bb W_{1} \= \begin{pmatrix}20 & 20\\\ -20 & -20\end{pmatrix}$$
+First and seconds weight matrix 
+$$W_{1} = \begin{pmatrix}20 & 20\\\ -20 & -20\end{pmatrix}, W_{2} = \begin{pmatrix}20 & 20\end{pmatrix}$$
 
 
 
