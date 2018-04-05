@@ -84,7 +84,8 @@ The calculation of every layer i consists of:
 - Our input $$x_i$$ is a vector. For example: $$x_0 = (0,0)^T$$ for the first layer
 - The weight matrix $$W_i$$
 - The vector of biases for every neuron $$b_i$$ 
-- Estimated values ŷ which are calculated by $$ŷ_i = \sigma \( W_i x_i + b_i \)$$
+- Estimated values ŷ which are calculated by $$ŷ_i = \sigma ( W_i x_i + b_i )$$
+- $$ \sigma $$ is the activation function
 
 After the first layer the estimated values ŷ are used as inputs for the next layer and so on.
 
@@ -101,8 +102,17 @@ $$ W_{1}  \begin{pmatrix}20 & 20 \end{pmatrix} $$
 $$ b_{1} \begin{pmatrix} -10\\\ 30\end{pmatrix} $$
 $$ b_{2} \begin{pmatrix} -30 \end{pmatrix} $$
 
-Let's calculate `1`:
-$$ \begin{pmatrix}20 & 20 \end{pmatrix} * \bigg( \begin{pmatrix}20 & 20\\\ -20 & -20\end{pmatrix} * \begin{pmatrix}0\\\ 1\end{pmatrix} + \begin{pmatrix}-10\\\ 30\end{pmatrix} \bigg) + \begin{pmatrix}-30 \end{pmatrix} $$
+Let's calculate the outputs for every possible input:
+$$ \sigma (\begin{pmatrix}20 & 20 \end{pmatrix} * \sigma \bigg( \begin{pmatrix}20 & 20\\\ -20 & -20\end{pmatrix} * \begin{pmatrix}0\\\ 0\end{pmatrix} + \begin{pmatrix}-10\\\ 30\end{pmatrix} \bigg) + \begin{pmatrix}-30 \end{pmatrix}) = 0 $$
+
+$$ \sigma (\begin{pmatrix}20 & 20 \end{pmatrix} * \sigma \bigg( \begin{pmatrix}20 & 20\\\ -20 & -20\end{pmatrix} * \begin{pmatrix}0\\\ 1\end{pmatrix} + \begin{pmatrix}-10\\\ 30\end{pmatrix} \bigg) + \begin{pmatrix}-30 \end{pmatrix}) = 1 $$
+
+$$ \sigma (\begin{pmatrix}20 & 20 \end{pmatrix} * \sigma \bigg( \begin{pmatrix}20 & 20\\\ -20 & -20\end{pmatrix} * \begin{pmatrix}1\\\ 0\end{pmatrix} + \begin{pmatrix}-10\\\ 30\end{pmatrix} \bigg) + \begin{pmatrix}-30 \end{pmatrix}) = 1 $$
+
+$$ \sigma (\begin{pmatrix}20 & 20 \end{pmatrix} * \sigma \bigg( \begin{pmatrix}20 & 20\\\ -20 & -20\end{pmatrix} * \begin{pmatrix}1\\\ 1\end{pmatrix} + \begin{pmatrix}-10\\\ 30\end{pmatrix} \bigg) + \begin{pmatrix}-30 \end{pmatrix}) = 0 $$
+
+The results are exactly how we expect them to be. The original problem of a non-linear function can also be solved in other ways for example with the kernel trick which moves the non-linear function in another dimensionality where it becomes linear.
+Our network can be interpreted in the same way. The first layer projects the XOR function into another space. The perceptron in the **output layer** can then learn the parameters of its linear model to discriminate the two classes.
 
 
 
