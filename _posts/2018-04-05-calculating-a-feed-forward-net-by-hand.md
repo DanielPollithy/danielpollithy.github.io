@@ -69,7 +69,12 @@ But if you swith the activation function to ReLU or anything else and add one hi
 
 ### Calculation
 
-Armed with the intuition we can proceed to some calculations:
+The network is called feed forward because there is no backward loop as in recurrent neural networks. The perceptrons a. k. a. neurons are illustrated as single units but we are going to deal with them layerwise as vectors.
+
+![xor_ffn.png]({{site.baseurl}}/images/xor_ffn.png)
+
+Our input X is a vector consisting of two binary values. For example: $$ X = (0,0)^T $$
+
 
 
 
