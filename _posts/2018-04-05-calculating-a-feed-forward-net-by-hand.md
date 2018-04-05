@@ -35,7 +35,7 @@ Like $ f(x) = x^2 $?
 
 One could propose a network like this:
 ![ANN2.png]({{site.baseurl}}/images/ANN2.png)
-Or even more complex ones but chaining multiple perceptrons together will just mimic another linear equation system as long as the activation function is only linear ($$y = x$$).
+Or even more complex ones but chaining multiple perceptrons together will just mimic another linear equation system as long as the activation function is only linear ($y = x$).
 
 The first choice for the activation function would be the cubic function itself. But I think approximating a function by using itself is not a valid solution.
 
