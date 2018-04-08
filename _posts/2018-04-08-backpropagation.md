@@ -33,6 +33,8 @@ $$ b_{1} \begin{pmatrix} -1 \\\ 2 \end{pmatrix} $$
 
 $$ b_{2} \begin{pmatrix} 3 \end{pmatrix} $$
 
+And let the learning rate be $$ \alpha = 0.5 $$ .
+
 ### Forward propagation
 
 Backpropagation is an online algorithm which means "one example at a time". The first step is to calculate the prediction for given x-values and calculate the error using the attached label.
@@ -116,6 +118,7 @@ $$ w \leftarrow w - \alpha * \frac{\partial E}{\partial w} $$
 
 
 **Good explanations:**
+
 [https://www.youtube.com/watch?v=aVId8KMsdUU](https://www.youtube.com/watch?v=aVId8KMsdUU)
 
 [https://www.youtube.com/watch?v=zpykfC4VnpM](https://www.youtube.com/watch?v=zpykfC4VnpM)
