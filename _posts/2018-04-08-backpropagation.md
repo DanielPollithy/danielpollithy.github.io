@@ -76,6 +76,10 @@ The following image contains all the numbers from the feed forward step:
 
 ![xor_bp2.png]({{site.baseurl}}/images/xor_bp2.png)
 
+$$ E_{h_{0}} = \sigma ' (0.6) * 1 * (-0.6) = -0.14 $$
+
+$$ E_{h_{1}} = \sigma ' (0.6) * (-3) * (-0.6) = 0.41 $$
+
 $$ E_{h_{2}} = \sigma ' (0.6) * (-2) * (-0.6) = 0.28 $$
 
 ![ffn_bg3.png]({{site.baseurl}}/images/ffn_bg3.png)
