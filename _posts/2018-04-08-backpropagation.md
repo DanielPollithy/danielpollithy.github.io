@@ -88,9 +88,9 @@ $$ E_{h_{2}} = \sigma ' (0.6) * (-2) * (-0.6) = 0.28 $$
 
 Now that we know how to calculate the error on hidden neurons we can calculate the error on weights.
 
-Error on weight w connecting two neurons. h1 from hidden layer h and y1 from output layer y:
+Error on weight w connecting two neurons. h_i from hidden layer h and y_i from output layer y:
 
-$$ \frac{\partial E}{\partial w} = \frac{\partial E}{\partial y_1} \sigma ' (y_1) * h_1 $$
+$$ \frac{\partial E}{\partial w} = \frac{\partial E}{\partial y_i} \sigma ' (y_i) * h_i $$
 
 ![weight_errors.png]({{site.baseurl}}/images/weight_errors.png)
 
