@@ -90,7 +90,7 @@ Therefore we assume the following values:
 **First and seconds weight matrix **
 
 $$ W_{1} \begin{pmatrix}20 & 20\\\ -20 & -20\end{pmatrix} $$
-$$ W_{1}  \begin{pmatrix}20 & 20 \end{pmatrix} $$
+$$ W_{2}  \begin{pmatrix}20 & 20 \end{pmatrix} $$
 
 **First and second bias vector**
 
