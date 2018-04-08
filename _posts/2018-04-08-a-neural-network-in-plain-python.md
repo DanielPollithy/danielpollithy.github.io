@@ -16,7 +16,7 @@ In my last blog entries I have been discovering neural networks:
 - [Calculating a feed forward net by hand](http://blog.pollithy.com/personal/calculating-a-feed-forward-net-by-hand)
 - [Backpropagation](http://blog.pollithy.com/personal/backpropagation)
 
-As long as it is possible, I am a fan of implementing simple version of what I have learned from scratch. That is why I built a small python neural network **without numpy or scikit**.
+As long as it is possible, I am a fan of implementing a simple version from scratch of what I have learned. That is why I built a small python neural network **without numpy or scikit**.
 
 ### Object oriented approach
 
