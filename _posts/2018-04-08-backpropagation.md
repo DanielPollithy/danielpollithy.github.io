@@ -53,7 +53,7 @@ But how do we calculate the error of the hidden units? We don't have a supervisi
 
 ![XOR_bp.png]({{site.baseurl}}/images/XOR_bp.png)
 
-The image above shows all of the steps and variables necessary for our XOR neural net. The weights to the biases where ignored so far as they were ones. If we want to change the weight of one bias, we just add the difference to the weight itself.
+The image above shows all of the steps and variables necessary for our XOR neural net. The weights to the biases where ignored so far as they were ones. If we want to change the weight of one bias, we just add the difference to the biase itself.
 
 With the error to the output neuron we can calculate the error of every single neuron that is connected to the output neuron:
 
