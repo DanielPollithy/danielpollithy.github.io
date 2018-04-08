@@ -34,7 +34,7 @@ And let the learning rate be $$ \alpha = 1 $$ .
 
 Backpropagation is an online algorithm which means "one example at a time". The first step is to calculate the prediction for given x-values and calculate the error using the attached label.
 
-<table><tr><th>x XOR y<br></th><th>0</th><th>1</th></tr><tr><td>0<br></td><td>0</td><td>1<br></td></tr><tr><td>1</td><td>1<br></td><td>0</td></tr></table>
+<table align="center"><tr><th>x XOR y<br></th><th>0</th><th>1</th></tr><tr><td>0<br></td><td>0</td><td>1<br></td></tr><tr><td>1</td><td>1<br></td><td>0</td></tr></table>
 
 For $$ x = (0, 0)^T $$ the calculation of y is as follows:
 
