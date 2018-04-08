@@ -33,7 +33,7 @@ $$ b_{1} \begin{pmatrix} -1 \\\ 2 \end{pmatrix} $$
 
 $$ b_{2} \begin{pmatrix} 3 \end{pmatrix} $$
 
-And let the learning rate be $$ \alpha = 0.5 $$ .
+And let the learning rate be $$ \alpha = 1 $$ .
 
 ### Forward propagation
 
@@ -93,9 +93,21 @@ Error on weight w connecting two neurons. h1 from hidden layer h and y1 from out
 
 $$ \frac{\partial E}{\partial w} = \frac{\partial E}{\partial y_1} \sigma ' (y_1) * h_1 $$
 
+![weight_errors.png]({{site.baseurl}}/images/weight_errors.png)
+
+
 This error (which is the derivative of the error to one neuron) is used to update the weight w:
 
 $$ w \leftarrow w - \alpha * \frac{\partial E}{\partial w} $$
+
+![weights_updated.png]({{site.baseurl}}/images/weights_updated.png)
+
+
+
+
+
+
+
 
 
 
