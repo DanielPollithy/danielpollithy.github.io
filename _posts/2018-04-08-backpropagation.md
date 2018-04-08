@@ -108,12 +108,17 @@ This have been the three important steps of backpropagation:
 3. Update weights
 
 
+In the next post I am going to present a small python script to evaluate whether the shown calculations can find a proper approximation to the XOR function. 
+
+
 There are good videos on this topic available:
 [https://www.youtube.com/watch?v=aVId8KMsdUU](https://www.youtube.com/watch?v=aVId8KMsdUU)
 
 [https://www.youtube.com/watch?v=zpykfC4VnpM](https://www.youtube.com/watch?v=zpykfC4VnpM)
 
 [https://www.youtube.com/watch?v=An5z8lR8asY](https://www.youtube.com/watch?v=An5z8lR8asY)
+
+[https://www.youtube.com/watch?v=Ilg3gGewQ5U](https://www.youtube.com/watch?v=Ilg3gGewQ5U)
 
 
 
