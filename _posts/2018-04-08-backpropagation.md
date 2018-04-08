@@ -56,6 +56,7 @@ The image above shows all of the steps and variables necessary for our XOR neura
 With the error to the output neuron we can calculate the error of every single neuron that is connected to the output neuron:
 
 Error of hidden neuron h_i:
+
 $$ E_{h_{i}} = \frac{\partial E}{\partial h_{i}} = \sum_{j} \sigma ' (y_{i}) * W2_{i,j} \frac{\partial E}{\partial y_{j}}$$
 
 - We want to know the error of the neuron to change its value accordingly: $$\frac{\partial E}{\partial h_{i}}$$
