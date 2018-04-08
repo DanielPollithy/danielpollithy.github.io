@@ -7,6 +7,11 @@ mathjax: true
 featured: false
 comments: false
 title: Backpropagation
+description: ''
+headline: ''
+modified: ''
+tags: ''
+imagefeature: ''
 ---
 ## Calculating backpropagation by hand
 
@@ -57,12 +62,38 @@ With the error to the output neuron we can calculate the error of every single n
 
 Error of hidden neuron h_i:
 
-$$ E_{h_{i}} = \frac{\partial E}{\partial h_{i}} = \sum_{j} \sigma ' (y_{i}) * W2_{i,j} \frac{\partial E}{\partial y_{j}}$$
+$$ E_{h_{i}} = \frac{\partial E}{\partial h_{i}} = \sum_{j} \sigma ' (y_{i}) * W2_{i,j} \frac{\partial E}{\partial y_{j}} $$
 
-- We want to know the error of the neuron to change its value accordingly: $$\frac{\partial E}{\partial h_{i}}$$
-- The error of the hidden neuron depends on the neurons that come after it. In this case it is only the output neuron: $$\frac{\partial E}{\partial y_{i}}$$
-- The changerate of the output neuron depends on how the hidden neuron is changes: $$\sigma ' (y_{i}) * W2_{i,j}$$
+- We want to know the error of the neuron to change its value accordingly: 
+$$\frac{\partial E}{\partial h_{i}}$$
+- The error of the hidden neuron depends on the neurons that come after it. In this case it is only the output neuron: 
+$$\frac{\partial E}{\partial y_{i}}$$
+- The changerate of the output neuron depends on how the hidden neuron is changes: 
+$$\sigma ' (y_{i}) * W2_{i,j}$$
 - $$ \sum $$ and then all of these partial errors to single neurons that come after are summed up to determine how much the single hidden neuron affects the next layer
+- The derivative of sigma is $$ \sigma ' (x) = e^x \div (1 + e^x)^2 $$
+
+### Calculate the errors of the hidden layer
+
+The following image contains all the numbers from the feed forward step:
+
+![xor_bp2.png]({{site.baseurl}}/images/xor_bp2.png)
+
+$$ E_{h_{2}} = \sigma ' (0.6) * (-2) * (-0.6) = 0.28 $$
+
+![ffn_bg3.png]({{site.baseurl}}/images/ffn_bg3.png)
+
+### Calculate the errors on weights
+
+Now that we know how to calculate the error on hidden neurons we can calculate the error on weights.
+
+Error on weight w connecting two neurons. h1 from hidden layer h and y1 from output layer y:
+
+$$ \frac{\partial E}{\partial w} = \frac{\partial E}{\partial y_1} \sigma ' (y_1) * h_1 $$
+
+This error (which is the derivative of the error to one neuron) is used to update the weight w:
+
+$$ w \leftarrow w - \alpha * \frac{\partial E}{\partial w} $$
 
 
 
@@ -80,9 +111,15 @@ $$ E_{h_{i}} = \frac{\partial E}{\partial h_{i}} = \sum_{j} \sigma ' (y_{i}) * W
 
 
 
-**Good explanation:**
+
+
+
+
+**Good explanations:**
 [https://www.youtube.com/watch?v=aVId8KMsdUU](https://www.youtube.com/watch?v=aVId8KMsdUU)
+
 [https://www.youtube.com/watch?v=zpykfC4VnpM](https://www.youtube.com/watch?v=zpykfC4VnpM)
+
 [https://www.youtube.com/watch?time_continue=230&v=An5z8lR8asY](https://www.youtube.com/watch?time_continue=230&v=An5z8lR8asY)
 
 
