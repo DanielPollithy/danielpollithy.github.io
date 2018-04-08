@@ -101,40 +101,19 @@ $$ w \leftarrow w - \alpha * \frac{\partial E}{\partial w} $$
 
 ![weights_updated.png]({{site.baseurl}}/images/weights_updated.png)
 
+ 
+This have been the three important steps of backpropagation:
+1. Feed forward
+2. Calculate errors
+3. Update weights
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-**Good explanations:**
-
+There are good videos on this topic available:
 [https://www.youtube.com/watch?v=aVId8KMsdUU](https://www.youtube.com/watch?v=aVId8KMsdUU)
 
 [https://www.youtube.com/watch?v=zpykfC4VnpM](https://www.youtube.com/watch?v=zpykfC4VnpM)
 
-[https://www.youtube.com/watch?time_continue=230&v=An5z8lR8asY](https://www.youtube.com/watch?time_continue=230&v=An5z8lR8asY)
+[https://www.youtube.com/watch?v=An5z8lR8asY](https://www.youtube.com/watch?v=An5z8lR8asY)
 
 
 
