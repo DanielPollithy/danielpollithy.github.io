@@ -65,7 +65,7 @@ $$ E_{h_{i}} = \frac{\partial E}{\partial h_{i}} = \sum_{j} \sigma ' (y_{i}) * W
 $$\frac{\partial E}{\partial h_{i}}$$
 - The error of the hidden neuron depends on the neurons that come after it. In this case it is only the output neuron: 
 $$\frac{\partial E}{\partial y_{i}}$$
-- The changerate of the output neuron depends on how the hidden neuron is changes: 
+- The changerate of the output neuron depends on how the hidden neuron is changed: 
 $$\sigma ' (y_{i}) * W2_{i,j}$$
 - $$ \sum $$ and then all of these partial errors to single neurons that come after are summed up to determine how much the single hidden neuron affects the next layer
 - The derivative of sigma is $$ \sigma ' (x) = e^x \div (1 + e^x)^2 $$
