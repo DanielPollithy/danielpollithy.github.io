@@ -4,14 +4,9 @@ published: true
 categories:
   - personal
 mathjax: true
-featured: false
+featured: true
 comments: false
 title: Backpropagation
-description: ''
-headline: ''
-modified: ''
-tags: ''
-imagefeature: ''
 ---
 ## Calculating backpropagation by hand
 
