@@ -6,7 +6,7 @@ categories:
 mathjax: true
 featured: true
 comments: false
-title: Backpropagation
+title: Backpropagation and stochastic gradient descent
 ---
 ## Calculating backpropagation by hand
 
@@ -119,9 +119,3 @@ There are good videos on this topic available:
 [https://www.youtube.com/watch?v=An5z8lR8asY](https://www.youtube.com/watch?v=An5z8lR8asY)
 
 [https://www.youtube.com/watch?v=Ilg3gGewQ5U](https://www.youtube.com/watch?v=Ilg3gGewQ5U)
-
-
-
-
-
-
