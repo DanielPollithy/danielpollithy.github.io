@@ -10,7 +10,7 @@ mathjax: false
 featured: true
 comments: false
 title: Pipeline with Scikit
-tags: 'pipeline, pandas, titanic'
+tags: pipeline pandas titanic
 ---
 ## Processing data with scikit's pipelines, pandas and numpy
 
