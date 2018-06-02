@@ -148,6 +148,13 @@ After 16 minutes and 17 seconds the job was done. And it consumed ten times more
 
 My quad core laptop was calculating 101 minutes. So the PREMIUM_1 took only 17% of the time my laptop needed. 
 
+---
+https://cloud.google.com/ml-engine/docs/tensorflow/distributed-tensorflow-mnist-cloud-datalab
+
+https://cloud.google.com/ml-engine/reference/rest/v1/projects.jobs#scaletier
+
+https://cloud.google.com/ml-engine/docs/tensorflow/regions
+
 
 
 
