@@ -123,6 +123,9 @@ Reload.
 
 **The notebook contains a javascript canvas drawing tool!**
 
+![Screenshot from 2018-06-02 23-47-07.png]({{site.baseurl}}/images/Screenshot from 2018-06-02 23-47-07.png)
+
+
 Now let's run from the next cell... And believe it or not, the seven was predicted correctly!
 
 ```
@@ -140,7 +143,7 @@ First of all I am going to delete this project and create a new one.
 
 Before running the job I am going to change "config/config.yaml" from STANDARD_1 to PREMIUM_1 (see a list of options [here](https://cloud.google.com/ml-engine/reference/rest/v1/projects.jobs#scaletier)). This means that there will be more parameter servers and more workers. So actually what I am doing is just throwing more resources at the the same code. Let's see whether it reduces the time to train. 
 
-The previous CNN had only 10.000 training steps and it took 12 minutes. So with the STANDARD tier it should take 14 minutes to train it. The exception is that the PREMIUM tier will be faster...
+The previous CNN had only 10.000 training steps and it took 12 minutes. So with the STANDARD tier it should take 24 minutes to train it. The exception is that the PREMIUM tier will be faster...
 
 ![Screenshot from 2018-06-03 00-22-17.png]({{site.baseurl}}/images/Screenshot from 2018-06-03 00-22-17.png)
 
@@ -154,25 +157,3 @@ https://cloud.google.com/ml-engine/docs/tensorflow/distributed-tensorflow-mnist-
 https://cloud.google.com/ml-engine/reference/rest/v1/projects.jobs#scaletier
 
 https://cloud.google.com/ml-engine/docs/tensorflow/regions
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
