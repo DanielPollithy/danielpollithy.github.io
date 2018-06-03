@@ -169,7 +169,7 @@ test_num_states = np.array(test_num_states)
 
 ### Classifying one cell
 
-Let's start small and only classify the upper left cell.
+The following CNN shall only be trained on the three labels "Empty", "X" or "O".
 
 ```
 
@@ -309,8 +309,7 @@ def train(train_data, train_labels, test_data, test_labels, cell_index=0, traini
 
 This CNN is an overkill for that static data set we have generated. But maybe in the future I am going to add some error to the generator...
 
-Run: `
-train(train_images, train_num_states[:, 0], test_images, test_num_states[:, 0], cell_index=0)`
+Run: `train(train_images, train_num_states[:, 0], test_images, test_num_states[:, 0], cell_index=0)`
 
 The CNN ran 15 minutes. In the end it returned as part of the evaluation on the test dataan accuracy of 1.0.
 ```
