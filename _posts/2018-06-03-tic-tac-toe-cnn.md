@@ -11,6 +11,7 @@ mathjax: false
 featured: false
 comments: false
 title: Tic Tac Toe CNN
+imagefeature: Screenshot from 2018-06-03 22-55-19.png
 ---
 ## Experiment: Writing a CNN for tic tac toe
 
