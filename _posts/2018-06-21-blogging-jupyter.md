@@ -64,7 +64,7 @@ plt.plot(x, y1, 'k--', x, y2, 'g--', x, y3, 'b--', x, y4, 'r--')
 - `%%time` time information of a cell about **a single run**
 - `%%timeit` runs the same cell 10.000 times and returns the **mean of the durance**
 - run shell commands: `!ls -la` or `!python3 -m install numpy`
-- LaTeX formulas: `\\( P(A \mid B) = \frac{P(B \mid A) \, P(A)}{P(B)} \\)` \\( P(A \mid B) = \frac{P(B \mid A) \, P(A)}{P(B)} \\)
+- LaTeX formulas: `\\( P(A \mid B) = \frac{P(B \mid A) \, P(A)}{P(B)} \\)` $$ P(A \mid B) = \frac{P(B \mid A) \, P(A)}{P(B)} $$
 
 (More ideas: [jupyter notebook tips](https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/))
 
