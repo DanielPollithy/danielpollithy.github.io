@@ -4,7 +4,7 @@ published: true
 categories:
   - general
   - python
-mathjax: false
+mathjax: true
 featured: false
 comments: false
 title: Blogging with Jupyter
