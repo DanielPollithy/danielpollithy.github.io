@@ -12,7 +12,7 @@ title: Blogging with Jupyter
 
 # Blogging with Jupyter
 
-I realized that most of my blog posts behave like a jupyter notebook, so I am going evaluate if this is as nice as writing with prose.io.
+I realized that most of my blog posts behave like a jupyter notebook (markdown, code and repeat). So why not just write a jupyter notebbok and post it as a blog entry. I am going evaluate if this is as nice as writing with prose.io.
 
 ## How it works
 1. `git clone` the repo containing the jekyll blog
