@@ -180,9 +180,6 @@ print(new_cloud_data[:10])
 # That looks good! Now we can delete the z-column and rgb-column.
 # Because for the first step we don't need them.
 new_cloud_data = np.delete(new_cloud_data, [2, 3], axis=1)
-
-# output the first 10 rows of the new ndarray data
-new_cloud_data[:10]
 ```
 
 
@@ -296,7 +293,7 @@ Now that we have seen how to load, alter and visualize in 2d, I am going to crea
 # generate a 3d data set containing waves like the sea
 # more or less ;)
 
-# generate a grid of numbers for x and y
+# generate a grid of numbers for x and z
 x = np.linspace(-10, 10, num=100)
 z = np.linspace(-10, 10, num=100)
 xx, zz = np.meshgrid(x, z)
@@ -304,6 +301,7 @@ xx, zz = np.meshgrid(x, z)
 # calculate "waves" for the grid
 yy = np.sin(xx) + np.cos(zz) + 3
 
+# flatten the arrays
 xx = xx.astype(np.float32).reshape(1, -1)
 yy = yy.astype(np.float32).reshape(1, -1)
 zz = zz.astype(np.float32).reshape(1, -2)
@@ -313,6 +311,7 @@ n = yy.size
 
 # Generate different blue values depending on the y value
 blue = (yy/np.max(yy))
+
 # Make rgb columns for every point
 rgb = np.hstack((np.repeat(0.01, n)[:, np.newaxis], np.repeat(0.01, n)[:, np.newaxis], blue.T))
 
@@ -331,6 +330,7 @@ print(rgb[:10])
      [0.01       0.01       0.25980985]
      [0.01       0.01       0.24302459]]
 
+----------------
 
 
 ```python
@@ -349,9 +349,9 @@ ax.scatter(xx, zz, yy, color=rgb);
 
 
 ```python
-# The new points will be stored in a pcd file
+# Next step: Store the new points in a pcd file
 
-# encode the colors (distinct red, green and blue color columns => one single column) 
+# Encode the colors (distinct red, green and blue color columns => one single column) 
 encoded_colors = pypcd.encode_rgb_for_pcl((rgb * 255).astype(np.uint8))
 
 # hstack the X, Y, Z, RGB columns
@@ -414,7 +414,8 @@ sudo apt-get update
 sudo apt-get install meshlab
 ```
 
-And voila: The waves are there. Although I have to admit that the colors are missing. I guess that it is a rounding error but I am not quite sure.
+And voila: The waves are there. Although I have to admit that the colors are missing. 
+I guess that it is a rounding error (which results in the last column to be only zeros) but I am not quite sure.
 
 ![View]({{site.baseurl}}/images/Screenshot from 2018-06-25 14-42-23.png)
 
