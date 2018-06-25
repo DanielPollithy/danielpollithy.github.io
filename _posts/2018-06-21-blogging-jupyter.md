@@ -4,7 +4,7 @@ published: true
 categories:
   - general
   - python
-mathjax: false
+mathjax: true
 featured: false
 comments: false
 title: Blogging with Jupyter
@@ -12,7 +12,7 @@ title: Blogging with Jupyter
 
 # Blogging with Jupyter
 
-I realized that most of my blog posts behave like a jupyter notebook, so I am going evaluate if this is as nice as writing with prose.io.
+I realized that most of my blog posts behave like a jupyter notebook (markdown, code and repeat). So why not just write a jupyter notebbok and post it as a blog entry. I am going evaluate if this is as nice as writing with prose.io.
 
 ## How it works
 1. `git clone` the repo containing the jekyll blog
@@ -50,6 +50,23 @@ plt.plot(x, y1, 'k--', x, y2, 'g--', x, y3, 'b--', x, y4, 'r--')
 
 ![png]({{site.baseurl}}/images/blogging_jupyter_1_1.png)
 
+# Tricks with jupyter notebook
+
+- get a plot.ly account and generate interactive graphs
+- use `%load_ext autoreload 
+  %autoreload 2`
+- display multiple beatiful outputs (not only the last of a cell): 
+  `from IPython.core.interactiveshell import InteractiveShell
+   InteractiveShell.ast_node_interactivity = "all"`
+- access the docs by prepending a question mark and evaluating a cell: `?str.replace`
+- list all ipython magic commands: `%lsmagic`
+- use variables in multiple notebooks like global context: `%store data` and `%store -r data` (list all with `%who`)
+- `%%time` time information of a cell about **a single run**
+- `%%timeit` runs the same cell 10.000 times and returns the **mean of the durance**
+- run shell commands: `!ls -la` or `!python3 -m install numpy`
+- LaTeX formulas: `\\( P(A \mid B) = \frac{P(B \mid A) \, P(A)}{P(B)} \\)` $$ P(A \mid B) = \frac{P(B \mid A) \, P(A)}{P(B)} $$
+
+(More ideas: [jupyter notebook tips](https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/))
 
 
 
