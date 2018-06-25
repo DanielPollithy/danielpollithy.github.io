@@ -9,6 +9,7 @@ categories:
   - python
   - numpy
   - scikit
+  - machine-learning
 ---
 ## Decision Tree
 

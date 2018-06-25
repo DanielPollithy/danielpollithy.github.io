@@ -6,10 +6,10 @@ featured: true
 comments: false
 title: Principal components analysis
 categories:
-  - personal
   - python
   - programming
   - numpy
+  - machine-learning
 ---
 ## Principal components analysis with numpy
 

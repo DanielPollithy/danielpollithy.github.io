@@ -2,7 +2,7 @@
 layout: post
 published: true
 categories:
-  - personal
+  - machine-learning
 mathjax: true
 featured: true
 comments: false

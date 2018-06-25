@@ -2,10 +2,10 @@
 layout: post
 published: true
 categories:
-  - personal
   - python
   - programming
   - scikit
+  - machine-learning
 mathjax: false
 featured: true
 comments: false

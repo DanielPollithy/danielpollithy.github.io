@@ -14,8 +14,7 @@ mathjax: false
 featured: false
 published: true
 categories:
-  - personal
-  - General
+  - general
 ---
 Today on the 9th of February 2018 a lot of wordpress blogs will be updated manually by their administrators because the automatic updater was broken with version 4.9.3.
 

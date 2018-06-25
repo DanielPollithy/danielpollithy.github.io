@@ -6,9 +6,9 @@ featured: true
 comments: false
 title: Android app Wifiota
 categories:
-  - personal
-  - Programming
-  - Hackathon
+  - android
+  - dlt
+  - hackathon
 tags: WiFi Direct Iota Flash Channel Challenge Android IRI Wifiota Java
 ---
 ## Sharing remaining mobile data in exchange for Iota

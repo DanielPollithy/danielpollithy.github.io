@@ -6,10 +6,8 @@ featured: true
 comments: false
 title: Ethereum Iota Hackathon
 categories:
-  - personal
-  - Hackathon
-  - DLT
-  - Programming
+  - hackathon
+  - dlt
 tags: >-
   ethereum solidity bluetooth socket cpp python javascript bash raspberry hikey
   drone

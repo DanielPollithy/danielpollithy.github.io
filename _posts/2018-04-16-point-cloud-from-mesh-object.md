@@ -2,7 +2,7 @@
 layout: post
 published: true
 categories:
-  - personal
+  - pointcloud
 mathjax: false
 featured: false
 comments: false

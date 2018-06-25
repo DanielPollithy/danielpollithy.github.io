@@ -6,9 +6,9 @@ featured: false
 comments: false
 title: MNIST with a CNN in TensorFlow
 categories:
-  - personal
-  - Programming
+  - tensorflow
   - python
+  - machine-learning
 tags: mnist numpy tensorflow tkinter
 ---
 ## Quickstart to TensorFlow

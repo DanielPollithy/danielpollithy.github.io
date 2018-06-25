@@ -2,11 +2,11 @@
 layout: post
 published: true
 categories:
-  - personal
   - tensorflow
   - numpy
   - scikit
   - python
+  - machine-learning
 mathjax: false
 featured: false
 comments: false

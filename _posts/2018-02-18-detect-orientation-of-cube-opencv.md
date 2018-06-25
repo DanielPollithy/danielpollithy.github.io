@@ -7,8 +7,8 @@ featured: true
 comments: false
 headline: Identify the position of a camera looking at a cube
 categories:
-  - opencv
   - python
+  - numpy
 tags: opencv python dbscan clustering
 imagefeature: Screenshot from 2018-02-11 22-36-24.png
 description: ''

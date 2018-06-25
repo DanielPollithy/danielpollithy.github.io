@@ -9,6 +9,7 @@ categories:
   - numpy
   - python
   - scikit
+  - machine-learning
 modified: '2018-03-27'
 description: ''
 headline: ''

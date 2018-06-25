@@ -2,8 +2,8 @@
 layout: post
 published: true
 categories:
-  - personal
   - tensorflow
+  - machine-learning
 mathjax: false
 featured: false
 comments: false

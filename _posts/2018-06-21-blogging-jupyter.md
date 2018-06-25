@@ -4,6 +4,7 @@ published: true
 categories:
   - general
   - python
+  - numpy
 mathjax: true
 featured: false
 comments: false
