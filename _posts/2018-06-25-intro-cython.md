@@ -9,6 +9,7 @@ mathjax: false
 featured: false
 comments: false
 title: Intro to Cython
+imagefeature: cython_25_1.png
 ---
 
 
@@ -40,7 +41,7 @@ I am going to use the jupyter notebook extension for this post: [ipython cython 
 
 
 
-```cython
+```python
 %%cython
 
 # Write the same function twice: once for python and the other time for cython
