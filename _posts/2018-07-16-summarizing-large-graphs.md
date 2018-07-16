@@ -18,7 +18,7 @@ Mellon University), U Kang (KAIST), Jilles Vreeken (Max Planck Institute for Inf
 
 The algorithm finds instances of a given graph vocabulary in a large graph. For example: stars, clique, bi-partite cores, etc...
 
-My "paper" about the algorithm can be found here: [analysis-article-vog.pdf]({{site.baseurl}}/analysis-article-vog.pdf).
+My "paper" about the algorithm can be found here: [analysis-article-vog.pdf](https://github.com/DanielPollithy/danielpollithy.github.io/raw/master/images/analysis-article-vog.pdf).
 
 ## Own experiment
 
