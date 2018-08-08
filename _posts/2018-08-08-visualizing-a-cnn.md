@@ -219,32 +219,3 @@ These are my immediate thoughts after looking into the different activation maps
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
