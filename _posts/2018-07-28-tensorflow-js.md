@@ -8,11 +8,7 @@ title: GTSRB with tensorflow.js
 categories:
   - keras
   - interactive
-description: ''
-headline: ''
-modified: ''
-tags: ''
-imagefeature: ''
+  - cnn
 ---
 ## TL;DR
 
@@ -329,7 +325,3 @@ function show_result(top_n, data) {
 ![Screenshot from 2018-08-08 11-09-02.png]({{site.baseurl}}/images/Screenshot from 2018-08-08 11-09-02.png)
 
 I host the application at [https://pollithy.com/gtsrb/index.html](https://pollithy.com/gtsrb/index.html)
-
-
-
-
