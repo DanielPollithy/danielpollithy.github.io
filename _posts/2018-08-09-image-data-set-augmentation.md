@@ -6,6 +6,7 @@ featured: false
 comments: false
 title: Image data set augmentation
 categories:
+  - personal
   - keras
   - cnn
 ---
@@ -112,19 +113,12 @@ Test accuracy = 0.9583531274742676. That's a plus of 10%.
 
 That is really impressing. I am going to upload this new model into my tensorflow.js application.
 
+![Screenshot from 2018-08-09 14-43-06.png]({{site.baseurl}}/images/Screenshot from 2018-08-09 14-43-06.png)
+
+(I can upload a badly cropped and skewed image and it gets recognized. Wow!)
+
 Next steps could be:
 
 - The colors of the images have to be normalized
 - Some of the signs are partially hidden or have a post in front of them
 - A better adaptive learning rate might be a good idea. I should evaluate different optimizers
-
-
-
-
-
-
-
-
-
-
-
