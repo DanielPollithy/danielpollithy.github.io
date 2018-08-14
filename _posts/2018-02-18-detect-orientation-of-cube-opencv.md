@@ -3,7 +3,7 @@ layout: post
 published: true
 title: Detect orientation of a cube with openCV
 mathjax: false
-featured: true
+featured: false
 comments: false
 headline: Identify the position of a camera looking at a cube
 categories:
@@ -11,8 +11,6 @@ categories:
   - numpy
 tags: opencv python dbscan clustering
 imagefeature: Screenshot from 2018-02-11 22-36-24.png
-description: ''
-modified: ''
 ---
 Setup: There are 8 cameras positioned around a cube at which they are looking (ref: Initial setup).
 Every face of the cube is colored differently.
@@ -477,9 +475,4 @@ Three clusters are detected correctly and the associated points show the outline
 Coming up:
 - tetragon classification by size and dominant background color
 - puzzling the tetragons to cubes and picking the right one
-- calculate the orientation of the observing camera 
-
-
-
-
-
+- calculate the orientation of the observing camera
