@@ -6,7 +6,6 @@ featured: false
 comments: false
 title: Image data set augmentation
 categories:
-  - personal
   - keras
   - cnn
 ---
