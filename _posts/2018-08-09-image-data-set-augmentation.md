@@ -6,25 +6,26 @@ featured: false
 comments: false
 title: Image data set augmentation
 categories:
+  - personal
   - keras
   - cnn
 ---
 ## Transform images to increase the size of the GTSRB dataset
 
-My GTSRB Keras CNN is overfitting its training data. I know that because the accuracy on the training data ist above 98% but the accuracy on the test data was 84% on its best run.
+My GTSRB Keras CNN is overfitting its training data. I know that because the accuracy on the training data ist above 98% but the accuracy on the test data was 84% for its best run.
 
-Before I balanced the classes of the data set the test accuracy was even lower at 80%. Adding L2 regularization to the last dense layer added 1%. 
+Before I balanced the classes of the data set, the test accuracy was even lower (80%). Adding L2 regularization to the last dense layer added 1%. 
 
-The remaining gap is still more than 10% so I tried other regularization strategies. Increasing the batch_size did not help. Doubling the size of the images also had no great effect.
+A gap of more than 10% remained, so I tried other strategies. Increasing the batch_size did not help. Doubling the size of the images (32x32 -> 64x64) had no certain effect.
 
-But I kept the best option for images for the end: Data set augmentation.
-The idea is to transform the images randomly (shifting the pixels, rotating, zooming...). This is intuitively a really important building block in the training pipeline in order to avoid that the model find "too simple" methods like checking whether a pixel at an exact position is white. Although the convolutional layers and pooling layers already help a little bit here.
+**But I kept the best option for the end:** Data set augmentation.
+For images the idea is to transform the images randomly (shifting the pixels, rotating, zooming...). This is intuitively a really important building block in the training pipeline in order to avoid that the model finds "too simple" methods like checking whether a pixel at an exact position is white. Although the convolutional layers and pooling layers already help a little bit here.
 
 ## Code
 
 I am using the same Keras code as in my last blog entries for the exact same dataset.
 
-Now I only have to add a ImageDataGenerator:
+I only have to add an ImageDataGenerator:
 
 ```python
 
@@ -90,7 +91,7 @@ for e in range(epochs):
 
 ![Screenshot from 2018-08-09 11-48-47.png]({{site.baseurl}}/images/Screenshot from 2018-08-09 11-48-47.png)
 
-The transformed images are classifiable but it is getting harder... Let's whether this has an impact on the generalization error.
+The transformed images are classifiable but it is getting harder... Let's see whether this has an impact on the generalization error.
 
 I can already tell that the training takes a lot longer, that could be because the ImageDataGenerator works on the CPU.
 
@@ -102,22 +103,17 @@ The training took 40 minutes instead of 5. And the training accuracy went down o
 
 And the test accuracy was a little bit lower 84,4% instead of 84,8% (without augmentation).
 
-I fixed the learning rate to 0.1 now. No exponential decay. The next step is to be able to get a high training accuracy to see whether we can get the network to overfit the data generating function again...
+**The parameters have to be adjusted.**
 
-I manually early stopped the training with loss: 0.8872 - acc: 0.9688.
+I fixed the learning rate to 0.1 now. No exponential decay. The next step is to be able to get a high training accuracy to see whether we can get the network to overfit the data generating function...
 
-And the test accuracy got boosted a lot:
+I manually early stopped the training with a loss of 0.8872 and a training accuracy of 97%, which is good.
 
+And the test accuracy got boosted by a signifact factor:
 Test accuracy = 0.9583531274742676. That's a plus of 10%.
 
 That is really impressing. I am going to upload this new model into my tensorflow.js application.
 
 ![Screenshot from 2018-08-09 14-43-06.png]({{site.baseurl}}/images/Screenshot from 2018-08-09 14-43-06.png)
 
-(I can upload a badly cropped and skewed image and it gets recognized. Wow!)
-
-Next steps could be:
-
-- The colors of the images have to be normalized
-- Some of the signs are partially hidden or have a post in front of them
-- A better adaptive learning rate might be a good idea. I should evaluate different optimizers
+I can upload a badly cropped and skewed image now and it gets classified correctly. Wow! I am surprised how well that worked.
