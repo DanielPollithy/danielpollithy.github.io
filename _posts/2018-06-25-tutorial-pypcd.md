@@ -6,7 +6,7 @@ categories:
   - numpy
   - pointcloud
 mathjax: false
-featured: false
+featured: true
 comments: false
 title: Tutorial pypcd
 imagefeature: Pypcd_19_0.png
@@ -418,5 +418,3 @@ And voila: The waves are there. Although I have to admit that the colors are mis
 I guess that it is a rounding error (which results in the last column to be only zeros) but I am not quite sure.
 
 ![View]({{site.baseurl}}/images/Screenshot from 2018-06-25 14-42-23.png)
-
-
