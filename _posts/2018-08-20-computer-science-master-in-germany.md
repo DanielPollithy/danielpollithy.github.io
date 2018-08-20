@@ -90,7 +90,7 @@ On the same day I had honest conversations with three people offering flats and 
 
 We prepared an application portfolio containing prints of our savings, copies of our ID cards and more. The weekend came, we drove to Karlsruhe and visited four flats (the other two appointments came from immobilienscout24, were expensive and in general a bad match). The two flats we found on ebay had a really good price and the people were nicer.
 
-Responding the flat owner as soon as possible, and having the portfolio, lead to the fact that we could decide which flat to take. We took ~60 square meters raised ground floor with an equipped kitchen for approximately 800€ (electricity and internet not included). I think we made a fair catch and had a good amount of luck! 
+Responding the flat owner as soon as possible, and having the portfolio, lead to the fact that we could decide which flat to take. We took ~60 square meters raised ground floor with an equipped kitchen for approximately 800€ (incl. utilities). I think we made a fair catch and had a good amount of luck! 
 
 ## Moving and getting started
 
