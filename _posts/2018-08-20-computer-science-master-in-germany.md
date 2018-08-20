@@ -96,6 +96,7 @@ Responding the flat owner as soon as possible, and having the portfolio, lead to
 
 The semester starts in October...  Please be patient and come back to read more ;)
 
+![karlsruhe.png]({{site.baseurl}}/images/karlsruhe.png)
 
 
 (Photo by [maxmann](https://pixabay.com/photo-2307326/))
