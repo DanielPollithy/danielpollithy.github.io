@@ -7,11 +7,6 @@ mathjax: false
 featured: false
 comments: false
 title: Computer Science Master in Germany
-description: ''
-headline: ''
-modified: ''
-tags: ''
-imagefeature: ''
 ---
 ## Finding a computer science master in Germany
 
@@ -51,11 +46,11 @@ I did not know where to expect a positive answer from. Saarbrücken accepted rea
 
 ## How to make a decision
 
-I had hoped a little bit that part of the decision making would be have been done by negative responses from universities. But (un)fortunately three months before the master there will still all posibilites open.
+I thought a part of the decision making would have been done by negative responses from universities. But three months before the master there were still all posibilites open.
 
 ### The courses
 
-First of all I read through the list of offered courses again and viewed every department's website. What caught my interest? The KIT offered the largest course list and seven specializations, 800 students in the Master of Computer Science was also a lot. The fact that there were student groups building cool things was also a factor.
+First of all I read through the list of offered courses again and viewed every department's website. What caught my interest? The KIT offered the largest course list and seven specializations, 800 students in the master of computer science was also a lot. The fact that there were student groups building cool things was also a factor.
 
 ### Apartment market
 
@@ -100,8 +95,3 @@ The semester starts in October...  Please be patient and come back to read more 
 
 
 (Photo by [maxmann](https://pixabay.com/photo-2307326/))
-
-
-
-
-
