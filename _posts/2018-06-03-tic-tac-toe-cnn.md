@@ -7,6 +7,7 @@ categories:
   - scikit
   - python
   - machine-learning
+  - cnn
 mathjax: false
 featured: false
 comments: false
@@ -383,38 +384,3 @@ The following ideas would be fun starting points for new experiments:
 - Detect whether a state is legal or not
 - Check if there is already a winner
 - Build a KI for tic tac toe without telling it the rules
-
-
-
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
