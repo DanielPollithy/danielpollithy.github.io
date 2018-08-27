@@ -207,7 +207,7 @@ plt.axis('scaled');
 
 
 ```python
-# Aha! It's the point cloud logo. But we have to flip it horizontally
+# Aha! It's the point cloud logo. But we have to flip it vertically.
 # A minus applied to the y-data should be enough.
 plt.scatter(new_cloud_data[:, [0]], -new_cloud_data[:, [1]])
 plt.axis('scaled');
