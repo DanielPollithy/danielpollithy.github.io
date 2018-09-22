@@ -181,7 +181,7 @@ My intuition on how to read this graph is:
 
 ## Finding primes with a while loop
 
-The following program uses a while loop to classify whether a number is prime. Tensorflow can help to parallelize while loops "automagically". Imagine you could write loops that can be placed on GPUs instantaneously...
+The following program uses a while loop to tell whether a number is prime. Tensorflow can help to parallelize while loops "automagically". Imagine you could write loops that can be placed on GPUs instantaneously...
  
 Tensorflow's explains how the `tf.while_loop` works: [White paper tensorflow control flow](http://download.tensorflow.org/paper/white_paper_tf_control_flow_implementation_2017_11_1.pdf).
 
