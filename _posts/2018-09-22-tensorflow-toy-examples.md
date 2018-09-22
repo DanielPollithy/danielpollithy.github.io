@@ -48,7 +48,7 @@ c = tf.constant(13)
 result = a*a - b*b - c*c
 ```
  
-Obviously we would like the read the result but one might be surprised to see that no value is returned but instead we obtain a node from the computational graph...
+Obviously we would like to read the result but one might be surprised to see that no value is returned. Instead we obtain a node from the computational graph...
  
 `result.eval()` in an interactive session or `sess.run([result])` delivers what we expect!
 
@@ -97,11 +97,11 @@ print("{} Joule(?)".format(difference))
 
 ## Adding state to the graph
 
-Suppose we have a dynamical system like a simulation of a swing or of the populations in a forest. These systems have something called a **state**. In programming we represent and manipulate this with variables. This concepts also exists for tensorflow.
+Suppose we have a dynamical system like a simulation of a swing or of the populations in a forest. These systems have something called a **state**. In programming we represent and manipulate this with variables. This concept also exists for tensorflow.
 
-The following example calculates n fibonacci numbers and stores the found numbers in its variables. So the same graph is called n times and the variables' contents change over this time.
+The following example calculates n fibonacci numbers in a non-recursive way. So the same graph is called n times and the variables' contents change for every iteration.
 
-It is important to say that the manipulation of variables (reading and writing) justifies the need for another new thing called **control dependencies**. One can use them to assure the execution of a sequence in its order.
+It is important to say that the manipulation of variables (reading and writing) justifies the need for another new thing called **control dependencies**. One can use them to assure the execution of a sequence in its correct order.
 
 ```python
 import tensorflow as tf
@@ -164,5 +164,20 @@ fibs = np.asarray(numbers)[:, 1].flatten()
 
 print(fibs)
 ```
+
+The assignment `file_writer = tf.summary.FileWriter('tf_logs', sess.graph)` writes the computational graph to disk and we can visualize it with tensorboard:
+
+![Screenshot from 2018-09-22 14-42-18.png]({{site.baseurl}}/images/Screenshot from 2018-09-22 14-42-18.png)
+
+I am not sure but I think: The yellow line shows a connection where the data could have been manipulated, the solid grey line where data flows without manipulation and the dashed lines are control flow operations. 
+
+The blue rectangles with round corners are variables. The white ellipsis with grey border is an operation and the ellipsis with red dashed border is the grouping.
+ 
+My intuition on how to read this graph is:
+
+ - Find operations which do not have incoming dashed grey lines (control flow) and no incoming lines from such nodes (this excludes "Assign_2"). They are free to be evaluated without prerequisites. -> "Assign"
+ - After "Assign" is done it is the turn of "Add" and then "Assign_1" and "Assign_2" could potentially be executed in parallel
+ 
+
 
 
