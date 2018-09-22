@@ -6,6 +6,7 @@ featured: false
 comments: false
 title: Tensorflow Toy Examples
 categories:
+  - personal
   - tensorflow
 ---
 I have been using tensorflow for some examples in this blog. Building a sequential model and evaluating some metrics was easy. But when I wanted to do a little bit more (for example image data set augmentation) I got really stuck.
@@ -204,7 +205,9 @@ A NextIteration is enabled when its input is available.
 The prime search code:
 
 ```python
-# Is this number a prime?
+# --------------------------
+# PRIME CHECKING TENSORFLOW
+# --------------------------
 import tensorflow as tf
 
 # The number at the bench
@@ -294,4 +297,3 @@ All of the python code which was written to manipulate the variables was transla
 ![Screenshot from 2018-09-22 22-54-15.png]({{site.baseurl}}/images/Screenshot from 2018-09-22 22-54-15.png)
 
 The big benefit of this (telling from what I read on the web) is that it supports auto differentiation. So one could write a loop to solve some problem and end-to-end learning could still be possible.
-
