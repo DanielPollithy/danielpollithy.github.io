@@ -1,12 +1,12 @@
 ---
 layout: post
 published: true
-categories:
-  - personal
-mathjax: false
+mathjax: true
 featured: false
 comments: false
 title: Tensorflow Toy Examples
+categories:
+  - tensorflow
 ---
 I have been using tensorflow for some examples in this blog. Building a sequential model and evaluating some metrics was easy. But when I wanted to do a little bit more (for example image data set augmentation) I got really stuck.
 
