@@ -328,7 +328,7 @@ def _parse_function(filename, intensity):
 
 
 def noisening(image, intensity, filename):
-    """Adds random noise to the image"
+    """Adds random noise to the image"""
     noise = tf.random_uniform([H, W, 3], minval=1, maxval=100, dtype=tf.int32)
 
     image = tf.cast(image, tf.int32)
@@ -465,8 +465,3 @@ The graph contains the operations outside of the functions only.
 Opening the blur function shows us the bigger parts of the computational graph.
 
 ![Screenshot from 2018-09-23 18-57-18.png]({{site.baseurl}}/images/Screenshot from 2018-09-23 18-57-18.png)
-
-
-
-
-
