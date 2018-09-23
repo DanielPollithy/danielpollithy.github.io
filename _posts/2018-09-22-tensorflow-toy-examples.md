@@ -456,12 +456,12 @@ with tf.Session() as sess:
 ```
 
 
-It is interesting to note the use of the dataset and that the writing operation could not be part of the `.map` function because it would not get called because there is no other operation depending on it.
+Note the use of `tf.data.Dataset` and that the `tf.write_file` operation could not be part of the `.map` function because it would not get called due to no other operation depending on it.
 
-The graph contains the operations outside of the functions only.
+The main graph contains the operations outside of the functions only.
 
 ![Screenshot from 2018-09-23 18-56-31.png]({{site.baseurl}}/images/Screenshot from 2018-09-23 18-56-31.png)
 
-Opening the blur function shows us the bigger parts of the computational graph.
+Opening for example the blur function shows us the bigger parts of the computational graph.
 
 ![Screenshot from 2018-09-23 18-57-18.png]({{site.baseurl}}/images/Screenshot from 2018-09-23 18-57-18.png)
