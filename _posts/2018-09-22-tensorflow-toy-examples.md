@@ -296,3 +296,177 @@ All of the python code which was written to manipulate the variables was transla
 ![Screenshot from 2018-09-22 22-54-15.png]({{site.baseurl}}/images/Screenshot from 2018-09-22 22-54-15.png)
 
 The big benefit of this (telling from what I read on the web) is that it supports auto differentiation. So one could write a loop to solve some problem and end-to-end learning could still be possible.
+
+## Image manipulation
+
+Now I have made a toy example that:
+
+- Reads all images from a list of filenames
+- Makes them look old
+- Stores the images back to disk
+
+![2.JPG.new.JPG]({{site.baseurl}}/images/2.JPG.new.JPG)
+
+```python
+# This tensorflow program makes an image look old and sepia style
+
+import tensorflow as tf
+import numpy as np
+import scipy.stats as st
+
+# The target dimensions of the image
+W = 600
+H = 400
+
+
+def _parse_function(filename, intensity):
+	"""Reads an image from a file, decodes it into a dense tensor"""
+    image_string = tf.read_file(filename)
+    image_decoded = tf.image.decode_jpeg(image_string)
+    image_resized = tf.image.resize_images(image_decoded, [H, W])
+    return image_resized, intensity, filename
+
+
+def noisening(image, intensity, filename):
+    """Adds random noise to the image"
+    noise = tf.random_uniform([H, W, 3], minval=1, maxval=100, dtype=tf.int32)
+
+    image = tf.cast(image, tf.int32)
+    image = image + noise
+
+    # all pixels between 1, 255
+    image = tf.clip_by_value(image, 1, 255)
+
+    image = tf.cast(image, tf.uint8)
+
+    return image, intensity, filename
+
+
+def sepia(image, intensity, filename):
+	"""Changes the colors of the image to sepia"""
+    
+    image = tf.cast(image, tf.float32)
+
+    # Extract the color channel
+    red = image[:, :, 0]
+    green = image[:, :, 1]
+    blue  = image[:, :, 2]
+
+    # Apply a color matrix from
+    # https://www.techrepublic.com/blog/how-do-i/how-do-i-convert-images-to-grayscale-and-sepia-tone-using-c/
+    output_red   = red * 0.393 + green * 0.769 + blue * 0.189
+    output_green = red * 0.349 + green * 0.686 + blue * 0.168
+    output_blue  = red * 0.272 + green * 0.534 + blue * 0.131
+
+    # bring color channels back together
+    image = tf.stack([output_red, output_green, output_blue], axis=-1)
+
+    image = tf.cast(image, tf.uint8)
+
+    return image, intensity, filename
+
+
+def gkern(kernlen=21, nsig=3):
+    """Returns a 2D Gaussian kernel array."""
+
+    interval = (2*nsig+1.)/(kernlen)
+    x = np.linspace(-nsig-interval/2., nsig+interval/2., kernlen+1)
+    kern1d = np.diff(st.norm.cdf(x))
+    kernel_raw = np.sqrt(np.outer(kern1d, kern1d))
+    kernel = kernel_raw/kernel_raw.sum()
+    return kernel
+
+
+def blur(image, intensity, filename):
+    """Blur the image with gaussian"""
+    
+    # Make Gaussian Kernel with desired specs.
+    gauss_kernel = gkern(10, nsig=3)
+
+    # Expand dimensions of `gauss_kernel` for `tf.nn.conv2d` signature.
+    gauss_kernel = gauss_kernel[:, :, tf.newaxis, tf.newaxis]
+
+    image = tf.cast(image, tf.float32)
+
+    # Convolution only works on 4d tensor
+    batch = image[:, :, :, tf.newaxis]
+
+    # Convolve.
+    batch = tf.nn.conv2d(batch, gauss_kernel, strides=[1, 1, 1, 1], padding="SAME")
+
+    image = tf.squeeze(batch)
+
+    image = tf.cast(image, tf.uint8)
+
+    return image, intensity, filename
+
+
+def frame(image, intensity, filename):
+    """Add a black frame to the image"""
+
+    width = 20
+    half = 10
+
+    image = tf.image.pad_to_bounding_box(
+        image,
+        half,
+        half,
+        H + width,
+        W + width
+    )
+
+    return image, intensity, filename
+
+
+# A vector of filenames.
+filenames = tf.constant(["1.JPG",
+                         "2.JPG"])
+
+# `intensities[i]` is the intensity for the image in `filenames[i].
+# 0 to 100
+intensities = tf.constant([50, 100])
+
+# Create a new dataset zip(filenames, intensities)
+dataset = tf.data.Dataset.from_tensor_slices((filenames, intensities))
+
+# Pipeline for every image
+dataset = dataset.map(_parse_function)
+dataset = dataset.map(noisening)
+dataset = dataset.map(blur)
+dataset = dataset.map(sepia)
+dataset = dataset.map(frame)
+
+# Get an iterator without placeholders that can be used once
+iterator = dataset.make_one_shot_iterator()
+
+# The nodes to work with in the graph
+image, intensity, filename = iterator.get_next()
+
+# Store the processed image
+new_filename = filename + ".new.JPG"
+image_string = tf.image.encode_jpeg(image)
+write_op = tf.write_file(new_filename, image_string)
+
+
+with tf.Session() as sess:
+    file_writer = tf.summary.FileWriter('tf_logs', sess.graph)
+    sess.run(tf.global_variables_initializer())
+    for i in range(2):
+        sess.run(write_op)
+```
+
+
+It is interesting to note the use of the dataset and that the writing operation could not be part of the `.map` function because it would not get called because there is no other operation depending on it.
+
+The graph contains the operations outside of the functions only.
+
+![Screenshot from 2018-09-23 18-56-31.png]({{site.baseurl}}/images/Screenshot from 2018-09-23 18-56-31.png)
+
+Opening the blur function shows us the bigger parts of the computational graph.
+
+![Screenshot from 2018-09-23 18-57-18.png]({{site.baseurl}}/images/Screenshot from 2018-09-23 18-57-18.png)
+
+
+
+
+
