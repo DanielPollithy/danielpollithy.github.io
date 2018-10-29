@@ -126,6 +126,8 @@ The LSTM creates a hidden representation of a line and shall then regenerate the
 
 #### 1
 
+![reconstructed_lines_1.png]({{site.baseurl}}/images/reconstructed_lines_1.png)
+
 
 ## Code autoencoder
  
