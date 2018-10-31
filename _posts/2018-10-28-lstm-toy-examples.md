@@ -5,6 +5,8 @@ mathjax: false
 featured: false
 comments: false
 title: Lstm Toy Examples
+categories:
+  - personal
 ---
 Some impression of LSTM architectures for simple math functions.
 
@@ -127,6 +129,175 @@ The LSTM creates a hidden representation of a line and shall then regenerate the
 #### 1
 
 ![reconstructed_lines_1.png]({{site.baseurl}}/images/reconstructed_lines_1.png)
+
+### Sine
+
+I just came back from a session with my advisor at university and a third person told us that he was not able to "learn" the sine and cosine function with lstm.
+ 
+So I generate a sine:
+ 
+![new_sine.png]({{site.baseurl}}/images/new_sine.png)
+
+Have the following simple keras code:
+
+```
+from keras.layers import Input, Dense, LSTM, RepeatVector
+from keras.models import Model, Sequential
+from keras.initializers import RandomNormal, lecun_normal
+
+def get_model(latent_dim=1):
+
+  model = Sequential()
+  model.add(LSTM(32, input_shape=(timesteps, input_dim), return_sequences=True))
+  model.add(LSTM(latent_dim, return_sequences=False))
+
+  # repeat the latent vector in order to 
+  # feed it to the next lstm
+  model.add(RepeatVector(timesteps))
+
+  model.add(LSTM(32, input_shape=(timesteps, latent_dim), return_sequences=True))
+  model.add(LSTM(1, return_sequences=True))
+
+  print(model.summary())
+  
+  return model
+
+```
+
+I train with default MSE and rmsprop:
+
+```
+model = get_model(latent_dim=1)
+
+model.compile(loss='mean_squared_error', optimizer='rmsprop')
+
+for i in range(25):
+  model.fit(x_train, x_train,
+            epochs=10,
+            batch_size=batch_size,
+            shuffle=True,
+            validation_data=(x_val, x_val))
+  
+  training_sample = x_train[np.random.randint(x_train.shape[0])]
+  predicted = model.predict(training_sample.reshape(1, timesteps, input_dim))
+  plt.scatter(x, predicted, c='r')
+  plt.plot(x, training_sample, c='b')
+  
+  plt.show()
+```
+
+```
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+lstm_5 (LSTM)                (None, 100, 32)           4352      
+_________________________________________________________________
+lstm_6 (LSTM)                (None, 1)                 136       
+_________________________________________________________________
+repeat_vector_2 (RepeatVecto (None, 100, 1)            0         
+_________________________________________________________________
+lstm_7 (LSTM)                (None, 100, 32)           4352      
+_________________________________________________________________
+lstm_8 (LSTM)                (None, 100, 1)            136       
+=================================================================
+Total params: 8,976
+Trainable params: 8,976
+Non-trainable params: 0
+```
+
+![sine_1_latent.gif]({{site.baseurl}}/images/sine_1_latent.gif)
+ 
+### Sine and cosine
+
+Maybe I understood him wrong. He said something like "I wanted to enter zero and get cosine, and one then get sine".
+ 
+There could potentially be a lot of interpretations for this but the output is understandable.
+He wants to input 0 or 1 and get cosine or sine.
+ 
+We could do this by inputting arbitrary numbers and expect different outcomes although this seems to be wrong because it is not a sequence. The more I think about it the more it sounds like the problem is framed in the wrong way. 
+ 
+Let's just do it...
+
+![sine_and_cosine.png]({{site.baseurl}}/images/sine_and_cosine.png)
+
+The same lstm gets as input a lot of zeros if we want an cosine and a lot of ones if we want the sine: f(0,0,0,0,0,0,0,..) = cos(x) and f(1,1,1,1,1,1,...) = sin(x)
+ 
+My assumption is that it learns sinus displaced between the phase of sin and cos.
+What it did was to learn one perfectly and ignore the other one...
+
+![s.png]({{site.baseurl}}/images/s.png)
+![s2.png]({{site.baseurl}}/images/s2.png)
+ 
+... thinking out loud again: It does not matter too much how he wanted to solve it but that the mapping has to be learned. So I am going to change the architecture to a sequence to sequence autoencoder:
+
+```
+
+from keras.layers import Input, Dense, LSTM, RepeatVector
+from keras.models import Model, Sequential
+from keras.initializers import RandomNormal, lecun_normal
+
+def get_model(latent_dim=1):
+  
+  inputs = Input(shape=(timesteps, input_dim))
+  encoded = LSTM(32, input_shape=(timesteps, input_dim), return_sequences=True)(inputs)
+  encoded = LSTM(32, input_shape=(timesteps, input_dim), return_sequences=True)(encoded)
+  encoded = LSTM(latent_dim, input_shape=(timesteps, input_dim), return_sequences=False)(encoded)
+  
+  latent_state = RepeatVector(timesteps)(encoded)
+  
+  decoded = LSTM(32, input_shape=(timesteps, input_dim), return_sequences=True)(latent_state)
+  decoded = LSTM(32, input_shape=(timesteps, input_dim), return_sequences=True)(decoded)
+  decoded = LSTM(1, input_shape=(timesteps, input_dim), return_sequences=True)(decoded)
+
+  autoencoder = Model(inputs, decoded)
+  
+  # decoder  
+  encoded_input = Input(shape=(latent_dim,))
+  deco = autoencoder.layers[-4](encoded_input)
+  deco = autoencoder.layers[-3](deco)
+  deco = autoencoder.layers[-2](deco)
+  deco = autoencoder.layers[-1](deco)
+  
+  # create the decoder model
+  decoder = Model(encoded_input, deco)
+  
+  # encoder
+  encoder = Model(inputs, encoded)
+  
+  print(autoencoder.summary())
+  
+  return autoencoder, decoder, encoder
+
+```
+ 
+I feed it a sine with a given phase displacement and it shall reconstruct the sine with one latent parameter.
+ 
+![phase_displ2.png]({{site.baseurl}}/images/phase_displ2.png)
+ 
+Which works:
+ 
+![works.png]({{site.baseurl}}/images/works.png)
+ 
+Now I interpolate in the linear space of the latent variable from -1 to -0.5 and the following image shows what I get:
+ 
+![reconstruction_by_one_latent_param.png]({{site.baseurl}}/images/reconstruction_by_one_latent_param.png)
+ 
+So by changing the latent value we can displace the phase of the sine (except for the beginning, which also has problems reconstructing but it gets better slowly when trained more epochs).
+ 
+Now the phase displacement was just 0.1 * pi/2. To scale this solution up to the "task" I have to increase the maximum displacement to pi/2 which is the shift of sine to cosine: sin(x+pi/2) = cos(x).
+ 
+That this is a much harder problem is obvious when we look at the training data:
+![sine_pi_half.png]({{site.baseurl}}/images/sine_pi_half.png)
+ 
+![sine_xor.png]({{site.baseurl}}/images/sine_xor.png)
+ 
+The first examples with waves "formed" the manifold just to route the sines over a given point. This is not possible anymore. It is interesting to note that the network needs a far longer time to start bending the predicted curve. It stayes parallel to the x-axis for at least 100 epochs.
+ 
+![linear.png]({{site.baseurl}}/images/linear.png)
+
+
+
+
 
 
 ## Code autoencoder
@@ -266,21 +437,3 @@ plt.show()
 ```
 
 ![reconstructed_lines_5.png]({{site.baseurl}}/images/reconstructed_lines_5.png)
-
-
-
-
-
-
- 
-
-
-
-
-
- 
-
-
- 
-
-
