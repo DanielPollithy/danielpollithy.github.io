@@ -7,7 +7,7 @@ comments: false
 title: Lstm Toy Examples
 imagefeature: /images/sine_cos.png
 ---
-Some impression of LSTM architectures for simple math functions: seq2seq, seq2vec and then seq-seq-autoencoder. In particular the last part is an experiment of reconstructing sinoid waves with phase displacement from a single latent parameter.
+Some impressions of LSTM architectures for simple math functions: seq2seq, seq2vec and then seq-seq-autoencoder. In particular the last part is an experiment of reconstructing sinoid waves with phase displacement from a single latent parameter.
 
 ## Sequence to sequence
 
@@ -286,6 +286,7 @@ So by changing the latent value we can displace the phase of the sine (except fo
 Now the phase displacement was just 0.1 * pi/2. To scale this solution up to the "task" I have to increase the maximum displacement to pi/2 which is the shift of sine to cosine: sin(x+pi/2) = cos(x).
  
 That this is a much harder problem is obvious when we look at the training data:
+ 
 ![sine_pi_half.png]({{site.baseurl}}/images/sine_pi_half.png)
  
 ![sine_xor.png]({{site.baseurl}}/images/sine_xor.png)
@@ -308,7 +309,7 @@ I have to mention that this training was done with Adam and not with rmsprop any
  
 ![phase_displacement_lstm.png]({{site.baseurl}}/images/phase_displacement_lstm.png)
  
-I still have the problem with the initial value but the rest looks good. 
+I still have the problem in the area of x < 0.2, but the rest looks good. 
  
 If I only interpolate between 0.6 to 0.8 I get good enough cosine waves. (Blue points is the sine for reference): 
  
@@ -318,16 +319,18 @@ And I can flip this by shifting the interpolation frame to 0.9-1.0:
  
 ![sin_end.png]({{site.baseurl}}/images/sin_end.png)
  
-To conclude this experiment. I can understand how to end up in a dead end street if the architecture is not chosen apropriately but if the autoencoder is trained in a real autoencoding way then the one latent variable can be used to control the phase displacement of such a sine.
+To conclude this experiment: I can understand how to end up in a dead end street if the architecture is not chosen apropriately. But if the autoencoder is trained in a real "autoencoding" way then the one latent variable can be used directly to control the phase displacement of such a sine wave.
 
+ 
+ 
  
 
 
 
 
-
-
 ## Code autoencoder
+ 
+Some code snippets for data generation, training and evaluation.
  
 ### Data generation
 
