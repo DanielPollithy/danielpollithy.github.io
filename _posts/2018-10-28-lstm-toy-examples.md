@@ -5,8 +5,6 @@ mathjax: false
 featured: false
 comments: false
 title: Lstm Toy Examples
-categories:
-  - personal
 ---
 Some impression of LSTM architectures for simple math functions.
 
