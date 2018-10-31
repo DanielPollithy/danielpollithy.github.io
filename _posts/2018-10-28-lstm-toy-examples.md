@@ -2,11 +2,12 @@
 layout: post
 published: true
 mathjax: false
-featured: false
+featured: true
 comments: false
 title: Lstm Toy Examples
+imagefeature: /images/sine_cos.png
 ---
-Some impression of LSTM architectures for simple math functions.
+Some impression of LSTM architectures for simple math functions: seq2seq, seq2vec and then seq-seq-autoencoder. In particular the last part is an experiment of reconstructing sinoid waves with phase displacement from a single latent parameter.
 
 ## Sequence to sequence
 
@@ -292,6 +293,34 @@ That this is a much harder problem is obvious when we look at the training data:
 The first examples with waves "formed" the manifold just to route the sines over a given point. This is not possible anymore. It is interesting to note that the network needs a far longer time to start bending the predicted curve. It stayes parallel to the x-axis for at least 100 epochs.
  
 ![linear.png]({{site.baseurl}}/images/linear.png)
+
+After 150 epochs the sine waves start to become reconstructed:
+ 
+![ultimate_sine.png]({{site.baseurl}}/images/ultimate_sine.png)
+ 
+100 epochs later the cosine gets approximated:
+ 
+![ultimate_cosine.png]({{site.baseurl}}/images/ultimate_cosine.png)
+ 
+I have to mention that this training was done with Adam and not with rmsprop anymore.
+ 
+**Result:** Interpolating the hidden value between 0.5 and 1.0 results in phase displaced waves:
+ 
+![phase_displacement_lstm.png]({{site.baseurl}}/images/phase_displacement_lstm.png)
+ 
+I still have the problem with the initial value but the rest looks good. 
+ 
+If I only interpolate between 0.6 to 0.8 I get good enough cosine waves. (Blue points is the sine for reference): 
+ 
+![sine_cos.png]({{site.baseurl}}/images/sine_cos.png)
+ 
+And I can flip this by shifting the interpolation frame to 0.9-1.0:
+ 
+![sin_end.png]({{site.baseurl}}/images/sin_end.png)
+ 
+To conclude this experiment. I can understand how to end up in a dead end street if the architecture is not chosen apropriately but if the autoencoder is trained in a real autoencoding way then the one latent variable can be used to control the phase displacement of such a sine.
+
+ 
 
 
 
