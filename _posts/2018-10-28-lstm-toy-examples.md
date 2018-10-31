@@ -5,7 +5,9 @@ mathjax: false
 featured: true
 comments: false
 title: Lstm Toy Examples
-imagefeature: /images/sine_cos.png
+imagefeature: sine_cos.png
+categories:
+  - keras
 ---
 Some impressions of LSTM architectures for simple math functions: seq2seq, seq2vec and then seq-seq-autoencoder. In particular the last part is an experiment of reconstructing sinoid waves with phase displacement from a single latent parameter.
 
