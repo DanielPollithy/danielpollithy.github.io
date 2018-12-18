@@ -26,6 +26,8 @@ If I want to process the 3d data stored in pcd with python I have got two option
 Like the post title already says I am going to explain how to use pypcd step by step in the following few lines of code.
 
 
+## Installtion pypcd python2
+
 ```python
 # Install pypcd for the current python version of the kernel
 import sys
@@ -41,6 +43,35 @@ print(pypcd.__version__)
 
     0.1.1
 
+
+## Installtion pypcd python3
+
+If you are using python3.5 or python3.6 you are going to run into the following error when trying to work with pypcd:
+
+```
+Python 3.6.5 (default, Mar 29 2018, 03:28:50) 
+[GCC 5.4.0 20160609] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import pypcd
+>>> pc = pypcd.PointCloud.from_path('cloud.pcd')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: module 'pypcd' has no attribute 'PointCloud'
+```
+
+The problem is resolved in the following fork of pypcd for python3:
+[https://github.com/DanielPollithy/pypcd](https://github.com/DanielPollithy/pypcd)
+
+Follow the next steps to install pypcd which was fixed to work with Python3.X:
+
+
+1. Install pypcd from github:
+
+`python3.6 -m pip install --user https://github.com/DanielPollithy/pypcd.git`
+
+2. Change the import statement
+
+`from pypcd import pypcd`
 
 ## PCD format
 
