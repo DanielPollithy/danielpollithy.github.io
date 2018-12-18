@@ -60,14 +60,15 @@ AttributeError: module 'pypcd' has no attribute 'PointCloud'
 ```
 
 The problem is resolved in the following fork of pypcd for python3:
+
 [https://github.com/DanielPollithy/pypcd](https://github.com/DanielPollithy/pypcd)
 
-Follow the next steps to install pypcd which was fixed to work with Python3.X:
+Follow the next steps to install a version of pypcd which was fixed to be compatible with Python3.X:
 
 
-1. Install pypcd from github:
+1. Install pypcd from github
 
-`python3.6 -m pip install --user https://github.com/DanielPollithy/pypcd.git`
+`python3.6 -m pip install --user git+https://github.com/DanielPollithy/pypcd.git`
 
 2. Change the import statement
 
