@@ -26,7 +26,7 @@ If I want to process the 3d data stored in pcd with python I have got two option
 Like the post title already says I am going to explain how to use pypcd step by step in the following few lines of code.
 
 
-## Installtion pypcd python2
+## Installing pypcd for python2
 
 ```python
 # Install pypcd for the current python version of the kernel
@@ -44,7 +44,7 @@ print(pypcd.__version__)
     0.1.1
 
 
-## Installtion pypcd python3
+## Installing pypcd for python3
 
 If you are using python3.5 or python3.6 you are going to run into the following error when trying to work with pypcd:
 
