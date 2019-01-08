@@ -1,12 +1,12 @@
 ---
 layout: post
 published: true
-categories:
-  - personal
 mathjax: false
-featured: false
+featured: true
 comments: false
 title: Visualize Grasping Movements
+categories:
+  - python
 ---
 ## Visualizing joint angles of grasps
 
@@ -181,8 +181,8 @@ Now call the MMMDataGloveConverter:
 
 Notes:
 
- - Use the config file I have shown above
- - You have to add the "--mode test" or else it won't work
+- Use the config file I have shown above
+- You have to add the "--mode test" or else it won't work
  
  ![Screenshot from 2019-01-08 16-27-27.png]({{site.baseurl}}/images/Screenshot from 2019-01-08 16-27-27.png)
 
