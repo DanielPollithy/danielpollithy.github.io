@@ -42,7 +42,7 @@ The joint angles of multiple subjects were collected with a CyberGlove while the
 
 The following image taken from the Paper "Biomechanical Characteristics of Hand Coordination in Grasping Activities of Daily Living" by Liu et al. explains the hand skeleton and which parts are measured by the CyberGlove.
 
-![](/https://www.researchgate.net/publication/289495089/figure/fig4/AS:341327033192461@1458390114726/CyberGlove-sensor-placement-and-corresponding-kinematic-model-of-human-hand-A.png))
+[View Image on Researchgate](/https://www.researchgate.net/publication/289495089/figure/fig4/AS:341327033192461@1458390114726/CyberGlove-sensor-placement-and-corresponding-kinematic-model-of-human-hand-A.png))
 
 Opening one random grasp shows us that it is tabular data, but what are the columns? They are described in the downloaded folder of the HUST dataset:
 
@@ -297,7 +297,3 @@ Now calling `python create_gif.py grasp1` results in three gifs in the specified
 - And a minimized version with pause
 
 ![anim_closeup.gif]({{site.baseurl}}/images/anim_closeup.gif)
-
-
-
-
