@@ -4,13 +4,13 @@ published: true
 mathjax: true
 featured: true
 comments: false
-title: Sum-Product Network
+title: Sum-Product Network 1 - Overview
 description: An introduction to SPNs with a visual explanation
 categories:
   - spn
 imagefeature: Screenshot from 2019-02-01 20-29-11.png
 ---
-This post aims to explain Sum-Product Networks with a graphical explanation. It also contains an introduction on inference and training.
+This post aims to give an overview of Sum-Product Networks with a graphical explanation. It also contains an introduction on inference.
 
 **TL;DR**
 Sum-Product Network is a group of probabilistic graphical models with the nice property that inference is linear in time to the size of the network. They consist only of univariate distributions, sums and products.
@@ -26,7 +26,7 @@ We start with a toy example: Imagine you own a web shop and the products you are
 
 You noticed this **customer Joe**. He really bought a lot of stuff. A quick report gives you a list of items he bought by their attributes:
 
-<center>
+
   
 | Name            | Price | Category | Packet Size | Weight |
 |-----------------|-------|----------|-------------|--------|
@@ -38,7 +38,7 @@ You noticed this **customer Joe**. He really bought a lot of stuff. A quick repo
 | Light sabor     | $     | stuff    | s           | light  |
 | Lego Star Wars  | $$$   | stuff    | m           | heavy  |
   
-</center>
+
 
 **Now you are wondering:** Which of my other products should I advertise to Joe?
 
@@ -114,6 +114,7 @@ First: A SPN can be any univariate distribution
 Second: A product over disjunct variables is a SPN
 
 ![graph4.png]({{site.baseurl}}/images/graph4.png)
+
 (the big X refers signifies a product)
 
 Third: A weighted sum of SPNs over the same variables is an SPN
@@ -164,7 +165,7 @@ The root is also consistent because:
 
 Now that we have a SPN, what is it good for?
 
-1. All Marginals Are Computable in Linear Time
+#### All Marginals Are Computable in Linear Time
 
 Example: What is the probability of **P(Price=$$$)** ?
 
@@ -176,22 +177,24 @@ And we select the probability of the variable price at "high" ($$$).
 ![Screenshot from 2019-02-01 19-46-18.png]({{site.baseurl}}/images/Screenshot from 2019-02-01 19-46-18.png)
 
 Now we propagate up to the sum node.
+
 ![Screenshot from 2019-02-01 19-51-43.png]({{site.baseurl}}/images/Screenshot from 2019-02-01 19-51-43.png)
 
 The last propagation to the root is multiplication with 1.0:
+
 ![Screenshot from 2019-02-01 19-52-35.png]({{site.baseurl}}/images/Screenshot from 2019-02-01 19-52-35.png)
 
 **That's it: Now we know that P(price=$$$) = 0.21**
 
 (Note: If the SPN is not normalized, then we would have to divide this result by the partition function Z)
 
-2. All MAP States Are Computable in Linear Time
+#### All MAP States Are Computable in Linear Time
 
 Let's consider the case that it is sunday and we can only send light and small packages.
 What are the MAP states of the joint distribution?
 
 In other terms: 
-$$ arg_{price, category} max P(Price=price, Category=category \| Weight=light, Size=small) $$
+$$ arg_{price, category} max P(Price=price, Category=category | Weight=light, Size=small) $$
 
 How does it work?
 1. We exchange the sum-nodes by **max-nodes**
@@ -200,6 +203,7 @@ How does it work?
 4. Select subtree by following the max of the calculated weights under the max nodes
 
 In the following picture you can see the max-node and the selected probabilities which are fixed (the evidence).
+
 ![Screenshot from 2019-02-01 20-10-46.png]({{site.baseurl}}/images/Screenshot from 2019-02-01 20-10-46.png)
 
 The median and mode are picked (in red). The following shows the upward pass:
@@ -215,7 +219,10 @@ We found out that we should advertise medium priced tech if we only want to send
 
 ## What comes next?
 
-In a subsequent write-up I am going to explain how to learn the parameters of a SPN. 
+In a subsequent post I am going to explain:
+
+- how to learn the parameters of a SPN and
+- how to learn the structure of an SPN.
 
 
 ## Sources
@@ -225,10 +232,3 @@ https://www.youtube.com/watch?v=eF0APeEIJNw
 http://spn.cs.washington.edu/talks/Gens_SLSPN_ICML2013.pdf
 
 https://uwaterloo.ca/data-analytics/sites/ca.data-analytics/files/uploads/files/oct17spn-guest-lecture-stat946-oct17-2017.pdf
-
-
-
-
-
-
-
