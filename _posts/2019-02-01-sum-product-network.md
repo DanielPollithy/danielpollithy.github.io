@@ -26,6 +26,8 @@ We start with a toy example: Imagine you own a web shop and the products you are
 
 You noticed this **customer Joe**. He really bought a lot of stuff. A quick report gives you a list of items he bought by their attributes:
 
+<center>
+  
 | Name            | Price | Category | Packet Size | Weight |
 |-----------------|-------|----------|-------------|--------|
 | Notebook        | $$$   | tech     | m           |  heavy |
@@ -35,6 +37,8 @@ You noticed this **customer Joe**. He really bought a lot of stuff. A quick repo
 | Star Wars Shirt | $     | clothes  | m           | light  |
 | Light sabor     | $     | stuff    | s           | light  |
 | Lego Star Wars  | $$$   | stuff    | m           | heavy  |
+  
+</center>
 
 **Now you are wondering:** Which of my other products should I advertise to Joe?
 
@@ -58,25 +62,46 @@ Imagine we had a pool of approximations of the original function f. The approxim
 
 We are looking for the hypothesis h which has the highest probability of producing the buying history of Joe which we are going to call our training data.
 
-$$ h_{ML} = arg_{h} max P(training data \| h) \cdot P(h) $$
+$$ h_{ML} = arg_{h} max P(training data | h) \cdot P(h) $$
 
 ### Probabilistic Graphical Model
 
-In these models we draw a vertex in a graph for every random variable and an edge represents some kind of dependency or correlation.
+In these models we draw a vertex in a graph for every random variable and an edge to represent some kind of causality (Bayesian Network) or correlation (Markov Network).
 
 ![RandomVariables.png]({{site.baseurl}}/images/RandomVariables.png)
 
 Advantages of these models are that they are interpretable and you can combine data with a-priori knowledge. 
 In our case, we know that the price depends on the Packet Size and the Weight because our fulfillment partner charges differently for packets.
-And the second information: You only call things "tech" if they are at price level $$ or $$$, everything else is called "stuff".
+And the second information: The category influences all of the other variables.
 
 In a Markov Network these dependencies add edges between the vertices:
+
 ![graph2.png]({{site.baseurl}}/images/graph2.png)
 
-You can imagine that in real world scenarios these networks get huge because products could have a lot of attributes and there are multiple levels on influencing.
-Inference in these graphs is in general NP-complete. The same property holds for Bayesian Networks. Because of that, they are called **intractable**.
+You can imagine, that in real world scenarios these networks get huge because products could have a lot of attributes and there are multiple levels on influencing.
+Inference in these graphs is in general **NP-complete**. The same property holds for Bayesian Networks. Because of that, they are called **intractable**.
 
-This is the problem where Sum-Product Networks come to rescue our CPU.
+This is the problem where Sum-Product Networks come to rescue.
+
+## SPN Idea
+
+We want to build a probabilistic graphical model which only contains univariate distributions, sums and products. The sums can be interpreted as mixtures/clusterings whereas the products have the interpretation of a "part of" relationship.
+
+We can illustrate the training data with the dimsions on the y-axis and the samples on the x-axis in the following plot:
+
+![Screenshot from 2019-02-01 20-56-53.png]({{site.baseurl}}/images/Screenshot from 2019-02-01 20-56-53.png)
+
+A univariate distribution models the probabilities of "rectangles in a row":
+For example the three data points in dimension 3 could be modeled by a binomial distribution.
+
+![Screenshot from 2019-02-01 21-01-08.png]({{site.baseurl}}/images/Screenshot from 2019-02-01 21-01-08.png)
+
+A **product node** can be visualized as a partitioning of dimensions. In the toy example this will be the three attributes {price, size, weight} seperated from {category}.
+
+![Screenshot from 2019-02-01 21-04-20.png]({{site.baseurl}}/images/Screenshot from 2019-02-01 21-04-20.png)
+
+A **sum node** signifies a paritioning of the data points (in the following toy example this could be Amazon's data (red) and your shop's data (green)):
+![Screenshot from 2019-02-01 21-05-50.png]({{site.baseurl}}/images/Screenshot from 2019-02-01 21-05-50.png)
 
 ### Rules SPN
 
