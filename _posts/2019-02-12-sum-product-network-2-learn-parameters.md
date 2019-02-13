@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-mathjax: false
+mathjax: true
 featured: false
 comments: false
 title: Sum-Product Network 2 - Learn Parameters
@@ -407,22 +407,3 @@ plt.show()
 Although it is really simple it is not stable. When P(X,Y) comes close to 1 my update rules seem to destroy everything. I am going to explore these issues when I am really explaining what I am implementing in the next post.
 
 ![error_spn.png]({{site.baseurl}}/images/error_spn.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
