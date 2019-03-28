@@ -12,9 +12,9 @@ A fellow student counted the most frequent exam questions for the course "Grundl
 
 ## About the course
 
-I heard the course in the winter semester 2018/2019 by Dr. Stüker. The recordings from the year before are available on Youtube; he told us that the contents are still up-to-date.
+I attended the course in the winter semester 2018/2019 by Dr. Stüker. The recordings from the year before are available on Youtube; he told us that the contents are still up-to-date.
 
-The general task is called **continuous speech recognition**:
+The general task is called **continuous speech recognition**. ASR:
 To transform a recording of human speech automatically into a string of word that can be processed by a computer.
 
 These were the topics with their counts from which the questions came:
