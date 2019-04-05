@@ -6,6 +6,8 @@ featured: false
 comments: false
 title: Analysis of Exam Questions in Automatic Speech Recognition
 description: A visualization of the most frequent exam questions for ASR
+categories:
+  - personal
 ---
 
 A fellow student counted the most frequent exam questions for the course "Grundlagen der Automatischen Spracherkennung" as I am preparing for the oral exam I thought that a visualization of this would be cool.
@@ -103,3 +105,20 @@ We can calculate p(x) by marginalizing over all possible word sequences. This is
 ## Note
 
 I cut the other (more important) topics because it might not be a good idea to make this information available to the Internet, sorry.
+
+
+![fourier.png]({{site.baseurl}}/images/fourier.png)
+
+
+![smooting_and_backoff.png]({{site.baseurl}}/images/smooting_and_backoff.png)
+
+
+![spectrum_cepstrum.png]({{site.baseurl}}/images/spectrum_cepstrum.png)
+
+
+![polyphone.png]({{site.baseurl}}/images/polyphone.png)
+
+
+![expectation_maximization.png]({{site.baseurl}}/images/expectation_maximization.png)
+
+
