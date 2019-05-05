@@ -2,20 +2,20 @@
 layout: post
 published: true
 mathjax: true
-featured: false
+featured: true
 comments: false
 title: Information theory
-description: Coding, Informtion, Entropy, Cross entropy,...
+description: Coding, Self-information, Entropy, Cross entropy,...
 categories:
   - machine-learning
   - vision
 ---
 
 Whether it is cryptography, automatic speech recognition or computer vision:
-Information theory seems to be anywhere in computer science. This post is a
+Information theory seems to be everywhere in computer science. This post is a
 collection of intuitions and formulas.
 
-Information theory reasons abouts channels and how to optimally encode messages on a
+Information theory reasons about channels and how to optimally encode messages on a
 channel with or without noise.
 
 ## Self-Information
