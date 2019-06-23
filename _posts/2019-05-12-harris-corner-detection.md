@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-mathjax: false
+mathjax: true
 featured: false
 comments: false
 title: Harris Corner Detection
@@ -26,7 +26,7 @@ Instead of calculating the eigenvalues (which is by the way not straight forward
 tensorflow.js) the authors suggested to calculate a score which is easier
 to obtain from the Hessian. They named it the Harris-Cornerness-function f.
 
-f = det(H) - kappa * trace^2 (H)
+$$ f = det(H) - kappa * trace^2 (H) $$
 
 det(H) is equal to the product of the eigenvalues.
 And trace(H) is equal to the sum of the eigenvalues.
@@ -42,6 +42,13 @@ computer vision courses this semester (video analysis, automotive vision,
   deep learning for computer vision) which have some overlaps. In order to practice
   matrix operations and get some visuals I decided to build a collection of demos
   with tensorflow.js that implement the classic cv algorithms.
+
+Note: Instead of the Hessian H the **structure matrix** M is used most of the times.
+(dy and dy are the gradient in x and y direction):
+
+$$
+\begin{pmatrix} dx^2 & dx \cdot dy  \\ dy \cdot dx & dy^2 \end{pmatrix}
+$$
 
 
 <table>
