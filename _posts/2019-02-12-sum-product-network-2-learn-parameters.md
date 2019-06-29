@@ -6,6 +6,8 @@ featured: false
 comments: false
 title: Sum-Product Network 2 - Learn Parameters
 description: Given a valid SPN how can we train the parameters?
+categories:
+  - spn
 ---
 In the last post I wrote about inference, marginalization and such for SPNs. Now let us take a look at parameter learning for SPNs.
 
@@ -62,7 +64,7 @@ P(y, x) is just inference and P(x) can be calculated by marginalizing over y.
 
 <!--$$\ max  \nabla log {\sum_h P(y, h, x)} - \nabla log { \sum_{y', h} P(y', h, x)}$$ where h are hidden variables.
 
-In the context of SPNs hidden variables are the sum nodes. 
+In the context of SPNs hidden variables are the sum nodes.
 The first part we want to maximize is just the sum over all sum nodes which -->
 
 ### Illustration
@@ -104,7 +106,7 @@ Therefore we are going to backprop the output of P(X) to all its variables:
 
 I guess you can imagine how this should work. Luckily there are tools out there which can do this automagically for us ;)
 
-Note: The 0.8^5 should be 0.5^8... 
+Note: The 0.8^5 should be 0.5^8...
 
 *Second part backprop*: Now we can calculate the backprop for the P(Y,X)
 
@@ -128,9 +130,9 @@ from sklearn.datasets import load_digits
 
 digits = load_digits()
 
-plt.gray() 
-plt.matshow(digits.images[55]) 
-plt.show() 
+plt.gray()
+plt.matshow(digits.images[55])
+plt.show()
 digits.target[55]
 ```
 
@@ -188,24 +190,24 @@ w = tf.placeholder(tf.float32)
 
 # the network polynomial which encodes our SPN
 f = w1[0] * (
-    (x[0]*w[0] + (1-x[0])*w[1]) * 
-    (x[1]*w[4] + (1-x[1])*w[5]) * 
-    (x[2]*w[8] + (1-x[2])*w[9]) * 
-    (x[3]*w[12]+ (1-x[3])*w[13]) * 
-    (x[4]*w[16]+ (1-x[4])*w[17]) * 
-    (x[5]*w[20]+ (1-x[5])*w[21]) * 
-    (x[6]*w[24]+ (1-x[6])*w[25]) * 
-    (x[7]*w[28]+ (1-x[7])*w[29]) * 
+    (x[0]*w[0] + (1-x[0])*w[1]) *
+    (x[1]*w[4] + (1-x[1])*w[5]) *
+    (x[2]*w[8] + (1-x[2])*w[9]) *
+    (x[3]*w[12]+ (1-x[3])*w[13]) *
+    (x[4]*w[16]+ (1-x[4])*w[17]) *
+    (x[5]*w[20]+ (1-x[5])*w[21]) *
+    (x[6]*w[24]+ (1-x[6])*w[25]) *
+    (x[7]*w[28]+ (1-x[7])*w[29]) *
     (y)) + \
   w1[1] * (
-      (x[0]*w[2]+  (1-x[0]) *w[3]) * 
-      (x[1]*w[6]+  (1-x[1]) *w[7]) * 
-      (x[2]*w[10]+ (1-x[2]) *w[11]) * 
-      (x[3]*w[14]+ (1-x[3]) *w[15]) * 
-      (x[4]*w[18]+ (1-x[4]) *w[19]) * 
-      (x[5]*w[22]+ (1-x[5]) *w[23]) * 
-      (x[6]*w[26]+ (1-x[6]) *w[27]) * 
-      (x[7]*w[30]+ (1-x[7]) *w[31]) * 
+      (x[0]*w[2]+  (1-x[0]) *w[3]) *
+      (x[1]*w[6]+  (1-x[1]) *w[7]) *
+      (x[2]*w[10]+ (1-x[2]) *w[11]) *
+      (x[3]*w[14]+ (1-x[3]) *w[15]) *
+      (x[4]*w[18]+ (1-x[4]) *w[19]) *
+      (x[5]*w[22]+ (1-x[5]) *w[23]) *
+      (x[6]*w[26]+ (1-x[6]) *w[27]) *
+      (x[7]*w[30]+ (1-x[7]) *w[31]) *
       (1-y)
   )
 
@@ -235,32 +237,32 @@ w = tf.placeholder(tf.float32)
 
 # the network polynomial which encodes our SPN
 f = w1[0] * (
-    (x[0]*w[0] + (1-x[0])*w[1]) * 
-    (x[1]*w[4] + (1-x[1])*w[5]) * 
-    (x[2]*w[8] + (1-x[2])*w[9]) * 
-    (x[3]*w[12]+ (1-x[3])*w[13]) * 
-    (x[4]*w[16]+ (1-x[4])*w[17]) * 
-    (x[5]*w[20]+ (1-x[5])*w[21]) * 
-    (x[6]*w[24]+ (1-x[6])*w[25]) * 
-    (x[7]*w[28]+ (1-x[7])*w[29]) * 
+    (x[0]*w[0] + (1-x[0])*w[1]) *
+    (x[1]*w[4] + (1-x[1])*w[5]) *
+    (x[2]*w[8] + (1-x[2])*w[9]) *
+    (x[3]*w[12]+ (1-x[3])*w[13]) *
+    (x[4]*w[16]+ (1-x[4])*w[17]) *
+    (x[5]*w[20]+ (1-x[5])*w[21]) *
+    (x[6]*w[24]+ (1-x[6])*w[25]) *
+    (x[7]*w[28]+ (1-x[7])*w[29]) *
     (y_true)) + \
   w1[1] * (
-      (x[0]*w[2]+  (1-x[0]) *w[3]) * 
-      (x[1]*w[6]+  (1-x[1]) *w[7]) * 
-      (x[2]*w[10]+ (1-x[2]) *w[11]) * 
-      (x[3]*w[14]+ (1-x[3]) *w[15]) * 
-      (x[4]*w[18]+ (1-x[4]) *w[19]) * 
-      (x[5]*w[22]+ (1-x[5]) *w[23]) * 
-      (x[6]*w[26]+ (1-x[6]) *w[27]) * 
-      (x[7]*w[30]+ (1-x[7]) *w[31]) * 
+      (x[0]*w[2]+  (1-x[0]) *w[3]) *
+      (x[1]*w[6]+  (1-x[1]) *w[7]) *
+      (x[2]*w[10]+ (1-x[2]) *w[11]) *
+      (x[3]*w[14]+ (1-x[3]) *w[15]) *
+      (x[4]*w[18]+ (1-x[4]) *w[19]) *
+      (x[5]*w[22]+ (1-x[5]) *w[23]) *
+      (x[6]*w[26]+ (1-x[6]) *w[27]) *
+      (x[7]*w[30]+ (1-x[7]) *w[31]) *
       (y_false)
   )
 
 # f(x=0) in interactive session
-f.eval(feed_dict={x:data[55], 
+f.eval(feed_dict={x:data[55],
                   y_true:1,  # digits.target[55]==0
-                  y_false:1, 
-                  w1:weights1, 
+                  y_false:1,
+                  w1:weights1,
                   w:weights2
                  })
 
@@ -289,13 +291,13 @@ break_crit = 0.000001
 errors = []
 
 for i in range(iterations):
-  
+
   if i%101==0:
     print(i)
-    
+
 
   with tf.GradientTape(persistent=True) as t:
-    
+
     sample = random.randint(0, 1000)
 
     # The placeholder for the parameter
@@ -319,63 +321,63 @@ for i in range(iterations):
     # P(Y,X)
     # the network polynomial which encodes our SPN
     s = w1[0] * (
-        (x[0]*w[0] + (1-x[0])*w[1]) * 
-        (x[1]*w[4] + (1-x[1])*w[5]) * 
-        (x[2]*w[8] + (1-x[2])*w[9]) * 
-        (x[3]*w[12]+ (1-x[3])*w[13]) * 
-        (x[4]*w[16]+ (1-x[4])*w[17]) * 
-        (x[5]*w[20]+ (1-x[5])*w[21]) * 
-        (x[6]*w[24]+ (1-x[6])*w[25]) * 
-        (x[7]*w[28]+ (1-x[7])*w[29]) * 
+        (x[0]*w[0] + (1-x[0])*w[1]) *
+        (x[1]*w[4] + (1-x[1])*w[5]) *
+        (x[2]*w[8] + (1-x[2])*w[9]) *
+        (x[3]*w[12]+ (1-x[3])*w[13]) *
+        (x[4]*w[16]+ (1-x[4])*w[17]) *
+        (x[5]*w[20]+ (1-x[5])*w[21]) *
+        (x[6]*w[24]+ (1-x[6])*w[25]) *
+        (x[7]*w[28]+ (1-x[7])*w[29]) *
         (y_true)) + \
       w1[1] * (
-          (x[0]*w[2]+  (1-x[0]) *w[3]) * 
-          (x[1]*w[6]+  (1-x[1]) *w[7]) * 
-          (x[2]*w[10]+ (1-x[2]) *w[11]) * 
-          (x[3]*w[14]+ (1-x[3]) *w[15]) * 
-          (x[4]*w[18]+ (1-x[4]) *w[19]) * 
-          (x[5]*w[22]+ (1-x[5]) *w[23]) * 
-          (x[6]*w[26]+ (1-x[6]) *w[27]) * 
-          (x[7]*w[30]+ (1-x[7]) *w[31]) * 
+          (x[0]*w[2]+  (1-x[0]) *w[3]) *
+          (x[1]*w[6]+  (1-x[1]) *w[7]) *
+          (x[2]*w[10]+ (1-x[2]) *w[11]) *
+          (x[3]*w[14]+ (1-x[3]) *w[15]) *
+          (x[4]*w[18]+ (1-x[4]) *w[19]) *
+          (x[5]*w[22]+ (1-x[5]) *w[23]) *
+          (x[6]*w[26]+ (1-x[6]) *w[27]) *
+          (x[7]*w[30]+ (1-x[7]) *w[31]) *
           (y_false)
       )
 
     z = w1[0] * (
-        (1*w[0] + 1*w[1]) * 
-        (1*w[4] + 1*w[5]) * 
-        (1*w[8] + 1*w[9]) * 
-        (1*w[12]+ 1*w[13]) * 
-        (1*w[16]+ 1*w[17]) * 
-        (1*w[20]+ 1*w[21]) * 
-        (1*w[24]+ 1*w[25]) * 
-        (1*w[28]+ 1*w[29]) * 
+        (1*w[0] + 1*w[1]) *
+        (1*w[4] + 1*w[5]) *
+        (1*w[8] + 1*w[9]) *
+        (1*w[12]+ 1*w[13]) *
+        (1*w[16]+ 1*w[17]) *
+        (1*w[20]+ 1*w[21]) *
+        (1*w[24]+ 1*w[25]) *
+        (1*w[28]+ 1*w[29]) *
         (1)) + \
       w1[1] * (
-          (1*w[2]+  1 *w[3]) * 
-          (1*w[6]+  1 *w[7]) * 
-          (1*w[10]+ 1 *w[11]) * 
-          (1*w[14]+ 1 *w[15]) * 
-          (1*w[18]+ 1 *w[19]) * 
-          (1*w[22]+ 1 *w[23]) * 
-          (1*w[26]+ 1 *w[27]) * 
-          (1*w[30]+ 1 *w[31]) * 
+          (1*w[2]+  1 *w[3]) *
+          (1*w[6]+  1 *w[7]) *
+          (1*w[10]+ 1 *w[11]) *
+          (1*w[14]+ 1 *w[15]) *
+          (1*w[18]+ 1 *w[19]) *
+          (1*w[22]+ 1 *w[23]) *
+          (1*w[26]+ 1 *w[27]) *
+          (1*w[30]+ 1 *w[31]) *
           (1)
       )
-    
+
     p = tf.minimum(s/z, 1.0)
-    
+
     error = 1 - p
-    
+
   errors.append(float(error))
-    
+
   dw2_dx = t.gradient(error, w)
   dw1_dx = t.gradient(error, w1)
-  
-    
-  
-  
+
+
+
+
   del t  # Drop the reference to the tape
-  
+
   # normalize -> keep the weight mass constant
   if tf.reduce_sum(dw2_dx*dw2_dx) + tf.reduce_sum(dw1_dx*dw1_dx) >= break_crit:
     # old weight mass
@@ -393,12 +395,12 @@ for i in range(iterations):
     # change in mass
     c1 = w1_m_old/w1_m_new
     c2 = w2_m_old/w2_m_new
-  
+
     weights1 *= c1
     weights2 *= c2
   else:
     pass
-    
+
 
 plt.plot(errors)
 plt.show()
