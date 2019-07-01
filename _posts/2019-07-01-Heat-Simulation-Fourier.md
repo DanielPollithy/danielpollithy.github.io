@@ -16,8 +16,8 @@ I recently read the book "Infinite Powers" by Steven Strogatz. In chapter 10
 he told the story of Joseph Fourier and why he initially cared about approximating
 functions with a mixture of sine and cosine waves.
 
-His objective was to solve the "heat problem". How does the heat distribute in
-an a rod (or regarding electric circuits: in a wire). For some backgrounds see
+His objective was to solve the "heat problem". How does heat distribute in
+in a rod (or regarding circuits: in a wire). For some backgrounds see
 the section "background".
 
 The following section contains a demo of such a wire that can cool down.
@@ -50,7 +50,7 @@ after clicking on the wire.
   <canvas id="output" width="400" height="15" style="border: 1px solid black; margin: 0; padding: 0;"></canvas>
   </p>
 
-  <p>Cooling:</p>
+  <p>Heat flow simulation:</p>
   <p>
   <canvas id="cooling" width="400" height="15" style="border: 1px solid black; margin: 0; padding: 0;"></canvas>
   </p>
@@ -246,7 +246,7 @@ after clicking on the wire.
 ### Background
 
 Initially I wanted to write a little bit about this but I found that 3b1b just
-published a video about this:
+published a video about this topic:
 
 <p>
   <figure>

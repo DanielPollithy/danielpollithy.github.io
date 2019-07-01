@@ -2,7 +2,7 @@
 layout: post
 published: true
 mathjax: true
-featured: false
+featured: true
 comments: false
 title: Estimate depth information from two images
 description: Humans with two eyes do it naturally. Using the information from
