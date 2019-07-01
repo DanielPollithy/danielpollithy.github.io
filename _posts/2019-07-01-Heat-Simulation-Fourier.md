@@ -41,7 +41,7 @@ after clicking on the wire.
   </p>
 
   <p>Abgeschnittenes Betragsspektrum:</p>
-    <p>
+  <p>
   <canvas id="heatmap2" width="401" height="15" style="border: 1px solid black; margin: 0; padding: 0;"></canvas>
   </p>
 
