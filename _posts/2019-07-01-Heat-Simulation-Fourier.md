@@ -23,27 +23,38 @@ the section "background".
 The following section contains a demo of such a wire that can cool down.
 By clicking on the first wire you can draw heat patterns which are smoothed
 with a Fourier transformations (actually by setting the higher order coefficients to zero).
-In the case that the "simulate" check-box was active, the simulation will start
+In the case that the "simulate" check-box was active, then the simulation will start
 after clicking on the wire.
 
 ### Demo
 
-<p id="status" style="border: solid 1px blue;">Status: Ready</p>
+<p id="status" style="border: solid 2px green;">Status: Ready</p>
 
   <p>Input (click on the left half of the bar):</p>
-  <canvas id="canvas" width="800" height="15" style="border: 1px solid black; margin: 0; padding: 0; margin: 0 auto 2em auto;"></canvas>
+  <p>
+  <canvas id="canvas" width="800" height="15" style="border: 1px solid black; margin: 0; padding: 0;"></canvas>
+  </p>
 
   <p>Betragsspektrum:</p>
-  <canvas id="heatmap" width="401" height="15" style="border: 1px solid black; margin: 0; padding: 0; margin: 0 auto 2em auto;"></canvas>
+  <p>
+  <canvas id="heatmap" width="401" height="15" style="border: 1px solid black; margin: 0; padding: 0;"></canvas>
+  </p>
 
   <p>Abgeschnittenes Betragsspektrum:</p>
-  <canvas id="heatmap2" width="401" height="15" style="border: 1px solid black; margin: 0; padding: 0; margin: 0 auto 2em auto;"></canvas>
+    <p>
+  <canvas id="heatmap2" width="401" height="15" style="border: 1px solid black; margin: 0; padding: 0;"></canvas>
+  </p>
 
   <p>Output:</p>
-  <canvas id="output" width="400" height="15" style="border: 1px solid black; margin: 0; padding: 0; margin: 0 auto 2em auto;"></canvas>
+  <p>
+  <canvas id="output" width="400" height="15" style="border: 1px solid black; margin: 0; padding: 0;"></canvas>
+  </p>
 
   <p>Cooling:</p>
-  <canvas id="cooling" width="400" height="15" style="border: 1px solid black; margin: 0; padding: 0; margin: 0 auto 2em auto;"></canvas>
+  <p>
+  <canvas id="cooling" width="400" height="15" style="border: 1px solid black; margin: 0; padding: 0;"></canvas>
+  </p>
+
   <br>
   <b>FFT coefficients:</b>
    1... <input type="range" onchange="limit=parseInt(event.srcElement.value)" min="1" max="400" value="400"> ... 400
@@ -135,11 +146,13 @@ after clicking on the wire.
     function busy_off(){
       busy = false;
       status_p.innerHTML = "Status: Ready";
+      status_p.style.setProperty('border-color', 'green')
     }
 
     function busy_on(){
       busy = true;
       status_p.innerHTML = "Status: Busy";
+      status_p.style.setProperty('border-color', 'red')
     }
 
     function draw_canvas() {
@@ -234,6 +247,7 @@ after clicking on the wire.
 
 Initially I wanted to write a little bit about this but I found that 3b1b just
 published a video about this:
+
 <p>
   <figure>
     <div class="videoWrapper">
