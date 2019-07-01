@@ -31,19 +31,19 @@ after clicking on the wire.
 <p id="status" style="border: solid 1px blue;">Status: Ready</p>
 
   <p>Input (click on the left half of the bar):</p>
-  <canvas id="canvas" width="800" height="15" style="border: 1px solid black; margin: 0; padding: 0;"></canvas>
+  <canvas id="canvas" width="800" height="15" style="border: 1px solid black; margin: 0; padding: 0; margin: 0 auto 2em auto;"></canvas>
 
   <p>Betragsspektrum:</p>
-  <canvas id="heatmap" width="401" height="15" style="border: 1px solid black; margin: 0; padding: 0;"></canvas>
+  <canvas id="heatmap" width="401" height="15" style="border: 1px solid black; margin: 0; padding: 0; margin: 0 auto 2em auto;"></canvas>
 
   <p>Abgeschnittenes Betragsspektrum:</p>
-  <canvas id="heatmap2" width="401" height="15" style="border: 1px solid black; margin: 0; padding: 0;"></canvas>
+  <canvas id="heatmap2" width="401" height="15" style="border: 1px solid black; margin: 0; padding: 0; margin: 0 auto 2em auto;"></canvas>
 
   <p>Output:</p>
-  <canvas id="output" width="400" height="15" style="border: 1px solid black; margin: 0; padding: 0;"></canvas>
+  <canvas id="output" width="400" height="15" style="border: 1px solid black; margin: 0; padding: 0; margin: 0 auto 2em auto;"></canvas>
 
   <p>Cooling:</p>
-  <canvas id="cooling" width="400" height="15" style="border: 1px solid black; margin: 0; padding: 0;"></canvas>
+  <canvas id="cooling" width="400" height="15" style="border: 1px solid black; margin: 0; padding: 0; margin: 0 auto 2em auto;"></canvas>
   <br>
   <b>FFT coefficients:</b>
    1... <input type="range" onchange="limit=parseInt(event.srcElement.value)" min="1" max="400" value="400"> ... 400
@@ -234,5 +234,10 @@ after clicking on the wire.
 
 Initially I wanted to write a little bit about this but I found that 3b1b just
 published a video about this:
-
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ToIXSwZ1pJU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>
+  <figure>
+    <div class="videoWrapper">
+      <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ToIXSwZ1pJU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </figure>
+</p>
