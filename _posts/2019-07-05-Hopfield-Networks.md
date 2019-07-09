@@ -5,8 +5,11 @@ mathjax: true
 featured: false
 comments: false
 title: Hopfield Network
-description: This article explains Hopfield nets, simulates one and contains the relation to the Ising model.
+description: >-
+  This article explains Hopfield nets, simulates one and contains the relation
+  to the Ising model.
 categories:
+  - personal
   - general
 ---
 
@@ -269,3 +272,13 @@ $$ H = -0.5 \sum_{ij} T_{ij} \cdot s_i \cdot s_j - H_z \sum_{i=1}{s_i} $$
 The critical temperature was calculated with this model. A system with less than its critical temperature is dominated by quantum mechanical effects. If the majority of the couplings have a positive sign then
 the body is ferromagnetic. Which means you could use a permanent magnet to
 magnetize it like a refrigerator magnet.
+
+<p>
+  <figure>
+    <div class="videoWrapper">
+      <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/IP3W7cI01VY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </figure>
+</p>
+
+
