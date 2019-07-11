@@ -7,7 +7,8 @@ comments: false
 title: Hopfield Network
 description: This article explains Hopfield nets, simulates one and contains the relation to the Ising model.
 categories:
-  - general
+  - python
+  - machine-learning
 ---
 
 This article explains Hopfield networks, simulates one and contains the relation to the Ising model.
@@ -250,6 +251,9 @@ Even numbers would sum up to zero.
 For every pattern x the inverse of x is also a local minimum.
 
 If we try to store too many patterns so called **spin glass** states are generated. They are no linear combination of the original states. A network of N units has the capacity to store ~ 0.15N uncorrelated patterns.
+All the minima that have no associated pattern are called **spurious states**.
+
+If all weights are "+1" then the function calculated is something like k-Means/Hamming distance.
 
 More math about Hopfield nets [here](https://page.mi.fu-berlin.de/rojas/neural/chapter/K13.pdf).
 
