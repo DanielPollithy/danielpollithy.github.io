@@ -4,7 +4,7 @@ published: true
 categories:
   - machine-learning
 mathjax: true
-featured: true
+featured: false
 comments: false
 title: Backpropagation and stochastic gradient descent
 ---
@@ -46,7 +46,7 @@ $$ \sigma ( 0.43 ) = 0.6 $$
 
 ### Backward propagation
 
-**0 XOR 0 should be 0.** We can now calculate the error of the output neuron(s): 
+**0 XOR 0 should be 0.** We can now calculate the error of the output neuron(s):
 $$ y - ŷ = 0 - 0.6 = -0.6 $$
 
 But how do we calculate the error of the hidden units? We don't have a supervision to directly compare them to something.
@@ -61,11 +61,11 @@ Error of hidden neuron h_i:
 
 $$ E_{h_{i}} = \frac{\partial E}{\partial h_{i}} = \sum_{j} \sigma ' (y_{i}) * W2_{i,j} \frac{\partial E}{\partial y_{j}} $$
 
-- We want to know the error of the neuron to change its value accordingly: 
+- We want to know the error of the neuron to change its value accordingly:
 $$\frac{\partial E}{\partial h_{i}}$$
-- The error of the hidden neuron depends on the neurons that come after it. In this case it is only the output neuron: 
+- The error of the hidden neuron depends on the neurons that come after it. In this case it is only the output neuron:
 $$\frac{\partial E}{\partial y_{i}}$$
-- The changerate of the output neuron depends on how the hidden neuron is changed: 
+- The changerate of the output neuron depends on how the hidden neuron is changed:
 $$\sigma ' (y_{i}) * W2_{i,j}$$
 - $$ \sum $$ and then all of these partial errors to single neurons that come after are summed up to determine how much the single hidden neuron affects the next layer
 - The derivative of sigma is $$ \sigma ' (x) = e^x \div (1 + e^x)^2 $$
@@ -101,14 +101,14 @@ $$ w \leftarrow w - \alpha * \frac{\partial E}{\partial w} $$
 
 ![weights_updated.png]({{site.baseurl}}/images/weights_updated.png)
 
- 
+
 This have been the three important steps of backpropagation:
 1. Feed forward
 2. Calculate errors
 3. Update weights
 
 
-In the next post I am going to present a small python script to evaluate whether the shown calculations can find a proper approximation to the XOR function. 
+In the next post I am going to present a small python script to evaluate whether the shown calculations can find a proper approximation to the XOR function.
 
 
 There are good videos on this topic available:

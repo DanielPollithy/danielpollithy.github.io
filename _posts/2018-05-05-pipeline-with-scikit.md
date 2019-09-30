@@ -7,7 +7,7 @@ categories:
   - scikit
   - machine-learning
 mathjax: false
-featured: true
+featured: false
 comments: false
 title: Pipeline with Scikit
 tags: pipeline pandas titanic
@@ -93,7 +93,7 @@ class PandasMedianFill(BaseEstimator, TransformerMixin):
         for column in columns:
             X[column].fillna(X[column].median(), inplace = True)
         return X
-            
+
 
 class PandasModeFill(BaseEstimator, TransformerMixin):
     def __init__(self, columns=None):
@@ -116,10 +116,10 @@ The numerical pipeline will be enriched by the length of the name of the person:
 class NameLengthAdder(BaseEstimator, TransformerMixin):
     def __init__(self): # no *args or **kargs
         pass
-    
+
     def fit(self, X, y=None):
         return self  # nothing else to do
-    
+
     def transform(self, X, y=None):
         X['NameLength'] = X['Name'].str.len()
         X = X.drop(['Name'], axis=1)
@@ -132,24 +132,24 @@ The categorical pipelines obtains the new feature **Title**.
 class CatAttributesAdder(BaseEstimator, TransformerMixin):
     def __init__(self, stat_min=10): # no *args or **kargs
         self.stat_min = stat_min
-    
+
     def fit(self, X, y=None):
         return self  # nothing else to do
-    
+
     def transform(self, X, y=None):
         # create new features
         X['Title'] = X['Name'].str.split(", ", expand=True)[1].str.split(".", expand=True)[0]
         title_names = (X['Title'].value_counts() < self.stat_min)
         X['Title'] = X['Title'].apply(lambda x: 'Misc' if title_names.loc[x] == True else x)
-        
+
         X = X.drop(['Name'], axis=1)
-                
+
         return X
 ```
 
 ### Last step
 
-The categorical data like the Title has to be decomposed into single boolean attributes. For example for every possible string a new attribute. This method is called "one-hot" encoding. 
+The categorical data like the Title has to be decomposed into single boolean attributes. For example for every possible string a new attribute. This method is called "one-hot" encoding.
 Be aware that the training and test data don't have to present the same set of possible values. In that case the following method would not work correctly:
 
 ```
@@ -212,14 +212,3 @@ train_predictions = forest_reg.predict(train)
 train_score = accuracy_score(train_labels, train_predictions)
 print("Train score: {}".format(train_score))
 ```
-
-
-
-
-
-
-
-
-
-
-

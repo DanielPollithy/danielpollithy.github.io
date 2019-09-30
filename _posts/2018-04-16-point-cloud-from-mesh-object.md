@@ -4,7 +4,7 @@ published: true
 categories:
   - pointcloud
 mathjax: false
-featured: false
+featured: true
 comments: false
 title: Point cloud from mesh object
 ---
@@ -34,12 +34,12 @@ Now select your figure (we are in object mode), click "Add Modifier" in the pane
 
 You can check whether the subdivison worked by hitting the TAB key which brings you to the Edit Mode of Blender. If there are a lot of vertices everyting worked.
 
-Now you go to File > Export > Stanford (.ply). 
+Now you go to File > Export > Stanford (.ply).
 
 ![blender_3.png]({{site.baseurl}}/images/blender_3.png)
 
 Uncheck "Normals", "Vertex Colors" and "UVs". Only check "Apply Modifiers".
-Set Forward to "-Z Forward" and Up: "Y Up". 
+Set Forward to "-Z Forward" and Up: "Y Up".
 Export PLY and that is it.
 
 ![mesh_1.png]({{site.baseurl}}/images/mesh_1.png)
@@ -47,5 +47,3 @@ Export PLY and that is it.
 ### Further thoughts
 
 Though the point cloud library comes with a tool for mesh sampling I came up with this variant because it does not produce thick surfaces and the points are aligned in a dense and regular grid.
-
-
