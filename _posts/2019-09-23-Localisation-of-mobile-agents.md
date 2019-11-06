@@ -8,6 +8,7 @@ title: Localization of mobile agents
 description: An introduction to dead reckoning, static localization, dynamic localization, kalman filtering and EKF-SLAM.
 categories:
   - python
+  - localization
 ---
 
 In this post I am going to try to explain the basic concepts of localization
@@ -138,23 +139,23 @@ $$ x(t_{k+1}) = A' x(t_k) \cdot B' u(t_k) $$
 
 So we still have an integral here. How do we get A' and B'?
 
-#### Solution 1
+With the use of the Laplace transformation if possible or numerical approximations.
 
-With the use of the Laplace transformation if possible.
+#### Euler method
 
-#### Solution 2
+Given a differential equation which describes the system dynamics we want to
+calculate the state of the system after time t.
 
-Numerical approximation.
+$$ x(t) = x_0 + \int_0^t{\dot{x}(\tau) d\tau} $$
 
-We use the Euler Method. It works as follows: Sample from the continuous space
-at the timesteps and assume that between the values there was a straight line.
-The forward Euler takes the current step to calculate the next state. And the
-backward euler takes the derivative of the following step to calculate the following
-state.
+We use the Euler Method. It tries to fit small rectangles under the curve of
+which we want to calculate the integral. If we use the height of the function
+at timestep $$t_k$$ as the height of the rectangle we call it **Forward/explicit euler**.
+If the we use the height at $$x_{k+1}$$ then it's called **Backward euler**.
 
 The backward euler is a little bit extra effort because you have to solve an
-equation to get to the next state but it is said to be more stable and therefore
-worth a try.
+equation to get to the next state but it has the advantage of being stable (solution can
+  be found with the Newton method).
 
 Instead of using the quotient of differentials we have to use the **difference quotient**.
 
@@ -196,13 +197,8 @@ We measure **increments** from the last state (change of place, velocity or acce
 And then we use this measured information as system input to our discrete system
 model in order to calculate where our current position should be next.
 
-!!!
+"Schritthaltend": Abtastrate höher als Rechenzeit für neuen Zustand.
 
-**ToDo: Schritthaltend? Was heißt das?**
-
-?? "Schritthaltend": Abtastrate höher als Rechenzeit für neuen Zustand.
-
-!!!
 
 #### Error
 
@@ -978,3 +974,11 @@ external information (like GPS) is integrated.
 
 This is a full slam approach and I assume that the name comes from graphical
 model.
+
+### FAQ
+
+- How can we see that the Kalman filter minimizes the MSE?
+  -> The Kalman Gain is chosen to minimize the Covariance matrix of the estimate.
+     This matrix can be derived by minimizing the trace of of the covariance which
+     is the same as the mean variance. Which is the same as the mean squared derivation
+     of the correct value. Which is the mean squared error.
