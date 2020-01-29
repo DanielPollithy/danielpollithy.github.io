@@ -53,13 +53,13 @@ timesteps = inp.shape[1]
 point_dim = inp.shape[-1]  # example: is 2 for (x,y) points 
 
 # 1. Find entries which are equal to the masking_value 
-equal_zero = inp == K.cast_to_floatx([masking_value])
+equal_zero = inp == K.cast([masking_value], tf.float64)
 
 # 2. Count the zeros in the row
 zeros_per_row = K.sum(equal_zero, axis=-1)
 
 # 3. Find the rows which only contain masking_values
-correct_rows = K.cast_to_floatx(zeros_per_row == [point_dim])
+correct_rows = K.cast(zeros_per_row == [point_dim], tf.float64)
 
 # (The following code is argmin which is forced to return the first occurence)
 
