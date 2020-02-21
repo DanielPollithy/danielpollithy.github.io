@@ -109,10 +109,10 @@ h1, h2, h3, h4, h5, h6 {
             width: auto;
             height: auto; }
             .summer-blog-menu ul li a:hover {
-              border-bottom: 0.1875rem solid #e51843; } }
+              border-bottom: 0.1875rem solid #676767; } }
 
 .summer-site-head .summer-site-head-menu {
-  background-color: #e51843; }
+  background-color: #676767; }
   .summer-site-head .summer-site-head-menu .summer-blog-logo {
     display: inline-block;
     max-height: 5rem; }
@@ -143,7 +143,7 @@ h1, h2, h3, h4, h5, h6 {
   .summer-site-head .summer-site-head-content .summer-site-head-title-bg {
     display: inline-block;
     padding: 0.625rem;
-    background: #e51843;
+    background: #676767;
     line-height: 1.1; }
   .summer-site-head .summer-site-head-content h1, .summer-site-head .summer-site-head-content h2 {
     margin: 0;
@@ -212,7 +212,7 @@ h1, h2, h3, h4, h5, h6 {
       display: block;
       font-size: 3.25rem;
       font-weight: 800;
-      color: #e51843;
+      color: #676767;
       font-family: "Montserrat", sans-serif; }
     .summer-content .summer-index-post .summer-post-meta .month-year {
       display: block;
@@ -260,8 +260,8 @@ h1, h2, h3, h4, h5, h6 {
       border: 0.0625rem solid black;
       border-radius: 0.125rem; }
       .summer-content .summer-index-post .summer-index-post-tags a:hover {
-        color: #e51843;
-        border: 0.0625rem solid #e51843; }
+        color: #676767;
+        border: 0.0625rem solid #676767; }
   @media only screen and (min-width: 40.063em) {
     .summer-content .summer-index-post .summer-index-post-tags {
       text-align: left; } }
@@ -281,8 +281,8 @@ nav.pagination {
     border: 0.125rem solid black; }
   nav.pagination .newer-posts:hover,
   nav.pagination .older-posts:hover {
-    border: 0.125rem solid #e51843;
-    color: #e51843; }
+    border: 0.125rem solid #676767;
+    color: #676767; }
   nav.pagination .newer-posts.faded,
   nav.pagination .older-posts.faded {
     color: gray;
@@ -379,7 +379,7 @@ nav.pagination {
     padding-bottom: 3.125rem;
     text-align: center; }
     .summer-tags-container .summer-tags-header .tag-name {
-      color: #e51843;
+      color: #676767;
       text-transform: none; }
     @media only screen and (min-width: 40.063em) {
       .summer-tags-container .summer-tags-header {
