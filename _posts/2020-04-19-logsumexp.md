@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-mathjax: false
+mathjax: true
 featured: false
 comments: false
 title: LogSumExp
@@ -31,3 +31,18 @@ The softargmax divides each entry of the input vector x by the softmax. Therefor
 2. x' = x/s = [20, 5, 0.1, 300] / 299.97 ~= [0.066, 0.016, 0.0003, 1.0001]
 
 In the classification framework we would choose the fourth class as a prediction.
+
+
+## Addendum
+
+1. Maximum rewritten:$$ max(x) = log(exp(max(x))) $$
+2. Softargmax definition: $$ logsumexp(x) = log(exp(x_1) + ... + exp(x_n)) $$
+3. Upper bound for Softargmax: $$ log(exp(x_1) + ... + exp(x_n)) \le log(exp(max(x)) + ... + exp(max(x)))  $$
+4. Factor out n: $$ log(exp(max(x)) + ... + exp(max(x))) = log(n \cdot exp(max(x))) $$
+5. Log rule: $$ log(n \cdot exp(max(x))) = log(n) +  log(exp(max(x))) $$
+6. Insert defintion of max: $$log(n) +  log(exp(max(x))) = log(n) + max(x) $$
+7. Result: $$ logsumexp(x) \le max(x) + log(n) $$
+
+
+
+
