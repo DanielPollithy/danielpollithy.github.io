@@ -513,7 +513,7 @@ ToDo: Beschreibe, wie man Momente generell berechnen kann.
 
 ### Diracsche Deltafunktion
 
-$\delta(x-x_0) = $
+$\delta(x-x_0) = $ ...
 
 - nicht definiert, für $x=x_0$
 - 0, für alles andere
@@ -540,8 +540,9 @@ Beweis dazu: https://math.stackexchange.com/questions/276583/dirac-delta-functio
 
 Beispiele generatives Modell zu bedingter Dichte:
 
-- $y = 3 * x$ -----> $f(y|x) = \delta(y-3x)$
-- $y = a(x) + w$ -----> $f(y|x,w) = \delta(y-a(x)-w)$
+$y = 3 * x$ -----> $f(y|x) = \delta(y-3x)$
+
+$y = a(x) + w$ -----> $f(y|x,w) = \delta(y-a(x)-w)$
 
 Bei den bedingten Dichten handelt es sich also um dirac distributionen, die nur dort ungleich Null sind, wo die Funktion wahr ist.
 
@@ -611,9 +612,9 @@ y = a(x) + w
 
 y = x + N(0, 1)
 
-$f(y|x) = \int{f(y|x,w) \cdot f(w) dw} = f^w(y - a(x)) = f^w(y - x)$
+$$f(y|x) = \int{f(y|x,w) \cdot f(w) dw} = f^w(y - a(x)) = f^w(y - x)$$
 
-$f(y|x) = N(y - x)$
+$$f(y|x) = N(y - x)$$
 
 
 
@@ -677,25 +678,19 @@ $$ f(x_{k+1}) = \int_{R}{ f(x_{k+1}|x_k) \cdot f(x_k)  d x } $$
 Wir berechnen die Transitionsdichte zunächst weiterhin mit der dirachsen Delta-Funktion.
 Für den Trivialfall, dass $f(x_k)$ deterministisch (also dirac-verteilt) ist, löst sich das Intergral noch von selbst auf.
 
-Wenn unsere Eingabe mehr als 1d ist, dann ist es ebenfalls nicht so leicht, das Riemann-Integral hier zu bilden. Das Lebesgue-Integral kann Abhilfe schaffen.
-
 Das Hauptproblem ist, dass es sich beim CKI um ein Parameterintegral handelt.
 Das heißt, es ist nicht nur abhängig von der Integriervariable $x_k$, sondern auch noch von anderen "freien" Variablen. In diesem Fall $x_{k+1}$.
 
-Ein kleines Beispiel: Wir betrachten 100 Badewannen und öffnen ihre Wasserhähne gleichzeit. Nun messen wir, wieviel Wasser sich innerhalb von 10 Minuten gesammelt hat. Das gesammelte Wasser pro Badewanne ist der Wert des Integrals. Er ist für alle Badewannen zunächst gleich.
-Wenn wir aber die Wasserhähne unterschiedlich stark aufdrehen. Zum Beispiel für Badewanne #1 1% ... und für Badewanne 100 mit 100%, dann erhalten wir auch 100 unterschiedliche Wassermengen (Integrale).
-Wir können dann ein Histogramm über die Hahnöffnung in Prozent angeben. Im diskreten Fall ist das alles unproblematisch. Im kontinuierlichen Fall: Angenommen die Hahnöffnung ist Normalverteilt um 50%. Wie verhält sich die Dichtefunktion der Wassermengen?
-Dafür müsste man alle möglichen Öffnungsprozente betrachten (unendlich viele) und für jeden von ihnen das Integral berechnen.
 
 ### Beobachtungen einfließen lassen
 
 Gegeben einer Beobachtung $\hat{y}$ müssen wir uns entscheiden, was für eine Art von Schätzer wir haben wollen:
 
-- Maximum-Likelihood: $arg_x max f(\hat{y}|x)$
-- Maximum-A-Posteriori: $arg_x max f(x|\hat{y})$
+Maximum-Likelihood: $$arg_x max f(\hat{y}|x)$$
+Maximum-A-Posteriori: $$arg_x max f(x|\hat{y})$$
 
-Angenommen wir haben das folgende generative Modell: y = x^2 + v
-Dann erhalten wir $f(y|x,v) = \delta(y-x^2-v)$
+Angenommen wir haben das folgende generative Modell: $y = x^2 + v$
+Dann erhalten wir $$f(y|x,v) = \delta(y-x^2-v)$$
 
 Interessieren wir uns für $f(x|\hat{y})$:
 
