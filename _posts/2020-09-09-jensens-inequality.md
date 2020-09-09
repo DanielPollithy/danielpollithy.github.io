@@ -61,7 +61,6 @@ the area under its curve is convex.
 
 $$ log(E[\frac{p(X,Z)}{q(Z)}]) \ge E[log( \frac{p(X,Z)}{q(Z)} )] $$
 
-This is vital because the log of the expected value would have been a barrier.
 This can be brought into a nicer form by realizing that the definition of
 entropy is $$H(p) = E_{x\sim p(x)}[log(\frac{1}{p(x)})] = -E_{x\sim p(x)}[log ~ p(X)]$$
 
