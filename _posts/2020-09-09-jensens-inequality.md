@@ -39,9 +39,8 @@ $$ f(E[X]) \le E[f(X)] $$
 
 ![](/images/jensen_gap.jpg)
 
-Seeing this picture makes the law of the unconscious statistician (LOTUS)
-obviously the case when the jensen gap is zero. Note that a non-decreasing function
-is convex.
+For affine functions f the equality holds. Which tells us that they are concave
+and convex.
 
 ### Derivation of the ELBO
 
