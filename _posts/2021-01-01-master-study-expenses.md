@@ -17,9 +17,10 @@ travels and vacations. I am sure that some expenses are missing but the broad pi
 
 ![Accumulated expenses since the start of my master](/images/expenses/Accumulated expenses of two years of studying.svg)
 
-I spent a total of 20.350.64 €. This corresponds to 847.94 € per month. I assume that the missing expenses won't increase
-this number to more than 900 €. Just for the reference, a student could apply for
-a maximum BAföG of 861€ if she or he is not living alone and has to pay insurances. [Source](https://www.bafög.de/de/welche-bedarfssaetze-sieht-das-bafoeg-vor--375.php)
+I spent a total of € 20,965.40. This corresponds to € 873.55 per month. I assume that the missing expenses won't increase
+this number to more than € 900. Just for the reference, a student could apply for
+a maximum BAföG of € 861 in 2020 if she or he is not living at parent's house and has to
+ pay insurances. [Source](https://www.bafög.de/de/welche-bedarfssaetze-sieht-das-bafoeg-vor--375.php)
 
 The COVID-19 pandemic does not become visible in the expenses although I could not go to
 the canteen in the last seven months and did order less at restaurants etc.
