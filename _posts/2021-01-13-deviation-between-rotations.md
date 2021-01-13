@@ -23,6 +23,6 @@ five metrics on SO(3):
  - Euclidean Distance between Euler Angles: This is only a metric on SO(3) if further restrictions are made.
  - Norm of the Difference of Quaternions: Since every rotation is covered twice by unit-quaternions, one property of metrics does not hold. Which is the property that states, if the distance between two entities is zero then the two entities are the same. This is not true for the positive and the negative quaternion who have a rotational difference of zero. This makes it a pseudometric which can be alleviated by adding a further restriction.
  - Inner Product of Unit Quaternions: Also pseudometrics on the unit quaternion.
- - Deviation from the Identity Matrix: $$ || I - R_1 R_2^T ||_F $$
+ - Deviation from the Identity Matrix: $$ | I - R_1 R_2^T |_F $$
  - Geodesic on the Unit Sphere: the magnitude of the angle of the rotation matrix necessary to transform
    $$R_1$$ into $$R_2$$
