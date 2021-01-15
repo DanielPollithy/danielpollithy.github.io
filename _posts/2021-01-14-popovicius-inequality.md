@@ -11,7 +11,7 @@ description: An upper bound to the variance of samples from an unknown distribut
 ---
 
 Suppose you have a neural network with a function as its last layer that squashes
-its outputs to a fixed interval $$[a,b]$$. Popoviciu's inequality can give us an upper bound
+its outputs to a fixed interval [a,b]. Popoviciu's inequality can give us an upper bound
 to the sample variance.
 
 If we knew the distribution where the samples stem from, then it would be easy
@@ -22,11 +22,11 @@ The upper bound derived from Popoviciu's inequality is $$ \frac{1}{4}(b-a)^2 $$.
 Interestingly, Mihaly Bencze and Florin Popovici write in their [proof](https://www.researchgate.net/publication/267072994_A_simple_proof_of_Popoviciu%27s_inequality) that
 "Popoviciu’s inequality is a refinement of Jensen’s inequality".
 
-In the following, I am going to adapt the proof by (Zen)[https://stats.stackexchange.com/questions/45588/variance-of-a-bounded-random-variable] on stackexchange with a minor notational changes:
+In the following, I am going to adapt the proof by [Zen](https://stats.stackexchange.com/questions/45588/variance-of-a-bounded-random-variable) with minor notational changes:
 
 
 
-Let $$ g(x) = E[(X - t)^2] $$ where X is our random variable and t to be determined such that we find the maximum of g.
+Let $$ g(x) = E[(X - t)^2] $$ where X is our random variable and $$t$$ to be determined such that we find the minimum of g.
 
 Therefore we derive g with respect to t: $$ \frac{d}{dt} g(x) = \frac{d}{dt} E[X^2 - 2Xt + t^2] $$
 
@@ -56,9 +56,9 @@ $$ = E[(\frac{1}{2}(2X - (a + b))^2] = E[\frac{1}{4}(2X - (a - b))^2]$$
 
 $$ = \frac{1}{4} E[(X+X - a - b)^2] = \frac{1}{4} E[(X - a + X - b)^2] $$
 
-$$ = \frac{1}{4} E[(\underbrace{(X - a)}_{\ge 0} + (\underbrace{(X - b)}_{\le 0})^2] $$
+$$ = \frac{1}{4} E[(\underbrace{(X - a)}_{\ge 0} + \underbrace{(X - b)}_{\le 0})^2] $$
 
-Since every sample from X has to be larger than a and smaller than b, these observations are true. While the left part increases the value, the right part decreases it. Are upper bound can thus be constructed by simply flipping the sign such that the right part is not subtracted but added:
+Since every sample from X has to be greater than $$a$$ and smaller than $$b$$, these observations are true. While the left part increases the value, the right part decreases it. Our upper bound can thus be constructed by simply flipping the sign such that the right part is not subtracted but added:
 
 
 $$ \frac{1}{4} E[((X - a) + (X - b))^2] \le \frac{1}{4} E[((X - a) - (X - b))^2] $$
